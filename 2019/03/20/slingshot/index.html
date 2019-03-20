@@ -96,24 +96,33 @@
 
 
 
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="题解$ Slingshot $对于本题，我们进行分类讨论： $ 1. $   对于这种情况，$ x \to y $ 包含了 $ s \to t $ ，所以此时的选择有两种： ① 先从 $ s $ 走到 $ x $ ，然后穿到 $ y $ ，再从 $ y $ 走到 $ t $ 。 ② 直接从 $ s $ 走到 $ t $ 。 然后我们 $ yy $ 一下，如何用线段树维护多个 $ x \to y $">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://Cesarelg.github.io/2019/03/19/hello-world/index.html">
+<meta property="og:title" content="slingshot">
+<meta property="og:url" content="http://Cesarelg.github.io/2019/03/20/slingshot/index.html">
 <meta property="og:site_name" content="Cesare &amp; lg 的博客">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="题解$ Slingshot $对于本题，我们进行分类讨论： $ 1. $   对于这种情况，$ x \to y $ 包含了 $ s \to t $ ，所以此时的选择有两种： ① 先从 $ s $ 走到 $ x $ ，然后穿到 $ y $ ，再从 $ y $ 走到 $ t $ 。 ② 直接从 $ s $ 走到 $ t $ 。 然后我们 $ yy $ 一下，如何用线段树维护多个 $ x \to y $">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-19T12:14:28.570Z">
+<meta property="og:image" content="c:/Users/Administrator/Desktop/杂/例图/1.png">
+<meta property="og:image" content="c:/Users/Administrator/Desktop/杂/例图/2.png">
+<meta property="og:image" content="c:/Users/Administrator/Desktop/杂/例图/3.png">
+<meta property="og:image" content="c:/Users/Administrator/Desktop/杂/例图/4.png">
+<meta property="og:image" content="c:/Users/Administrator/Desktop/杂/例图/3.png">
+<meta property="og:image" content="c:/Users/Administrator/Desktop/杂/例图/2.png">
+<meta property="og:image" content="c:/Users/Administrator/Desktop/杂/例图/1.png">
+<meta property="og:image" content="c:/Users/Administrator/Desktop/杂/例图/4.png">
+<meta property="og:updated_time" content="2019-03-20T12:48:44.478Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="slingshot">
+<meta name="twitter:description" content="题解$ Slingshot $对于本题，我们进行分类讨论： $ 1. $   对于这种情况，$ x \to y $ 包含了 $ s \to t $ ，所以此时的选择有两种： ① 先从 $ s $ 走到 $ x $ ，然后穿到 $ y $ ，再从 $ y $ 走到 $ t $ 。 ② 直接从 $ s $ 走到 $ t $ 。 然后我们 $ yy $ 一下，如何用线段树维护多个 $ x \to y $">
+<meta name="twitter:image" content="c:/Users/Administrator/Desktop/杂/例图/1.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://Cesarelg.github.io/2019/03/19/hello-world/">
+  <link rel="canonical" href="http://Cesarelg.github.io/2019/03/20/slingshot/">
 
 
 
@@ -123,7 +132,7 @@
   };
 </script>
 
-  <title>Hello World | Cesare & lg 的博客</title>
+  <title>slingshot | Cesare & lg 的博客</title>
   
 
 
@@ -355,7 +364,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://Cesarelg.github.io/2019/03/19/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://Cesarelg.github.io/2019/03/20/slingshot/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cesare">
@@ -372,7 +381,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World
+          <h1 class="post-title" itemprop="name headline">slingshot
 
               
             
@@ -398,9 +407,13 @@
                 
               
 
-              <time title="创建时间：2019-03-19 20:14:28" itemprop="dateCreated datePublished" datetime="2019-03-19T20:14:28+08:00">2019-03-19</time>
+              <time title="创建时间：2019-03-20 20:46:49 / 修改时间：20:48:44" itemprop="dateCreated datePublished" datetime="2019-03-20T20:46:49+08:00">2019-03-20</time>
             
 
+            
+              
+
+              
             
           </span>
 
@@ -427,7 +440,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">430</span>
+                <span title="本文字数">5.4k</span>
               
 
               
@@ -441,7 +454,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">5 分钟</span>
               
             </div>
           
@@ -461,15 +474,35 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="Slingshot"><a href="#Slingshot" class="headerlink" title="$ Slingshot $"></a>$ Slingshot $</h2><p>对于本题，我们进行分类讨论：</p>
+<p>$ 1. $ </p>
+<p><img src="C:\Users\Administrator\Desktop\杂\例图\1.png" alt></p>
+<p>对于这种情况，$ x \to y $ 包含了 $ s \to t $ ，所以此时的选择有两种：</p>
+<p>① 先从 $ s $ 走到 $ x $ ，然后穿到 $ y $ ，再从 $ y $ 走到 $ t $ 。</p>
+<p>② 直接从 $ s $ 走到 $ t $ 。</p>
+<p>然后我们 $ yy $ 一下，如何用线段树维护多个 $ x \to y $ 只选一个最优的 $ x \to y $ 的情况。</p>
+<p>显然，这是个线段树维护区间最小值裸题。</p>
+<p>所以，由于我们根据 $ x $ 端点排序，所以只需要将 ① 情况的路程插入线段树中的 $ y $ 节点的位置即可。</p>
+<p>对于这种情况，路程就是<br>$$<br>ti + (s - x) + (y - t)<br>$$<br>在线段树中插入这个东东即可。</p>
+<p>$ 2. $ </p>
+<p><img src="C:\Users\Administrator\Desktop\杂\例图\2.png" alt></p>
+<p>对于这种情况， $ s \to t $ 包含了 $ x \to y $ 的情况，所以路程就是<br>$$<br>ti + (x - s) + (t - y)<br>$$<br>$ 3. $</p>
+<p><img src="C:\Users\Administrator\Desktop\杂\例图\3.png" alt></p>
+<p>对于这种情况， $ s \to t $ 包含了 $ x $ ，不包含 $ y $ ，所以路程就是<br>$$<br>ti + (s - x) + (t - y)<br>$$<br>$ 4. $</p>
+<p><img src="C:\Users\Administrator\Desktop\杂\例图\4.png" alt></p>
+<p>与 $ 3 $ 同理，只是包含情况反一下，也就是<br>$$<br>ti + (x - s) + (y - t)<br>$$<br>离散化一下，四种情况各建一棵线段树就完了。</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="$ Code: $"></a>$ Code: $</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;tr1/unordered_map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> debug(x) cout &lt;&lt; <span class="meta-string">"#x = "</span> &lt;&lt; x &lt;&lt; endl</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ls(x) (x &lt;&lt; 1)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rs(x) (x &lt;&lt; 1 | 1)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mid ((l + r) &gt;&gt; 1)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> re register</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> For(i, j, k) for(re int i = j; i &lt;= k; i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> foR(i, j, k) for(re int i = j; i &gt;= k; i--)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> ll N = <span class="number">200011</span>;</span><br><span class="line"><span class="keyword">const</span> ll inf = <span class="number">0x3f3f3f3f3f3f3f</span>;</span><br><span class="line"></span><br><span class="line">ll n, m, cnt, rep[N];</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">	ll x, y, w, id;</span><br><span class="line">&#125; p[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">cmp</span> <span class="params">( node a, node b )</span> </span>&#123; <span class="keyword">return</span> a.x == b.x? a.x &lt; b.y: a.x &lt; b.x; &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> IO &#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">inline</span> ll <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		ll x = <span class="number">0</span>; <span class="keyword">bool</span> f = <span class="number">0</span>; <span class="keyword">char</span> ch = getchar();</span><br><span class="line">		<span class="keyword">for</span> (; !<span class="built_in">isdigit</span> (ch); ch = getchar()) f ^= ( ch == <span class="string">'-'</span> );</span><br><span class="line">		<span class="keyword">for</span> (; <span class="built_in">isdigit</span> (ch); ch = getchar()) x = ( x &lt;&lt; <span class="number">1</span> ) + ( x &lt;&lt; <span class="number">3</span> ) + ( ch ^ <span class="number">48</span> );</span><br><span class="line">		<span class="keyword">return</span> f? -x: x;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">write</span> <span class="params">( ll x )</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> ( x &lt; <span class="number">0</span> ) x = -x, <span class="built_in">putchar</span> ( <span class="string">'-'</span> );</span><br><span class="line">		<span class="keyword">if</span> ( x &gt; <span class="number">9</span> ) write ( x / <span class="number">10</span> );</span><br><span class="line">		<span class="built_in">putchar</span> ( x % <span class="number">10</span> | <span class="number">48</span> );</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">wln</span> <span class="params">( ll x )</span> </span>&#123; write (x); <span class="built_in">putchar</span> ( <span class="string">'\n'</span> ); &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> IO;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> Segment_Tree &#123;</span><br><span class="line">	</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Tree</span> &#123;</span></span><br><span class="line">		ll mn;</span><br><span class="line">	&#125; ans[N &lt;&lt; <span class="number">2</span>];</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">push_up</span> <span class="params">( ll p )</span> </span>&#123; ans[p].mn = min ( ans[ls(p)].mn, ans[rs(p)].mn ); &#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">build</span> <span class="params">( ll p, ll l, ll r )</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> ( l == r ) &#123; ans[p].mn = inf; <span class="keyword">return</span> ; &#125;</span><br><span class="line">		build ( ls(p), l, mid ); build ( rs(p), mid + <span class="number">1</span>, r ); push_up (p);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Insert</span> <span class="params">( ll p, ll l, ll r, ll x, ll k )</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> ( l == r ) &#123; ans[p].mn = min ( k, ans[p].mn ); <span class="keyword">return</span> ; &#125;</span><br><span class="line">		<span class="keyword">if</span> ( mid &gt;= x ) Insert ( ls(p), l, mid, x, k );</span><br><span class="line">		<span class="keyword">if</span> ( mid &lt; x )  Insert ( rs(p), mid + <span class="number">1</span>, r, x, k );</span><br><span class="line">		push_up (p);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> ll <span class="title">Query</span> <span class="params">( ll p, ll l, ll r, ll ul, ll ur )</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> ( l &gt;= ul &amp;&amp; r &lt;= ur ) <span class="keyword">return</span> ans[p].mn;</span><br><span class="line">		<span class="keyword">if</span> ( mid &gt;= ur ) <span class="keyword">return</span> Query ( ls(p), l, mid, ul, ur ); <span class="keyword">else</span> </span><br><span class="line">		<span class="keyword">if</span> ( mid &lt; ul )  <span class="keyword">return</span> Query ( rs(p), mid + <span class="number">1</span>, r, ul, ur ); <span class="keyword">else</span> </span><br><span class="line">		<span class="keyword">return</span> min ( Query ( ls(p), l, mid, ul, ur ), Query ( rs(p), mid + <span class="number">1</span>, r, ul, ur ) );</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> Segment_Tree;</span><br><span class="line"></span><br><span class="line">ll u, v, w, s, t, _x[N], _y[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">	freopen (<span class="string">"ztn.in"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</span><br><span class="line">	freopen (<span class="string">"ztn.out"</span>, <span class="string">"w"</span>, <span class="built_in">stdout</span>);</span><br><span class="line">	n = read(), m = read();</span><br><span class="line">	For ( i, <span class="number">1</span>, n ) &#123;</span><br><span class="line">		u = read(), v = read(), w = read();</span><br><span class="line">		p[++cnt].x = u, p[cnt].y = v, p[cnt].w = w, p[cnt].id = <span class="number">0</span>;</span><br><span class="line">		_x[cnt] = u, _y[cnt]  =v;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	For ( i, <span class="number">1</span>, m ) &#123;</span><br><span class="line">		s = read(), t = read();</span><br><span class="line">		p[++cnt].x = s, p[cnt].y = t, p[cnt].w = <span class="number">0</span>, p[cnt].id = i;</span><br><span class="line">		_x[cnt] = s, _y[cnt]  =t; rep[i] = <span class="built_in">abs</span> ( s - t );</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">/* -----------------离散化----------------- */</span></span><br><span class="line">	</span><br><span class="line">	sort ( p + <span class="number">1</span>, p + cnt + <span class="number">1</span>, cmp );</span><br><span class="line">	</span><br><span class="line">	sort ( _x + <span class="number">1</span>, _x + cnt + <span class="number">1</span> );</span><br><span class="line">	ll len = unique ( _x + <span class="number">1</span>, _x + cnt + <span class="number">1</span> ) - _x - <span class="number">1</span>;</span><br><span class="line">	</span><br><span class="line">	For ( i, <span class="number">1</span>, cnt )</span><br><span class="line">		p[i].x = lower_bound ( _x + <span class="number">1</span>, _x + len + <span class="number">1</span>, p[i].x ) - _x;</span><br><span class="line">	</span><br><span class="line">	sort ( _y + <span class="number">1</span>, _y + cnt + <span class="number">1</span> );</span><br><span class="line">	len = unique ( _y + <span class="number">1</span>, _y + cnt + <span class="number">1</span> ) - _y - <span class="number">1</span>;</span><br><span class="line">	</span><br><span class="line">	For ( i, <span class="number">1</span>, cnt ) </span><br><span class="line">		p[i].y = lower_bound ( _y + <span class="number">1</span>, _y + len + <span class="number">1</span>, p[i].y ) - _y;</span><br><span class="line">		</span><br><span class="line">	<span class="comment">/* ---------------------------------- */</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">/* ----------------分类讨论------------------ */</span></span><br><span class="line">	</span><br><span class="line">	build ( <span class="number">1</span>, <span class="number">1</span>, cnt );</span><br><span class="line">	For ( i, <span class="number">1</span>, cnt )</span><br><span class="line">		<span class="keyword">if</span> ( !p[i].id )</span><br><span class="line">			Insert ( <span class="number">1</span>, <span class="number">1</span>, cnt, p[i].y, p[i].w -_x[p[i].x] - _y[p[i].y] );</span><br><span class="line">		<span class="keyword">else</span> </span><br><span class="line">			rep[p[i].id] = min ( rep[p[i].id], </span><br><span class="line">				Query ( <span class="number">1</span>, <span class="number">1</span>, cnt, <span class="number">1</span>, p[i].y ) + _x[p[i].x] + _y[p[i].y] );</span><br><span class="line">	<span class="comment">// x -&gt; y 包含 s ，不包含 t 。</span></span><br><span class="line"></span><br><span class="line">	build ( <span class="number">1</span>, <span class="number">1</span>, cnt );</span><br><span class="line">	For ( i, <span class="number">1</span>, cnt )</span><br><span class="line">		<span class="keyword">if</span> ( !p[i].id )</span><br><span class="line">			Insert ( <span class="number">1</span>, <span class="number">1</span>, cnt, p[i].y, p[i].w -_x[p[i].x] + _y[p[i].y] );</span><br><span class="line">		<span class="keyword">else</span> </span><br><span class="line">			rep[p[i].id] = min ( rep[p[i].id], </span><br><span class="line">				Query ( <span class="number">1</span>, <span class="number">1</span>, cnt, p[i].y, cnt ) + _x[p[i].x] - _y[p[i].y] );</span><br><span class="line">	<span class="comment">// s -&gt; t 包含 x -&gt; y</span></span><br><span class="line">    </span><br><span class="line">	build ( <span class="number">1</span>, <span class="number">1</span>, cnt );</span><br><span class="line">	foR ( i, cnt, <span class="number">1</span> )</span><br><span class="line">		<span class="keyword">if</span> ( !p[i].id )</span><br><span class="line">			Insert ( <span class="number">1</span>, <span class="number">1</span>, cnt, p[i].y, p[i].w + _x[p[i].x] + _y[p[i].y] );</span><br><span class="line">		<span class="keyword">else</span> </span><br><span class="line">			rep[p[i].id] = min ( rep[p[i].id], </span><br><span class="line">				Query ( <span class="number">1</span>, <span class="number">1</span>, cnt, p[i].y, cnt ) - _x[p[i].x] - _y[p[i].y] );</span><br><span class="line">	<span class="comment">// x -&gt; y 包含 t ， 不包含 s 。		</span></span><br><span class="line">    </span><br><span class="line">	build ( <span class="number">1</span>, <span class="number">1</span>, cnt );</span><br><span class="line">	foR ( i, cnt, <span class="number">1</span> )</span><br><span class="line">		<span class="keyword">if</span> ( !p[i].id )</span><br><span class="line">			Insert ( <span class="number">1</span>, <span class="number">1</span>, cnt, p[i].y, p[i].w + _x[p[i].x] - _y[p[i].y] );</span><br><span class="line">		<span class="keyword">else</span> </span><br><span class="line">			rep[p[i].id] = min ( rep[p[i].id], </span><br><span class="line">				Query ( <span class="number">1</span>, <span class="number">1</span>, cnt, <span class="number">1</span>, p[i].y ) - _x[p[i].x] + _y[p[i].y] );</span><br><span class="line">	<span class="comment">// x -&gt; y 包含 s -&gt; t</span></span><br><span class="line">    </span><br><span class="line">	<span class="comment">/* ---------------------------------- */</span></span><br><span class="line">	</span><br><span class="line">	For ( i, <span class="number">1</span>, m ) wln ( rep[i] ); <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">2 3</span></span><br><span class="line"><span class="comment">0 10 1</span></span><br><span class="line"><span class="comment">13 8 2</span></span><br><span class="line"><span class="comment">1 12</span></span><br><span class="line"><span class="comment">5 2</span></span><br><span class="line"><span class="comment">20 7</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<p>另外，关于循环的问题为什么有两种正序，两种倒序呢？</p>
+<p>让我们再看一遍先前的例图：</p>
+<p>前两个正序的：</p>
+<p><img src="C:\Users\Administrator\Desktop\杂\例图\3.png" alt></p>
+<p><img src="C:\Users\Administrator\Desktop\杂\例图\2.png" alt></p>
+<p>后两个倒序的：</p>
+<p><img src="C:\Users\Administrator\Desktop\杂\例图\1.png" alt></p>
+<p><img src="C:\Users\Administrator\Desktop\杂\例图\4.png" alt></p>
+<p>发现了吗，两者之间的奥秘。</p>
+<p>留给读者自行证明。</p>
+<p>从前面开始扫，由于 $ y $ 是排过序的，你插入的点就会在 $ s \to t $ 之间，否则有可能在外面，就是不优的，是错的。</p>
 
       
     </div>
@@ -500,14 +533,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/03/19/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/20/slingshot/" rel="prev" title="slingshot">
-                slingshot <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/20/A-distant-country/" rel="prev" title="A distant country">
+                A distant country <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -643,7 +680,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题解"><span class="nav-number">1.</span> <span class="nav-text">题解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Slingshot"><span class="nav-number">1.1.</span> <span class="nav-text">$ Slingshot $</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code"><span class="nav-number">1.2.</span> <span class="nav-text">$ Code: $</span></a></li></ol></li></ol></div>
             
 
           </div>
