@@ -96,12 +96,13 @@
 
 
 
-  <meta name="description" content="题解$ Slingshot $对于本题，我们进行分类讨论： $ 1. $   对于这种情况，$ x \to y $ 包含了 $ s \to t $ ，所以此时的选择有两种： ① 先从 $ s $ 走到 $ x $ ，然后穿到 $ y $ ，再从 $ y $ 走到 $ t $ 。 ② 直接从 $ s $ 走到 $ t $ 。 然后我们 $ yy $ 一下，如何用线段树维护多个 $ x \to y $">
+  <meta name="description" content="题解$Slingshot$对于本题，我们进行分类讨论： $ 1. $   对于这种情况，$x \to y$ 包含了 $s \to t$ ，所以此时的选择有两种： ① 先从 $s$ 走到 $x$ ，然后穿到 $y$ ，再从 $y$ 走到 $t$ 。 ② 直接从 $s$ 走到 $t$ 。 然后我们 $yy$ 一下，如何用线段树维护多个 $x \to y$ 只选一个最优的 $x \to y$ 的情况。">
+<meta name="keywords" content="Solution">
 <meta property="og:type" content="article">
 <meta property="og:title" content="slingshot">
 <meta property="og:url" content="http://Cesarelg.github.io/2019/03/20/slingshot/index.html">
 <meta property="og:site_name" content="Cesare &amp; lg 的博客">
-<meta property="og:description" content="题解$ Slingshot $对于本题，我们进行分类讨论： $ 1. $   对于这种情况，$ x \to y $ 包含了 $ s \to t $ ，所以此时的选择有两种： ① 先从 $ s $ 走到 $ x $ ，然后穿到 $ y $ ，再从 $ y $ 走到 $ t $ 。 ② 直接从 $ s $ 走到 $ t $ 。 然后我们 $ yy $ 一下，如何用线段树维护多个 $ x \to y $">
+<meta property="og:description" content="题解$Slingshot$对于本题，我们进行分类讨论： $ 1. $   对于这种情况，$x \to y$ 包含了 $s \to t$ ，所以此时的选择有两种： ① 先从 $s$ 走到 $x$ ，然后穿到 $y$ ，再从 $y$ 走到 $t$ 。 ② 直接从 $s$ 走到 $t$ 。 然后我们 $yy$ 一下，如何用线段树维护多个 $x \to y$ 只选一个最优的 $x \to y$ 的情况。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="c:/Users/Administrator/Desktop/杂/例图/1.png">
 <meta property="og:image" content="c:/Users/Administrator/Desktop/杂/例图/2.png">
@@ -111,10 +112,10 @@
 <meta property="og:image" content="c:/Users/Administrator/Desktop/杂/例图/2.png">
 <meta property="og:image" content="c:/Users/Administrator/Desktop/杂/例图/1.png">
 <meta property="og:image" content="c:/Users/Administrator/Desktop/杂/例图/4.png">
-<meta property="og:updated_time" content="2019-03-20T12:48:44.478Z">
+<meta property="og:updated_time" content="2019-03-20T12:59:46.374Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="slingshot">
-<meta name="twitter:description" content="题解$ Slingshot $对于本题，我们进行分类讨论： $ 1. $   对于这种情况，$ x \to y $ 包含了 $ s \to t $ ，所以此时的选择有两种： ① 先从 $ s $ 走到 $ x $ ，然后穿到 $ y $ ，再从 $ y $ 走到 $ t $ 。 ② 直接从 $ s $ 走到 $ t $ 。 然后我们 $ yy $ 一下，如何用线段树维护多个 $ x \to y $">
+<meta name="twitter:description" content="题解$Slingshot$对于本题，我们进行分类讨论： $ 1. $   对于这种情况，$x \to y$ 包含了 $s \to t$ ，所以此时的选择有两种： ① 先从 $s$ 走到 $x$ ，然后穿到 $y$ ，再从 $y$ 走到 $t$ 。 ② 直接从 $s$ 走到 $t$ 。 然后我们 $yy$ 一下，如何用线段树维护多个 $x \to y$ 只选一个最优的 $x \to y$ 的情况。">
 <meta name="twitter:image" content="c:/Users/Administrator/Desktop/杂/例图/1.png">
 
 
@@ -407,7 +408,7 @@
                 
               
 
-              <time title="创建时间：2019-03-20 20:46:49 / 修改时间：20:48:44" itemprop="dateCreated datePublished" datetime="2019-03-20T20:46:49+08:00">2019-03-20</time>
+              <time title="创建时间：2019-03-20 20:46:49 / 修改时间：20:59:46" itemprop="dateCreated datePublished" datetime="2019-03-20T20:46:49+08:00">2019-03-20</time>
             
 
             
@@ -440,7 +441,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">5.4k</span>
+                <span title="本文字数">5.3k</span>
               
 
               
@@ -474,17 +475,17 @@
       
 
       
-        <h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="Slingshot"><a href="#Slingshot" class="headerlink" title="$ Slingshot $"></a>$ Slingshot $</h2><p>对于本题，我们进行分类讨论：</p>
+        <h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="Slingshot"><a href="#Slingshot" class="headerlink" title="$Slingshot$"></a>$Slingshot$</h2><p>对于本题，我们进行分类讨论：</p>
 <p>$ 1. $ </p>
 <p><img src="C:\Users\Administrator\Desktop\杂\例图\1.png" alt></p>
-<p>对于这种情况，$ x \to y $ 包含了 $ s \to t $ ，所以此时的选择有两种：</p>
-<p>① 先从 $ s $ 走到 $ x $ ，然后穿到 $ y $ ，再从 $ y $ 走到 $ t $ 。</p>
-<p>② 直接从 $ s $ 走到 $ t $ 。</p>
-<p>然后我们 $ yy $ 一下，如何用线段树维护多个 $ x \to y $ 只选一个最优的 $ x \to y $ 的情况。</p>
+<p>对于这种情况，$x \to y$ 包含了 $s \to t$ ，所以此时的选择有两种：</p>
+<p>① 先从 $s$ 走到 $x$ ，然后穿到 $y$ ，再从 $y$ 走到 $t$ 。</p>
+<p>② 直接从 $s$ 走到 $t$ 。</p>
+<p>然后我们 $yy$ 一下，如何用线段树维护多个 $x \to y$ 只选一个最优的 $x \to y$ 的情况。</p>
 <p>显然，这是个线段树维护区间最小值裸题。</p>
-<p>所以，由于我们根据 $ x $ 端点排序，所以只需要将 ① 情况的路程插入线段树中的 $ y $ 节点的位置即可。</p>
+<p>所以，由于我们根据 $x$ 端点排序，所以只需要将 ① 情况的路程插入线段树中的 $ y $ 节点的位置即可。</p>
 <p>对于这种情况，路程就是<br>$$<br>ti + (s - x) + (y - t)<br>$$<br>在线段树中插入这个东东即可。</p>
-<p>$ 2. $ </p>
+<p>$ 2. ​$ </p>
 <p><img src="C:\Users\Administrator\Desktop\杂\例图\2.png" alt></p>
 <p>对于这种情况， $ s \to t $ 包含了 $ x \to y $ 的情况，所以路程就是<br>$$<br>ti + (x - s) + (t - y)<br>$$<br>$ 3. $</p>
 <p><img src="C:\Users\Administrator\Desktop\杂\例图\3.png" alt></p>
@@ -523,6 +524,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Solution/" rel="tag"># Solution</a>
+          
+        </div>
       
 
       
@@ -625,6 +632,19 @@
               
 
               
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
             </nav>
           
 
@@ -680,7 +700,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题解"><span class="nav-number">1.</span> <span class="nav-text">题解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Slingshot"><span class="nav-number">1.1.</span> <span class="nav-text">$ Slingshot $</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code"><span class="nav-number">1.2.</span> <span class="nav-text">$ Code: $</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题解"><span class="nav-number">1.</span> <span class="nav-text">题解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Slingshot"><span class="nav-number">1.1.</span> <span class="nav-text">$Slingshot$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code"><span class="nav-number">1.2.</span> <span class="nav-text">$ Code: $</span></a></li></ol></li></ol></div>
             
 
           </div>
