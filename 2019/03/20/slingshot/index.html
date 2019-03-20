@@ -96,13 +96,13 @@
 
 
 
-  <meta name="description" content="题解$Slingshot$对于本题，我们进行分类讨论： $ 1. $   对于这种情况，$x \to y$ 包含了 $s \to t$ ，所以此时的选择有两种： ① 先从 $s$ 走到 $x$ ，然后穿到 $y$ ，再从 $y$ 走到 $t$ 。 ② 直接从 $s$ 走到 $t$ 。 然后我们 $yy$ 一下，如何用线段树维护多个 $x \to y$ 只选一个最优的 $x \to y$ 的情况。">
+  <meta name="description" content="题解$Slingshot$对于本题，我们进行分类讨论： $ 1. $   对于这种情况，$x \to y​$ 包含了 $s \to t​$ ，所以此时的选择有两种： ① 先从 $s​$ 走到 $x​$ ，然后穿到 $y​$ ，再从 $y​$ 走到 $t​$ 。 ② 直接从 $s$ 走到 $t$ 。 然后我们 $yy$ 一下，如何用线段树维护多个 $x \to y$ 只选一个最优的 $x \to y">
 <meta name="keywords" content="Solution">
 <meta property="og:type" content="article">
 <meta property="og:title" content="slingshot">
 <meta property="og:url" content="http://Cesarelg.github.io/2019/03/20/slingshot/index.html">
 <meta property="og:site_name" content="Cesare &amp; lg 的博客">
-<meta property="og:description" content="题解$Slingshot$对于本题，我们进行分类讨论： $ 1. $   对于这种情况，$x \to y$ 包含了 $s \to t$ ，所以此时的选择有两种： ① 先从 $s$ 走到 $x$ ，然后穿到 $y$ ，再从 $y$ 走到 $t$ 。 ② 直接从 $s$ 走到 $t$ 。 然后我们 $yy$ 一下，如何用线段树维护多个 $x \to y$ 只选一个最优的 $x \to y$ 的情况。">
+<meta property="og:description" content="题解$Slingshot$对于本题，我们进行分类讨论： $ 1. $   对于这种情况，$x \to y​$ 包含了 $s \to t​$ ，所以此时的选择有两种： ① 先从 $s​$ 走到 $x​$ ，然后穿到 $y​$ ，再从 $y​$ 走到 $t​$ 。 ② 直接从 $s$ 走到 $t$ 。 然后我们 $yy$ 一下，如何用线段树维护多个 $x \to y$ 只选一个最优的 $x \to y">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="c:/Users/Administrator/Desktop/杂/例图/1.png">
 <meta property="og:image" content="c:/Users/Administrator/Desktop/杂/例图/2.png">
@@ -112,10 +112,10 @@
 <meta property="og:image" content="c:/Users/Administrator/Desktop/杂/例图/2.png">
 <meta property="og:image" content="c:/Users/Administrator/Desktop/杂/例图/1.png">
 <meta property="og:image" content="c:/Users/Administrator/Desktop/杂/例图/4.png">
-<meta property="og:updated_time" content="2019-03-20T12:59:46.374Z">
+<meta property="og:updated_time" content="2019-03-20T13:02:53.322Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="slingshot">
-<meta name="twitter:description" content="题解$Slingshot$对于本题，我们进行分类讨论： $ 1. $   对于这种情况，$x \to y$ 包含了 $s \to t$ ，所以此时的选择有两种： ① 先从 $s$ 走到 $x$ ，然后穿到 $y$ ，再从 $y$ 走到 $t$ 。 ② 直接从 $s$ 走到 $t$ 。 然后我们 $yy$ 一下，如何用线段树维护多个 $x \to y$ 只选一个最优的 $x \to y$ 的情况。">
+<meta name="twitter:description" content="题解$Slingshot$对于本题，我们进行分类讨论： $ 1. $   对于这种情况，$x \to y​$ 包含了 $s \to t​$ ，所以此时的选择有两种： ① 先从 $s​$ 走到 $x​$ ，然后穿到 $y​$ ，再从 $y​$ 走到 $t​$ 。 ② 直接从 $s$ 走到 $t$ 。 然后我们 $yy$ 一下，如何用线段树维护多个 $x \to y$ 只选一个最优的 $x \to y">
 <meta name="twitter:image" content="c:/Users/Administrator/Desktop/杂/例图/1.png">
 
 
@@ -408,7 +408,7 @@
                 
               
 
-              <time title="创建时间：2019-03-20 20:46:49 / 修改时间：20:59:46" itemprop="dateCreated datePublished" datetime="2019-03-20T20:46:49+08:00">2019-03-20</time>
+              <time title="创建时间：2019-03-20 20:46:49 / 修改时间：21:02:53" itemprop="dateCreated datePublished" datetime="2019-03-20T20:46:49+08:00">2019-03-20</time>
             
 
             
@@ -478,8 +478,8 @@
         <h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="Slingshot"><a href="#Slingshot" class="headerlink" title="$Slingshot$"></a>$Slingshot$</h2><p>对于本题，我们进行分类讨论：</p>
 <p>$ 1. $ </p>
 <p><img src="C:\Users\Administrator\Desktop\杂\例图\1.png" alt></p>
-<p>对于这种情况，$x \to y$ 包含了 $s \to t$ ，所以此时的选择有两种：</p>
-<p>① 先从 $s$ 走到 $x$ ，然后穿到 $y$ ，再从 $y$ 走到 $t$ 。</p>
+<p>对于这种情况，$x \to y​$ 包含了 $s \to t​$ ，所以此时的选择有两种：</p>
+<p>① 先从 $s​$ 走到 $x​$ ，然后穿到 $y​$ ，再从 $y​$ 走到 $t​$ 。</p>
 <p>② 直接从 $s$ 走到 $t$ 。</p>
 <p>然后我们 $yy$ 一下，如何用线段树维护多个 $x \to y$ 只选一个最优的 $x \to y$ 的情况。</p>
 <p>显然，这是个线段树维护区间最小值裸题。</p>
@@ -1209,6 +1209,46 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 
