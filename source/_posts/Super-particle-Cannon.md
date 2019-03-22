@@ -1,7 +1,7 @@
 ---
 title: Super particle Cannon
 date: 2019-03-22 21:06:59
-tags: [math, exLucas, 数论分块]
+tags: [math, Lucas, 数论分块]
 ---
 
 # $Super$ $Particle$ $Cannon$
