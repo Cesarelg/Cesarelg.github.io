@@ -1,7 +1,7 @@
 ---
 title: Park
 date: 2019-03-26 12:43:00
-tags: two points answer
+tags: [two points answer]
 ---
 
 # $Park$
