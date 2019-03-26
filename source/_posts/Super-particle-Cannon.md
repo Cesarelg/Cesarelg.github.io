@@ -75,54 +75,54 @@ ll T, n, k, res, C[N + 11][N + 11], f[N + 11][N + 11];
 
 namespace IO {
 
-	inline ll read() {
-		ll x = 0; bool f = 0; char ch = getchar();
-		for (; !isdigit (ch); ch = getchar()) f ^= (ch == '-');
-		for (; isdigit (ch); ch = getchar()) x = ( x << 3 ) + ( x << 1 ) + ( ch ^ 48 );
-		return f? -x: x;
-	}
+    inline ll read() {
+        ll x = 0; bool f = 0; char ch = getchar();
+        for (; !isdigit (ch); ch = getchar()) f ^= (ch == '-');
+        for (; isdigit (ch); ch = getchar()) x = ( x << 3 ) + ( x << 1 ) + ( ch ^ 48 );
+        return f? -x: x;
+    }
 
-	inline void write( ll x ) {
-		if ( x < 0 ) putchar ( '-' ), x = -x;
-		if ( x > 9 ) write ( x / 10 );
-		putchar ( x % 10 | 48 );
-	}
+    inline void write( ll x ) {
+        if ( x < 0 ) putchar ( '-' ), x = -x;
+        if ( x > 9 ) write ( x / 10 );
+        putchar ( x % 10 | 48 );
+    }
 
-	inline void wrn ( ll x ) { write (x); putchar ( ' ' ); }
+    inline void wrn ( ll x ) { write (x); putchar ( ' ' ); }
 
-	inline void wln ( ll x ) { write (x); putchar ( '\n' ); }
+    inline void wln ( ll x ) { write (x); putchar ( '\n' ); }
 
-	inline void wlnn ( ll x, ll y ) { wrn (x), wln (y); }
+    inline void wlnn ( ll x, ll y ) { wrn (x), wln (y); }
 
 }
 
 using namespace IO;
 
 inline ll Lucas ( ll n, ll m ) {
-	if ( n < m ) return 0;
-	if ( !m || n == m ) return 1;
-	return C[n % p][m % p] * Lucas ( n / p, m / p ) % p;
+    if ( n < m ) return 0;
+    if ( !m || n == m ) return 1;
+    return C[n % p][m % p] * Lucas ( n / p, m / p ) % p;
 }
 
 inline ll F ( ll n, ll k ) {
-	if ( k < 0 ) return 0;
-	if ( !n || !k ) return 1;
-	if ( n < p && k < p ) return f[n][k];
-	return ( F (n / p, k / p - 1) * f[n % p][p - 1] % p 
-		+ Lucas ( n / p, k / p ) * f[n % p][k % p] % p ) % p;
+    if ( k < 0 ) return 0;
+    if ( !n || !k ) return 1;
+    if ( n < p && k < p ) return f[n][k];
+    return ( F (n / p, k / p - 1) * f[n % p][p - 1] % p 
+        + Lucas ( n / p, k / p ) * f[n % p][k % p] % p ) % p;
 }
 
 int main() {
-//	freopen(".in", "r", stdin);
-//	freopen(".out", "w", stdout);
-	f[0][0] = C[0][0] = 1; For ( i, 1, N )
-		C[i][i] = C[i][0] = f[i][0] = 1;
-	For ( i, 1, N ) For ( j, 1, i - 1 )
-		C[i][j] = (C[i - 1][j] + C[i - 1][j - 1]) % p;
-	For ( i, 0, N ) For ( j, 1, N ) 
-		f[i][j] = ( C[i][j] + f[i][j - 1] ) % p;
-	T = read(); while ( T-- ) n = read(), wln ( F (n, read()) );
-	return 0;
+//    freopen(".in", "r", stdin);
+//    freopen(".out", "w", stdout);
+    f[0][0] = C[0][0] = 1; For ( i, 1, N )
+        C[i][i] = C[i][0] = f[i][0] = 1;
+    For ( i, 1, N ) For ( j, 1, i - 1 )
+        C[i][j] = (C[i - 1][j] + C[i - 1][j - 1]) % p;
+    For ( i, 0, N ) For ( j, 1, N ) 
+        f[i][j] = ( C[i][j] + f[i][j - 1] ) % p;
+    T = read(); while ( T-- ) n = read(), wln ( F (n, read()) );
+    return 0;
 }
 
 /*
@@ -135,7 +135,6 @@ int main() {
 968
 763
 */
-
 ```
 
 [题目链接](https://www.luogu.org/problemnew/show/P4345)
