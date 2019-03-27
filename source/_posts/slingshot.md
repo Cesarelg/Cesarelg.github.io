@@ -1,7 +1,7 @@
 ---
 title: slingshot
 date: 2019-03-18 10:03:21
-tags: category talk
+tags: [category talk, segment tree]
 ---
 
 # 题解
