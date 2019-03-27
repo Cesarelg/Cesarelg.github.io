@@ -1,5 +1,5 @@
 ---
-title: slingshot
+title: Slingshot
 date: 2019-03-18 10:03:21
 tags: [category talk, segment tree]
 ---
