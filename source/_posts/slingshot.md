@@ -2,6 +2,7 @@
 title: Slingshot
 date: 2019-03-18 10:03:21
 tags: [category talk, segment tree]
+
 ---
 
 # 题解
@@ -10,11 +11,11 @@ tags: [category talk, segment tree]
 
 对于本题，我们进行分类讨论：
 
-$ 1. ​$ 
+$ 1. $ 
 
 ![](https://s2.ax1x.com/2019/03/20/Al5IKg.png)
 
-对于这种情况，$x \to y​$ 包含了 $s \to t​$ ，所以此时的选择有两种：
+对于这种情况，$x \to y$ 包含了 $s \to t$ ，所以此时的选择有两种：
 
 ① 先从 $s$ 走到 $x$ ，然后穿到 $y$ ，再从 $y$ 走到 $t$ 。
 
