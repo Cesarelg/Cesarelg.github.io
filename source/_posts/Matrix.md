@@ -43,17 +43,17 @@ $$
 
 首先，我们将与 $ f[n] ​$ 有关的需要得到的式子放入一个矩阵:
 $$
-\begin{bmatrix}f[n]\\f[n - 1]\\f[n - 2]\end{bmatrix}
+\begin{bmatrix}f[n] \\ f[n - 1] \\ f[n - 2]\end{bmatrix}
 $$
 
 
-然后，我们寻找他从哪里来: $ f[n-1] = f[n - 2] + f[n - 3] ​$，即
+然后，我们寻找他从哪里来: $ f[n-1] = f[n - 2] + f[n - 3] $，即
 $$
-\begin{bmatrix}f[n-1]\\f[n - 2]\\f[n - 3]\end{bmatrix}
+\begin{bmatrix}f[n-1] \\ f[n - 2] \\ f[n - 3]\end{bmatrix}
 $$
-然后设我们需要得到的矩阵为$ ans ​$，有
+然后设我们需要得到的矩阵为$ Ans $，有
 $$
-Ans \times \begin{bmatrix}f[n-1]\\f[n - 2]\\f[n - 3]\end{bmatrix} = \begin{bmatrix}f[n]\\f[n - 1]\\f[n - 2]\end{bmatrix}
+Ans \times \begin{bmatrix}f[n-1] \\ f[n - 2] \\ f[n - 3]\end{bmatrix} = \begin{bmatrix}f[n] \\ f[n - 1] \\ f[n - 2]\end{bmatrix}
 $$
 然后我们一行一行根据矩乘的方式递推:
 
@@ -65,7 +65,7 @@ $$
 
 最后就构造出了完整的矩阵:
 $$
-\begin{bmatrix}1&0&1\\1&0&0\\0&1&0\end{bmatrix}
+\begin{bmatrix}1&0&1 \\ 1&0&0 \\ 0&1&0\end{bmatrix}
 $$
 
 
