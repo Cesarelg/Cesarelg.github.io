@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="Cesare">
 <meta property="og:description" content="$update:​$ 修复了部分矩阵的构建结果，并修复了文末链接。  开个新坑往后的可能很长一段时间，这都会是置顶。 向量 浅谈如何构造矩阵12345关于矩阵的构造，是矩乘中最关键的一环，一般只需要学会构造矩阵和熟练运用矩阵快速幂的模板，就可以做(shui)出(diao)非常多的题目。话不多说，马上进入正题。  例题1:【模板】矩阵加速（数列） 让我们观察一下这题的递推式:$$f[1] = f[2">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-28T03:04:33.952Z">
+<meta property="og:updated_time" content="2019-03-28T03:05:35.940Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Matrix">
 <meta name="twitter:description" content="$update:​$ 修复了部分矩阵的构建结果，并修复了文末链接。  开个新坑往后的可能很长一段时间，这都会是置顶。 向量 浅谈如何构造矩阵12345关于矩阵的构造，是矩乘中最关键的一环，一般只需要学会构造矩阵和熟练运用矩阵快速幂的模板，就可以做(shui)出(diao)非常多的题目。话不多说，马上进入正题。  例题1:【模板】矩阵加速（数列） 让我们观察一下这题的递推式:$$f[1] = f[2">
@@ -416,7 +416,7 @@
                 
               
 
-              <time title="创建时间：2019-03-28 09:09:28 / 修改时间：11:04:33" itemprop="dateCreated datePublished" datetime="2019-03-28T09:09:28+08:00">2019-03-28</time>
+              <time title="创建时间：2019-03-28 09:09:28 / 修改时间：11:05:35" itemprop="dateCreated datePublished" datetime="2019-03-28T09:09:28+08:00">2019-03-28</time>
             
 
             
@@ -507,10 +507,9 @@
 <p>让我们重复上一题的步骤:<br>$$<br> f[1] = f[2] = 1<br>$$</p>
 <p>$$<br> f[n] = f[n - 1] + f[n - 2]<br>$$</p>
 <p>可以发现 $ f[n] ​$ 最早由 $ f[n - 2] ​$ 转移而来，所以只需要构建一个 $ 2 * 2 ​$的矩阵就可以了。</p>
-<p>将递推式放入矩阵:<br>$$<br>\begin{bmatrix}f[n]\f[n - 1]\end{bmatrix}<br>$$<br>他从哪里来:<br>$$<br>\begin{bmatrix}f[n - 1]\f[n - 2]\end{bmatrix}<br>$$<br>设<br>$$<br>Ans * \begin{bmatrix}f[n - 1]\f[n - 2]\end{bmatrix} = \begin{bmatrix}f[n]\f[n - 1]\end{bmatrix}<br>$$<br>第一行需要得到 $ f[n] ​$，所以需要$ f[n - 1] ​$ 和 $ f[n - 2] ​$，因此得到矩阵第一行为: $ \begin{bmatrix}1&amp;1\end{bmatrix} ​$</p>
+<p>将递推式放入矩阵:<br>$$<br>\begin{bmatrix}f[n] \ f[n - 1]\end{bmatrix}<br>$$<br>他从哪里来:<br>$$<br>\begin{bmatrix}f[n - 1] \ f[n - 2]\end{bmatrix}<br>$$<br>设<br>$$<br>Ans \times \begin{bmatrix}f[n - 1] \ f[n - 2]\end{bmatrix} = \begin{bmatrix}f[n] \ f[n - 1]\end{bmatrix}<br>$$<br>第一行需要得到 $ f[n] ​$，所以需要$ f[n - 1] ​$ 和 $ f[n - 2] ​$，因此得到矩阵第一行为: $ \begin{bmatrix}1&amp;1\end{bmatrix} ​$</p>
 <p>第二行需要得到 $ f[n - 1] $，所以只需要$ f[n - 1] $就可以了，因此得到矩阵第二行为: $ \begin{bmatrix}1&amp;0\end{bmatrix} $</p>
-<p>最后构建出完整的矩阵: $ \begin{bmatrix}1&amp;1\1&amp;0\end{bmatrix} ​$</p>
-<p>代码:</p>
+<p>最后构建出完整的矩阵:<br>$$<br>\begin{bmatrix}1&amp;1 \ 1&amp;0\end{bmatrix}<br>$$<br>代码:</p>
 <hr>
 <p>习题:</p>
 <p>$1.$ <a href="https://www.luogu.org/problemnew/show/P5004" target="_blank" rel="noopener">专心OI - 跳房子</a></p>
