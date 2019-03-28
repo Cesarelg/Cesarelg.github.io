@@ -145,22 +145,24 @@ $$
 
 将递推式放入矩阵:
 $$
-\begin{bmatrix}f[n]\\f[n - 1]\end{bmatrix}
+\begin{bmatrix}f[n] \\ f[n - 1]\end{bmatrix}
 $$
 他从哪里来:
 $$
-\begin{bmatrix}f[n - 1]\\f[n - 2]\end{bmatrix}
+\begin{bmatrix}f[n - 1] \\ f[n - 2]\end{bmatrix}
 $$
 设
 $$
-Ans * \begin{bmatrix}f[n - 1]\\f[n - 2]\end{bmatrix} = \begin{bmatrix}f[n]\\f[n - 1]\end{bmatrix}
+Ans \times \begin{bmatrix}f[n - 1] \\ f[n - 2]\end{bmatrix} = \begin{bmatrix}f[n] \\ f[n - 1]\end{bmatrix}
 $$
 第一行需要得到 $ f[n] ​$，所以需要$ f[n - 1] ​$ 和 $ f[n - 2] ​$，因此得到矩阵第一行为: $ \begin{bmatrix}1&1\end{bmatrix} ​$
 
 第二行需要得到 $ f[n - 1] $，所以只需要$ f[n - 1] $就可以了，因此得到矩阵第二行为: $ \begin{bmatrix}1&0\end{bmatrix} $
 
-最后构建出完整的矩阵: $ \begin{bmatrix}1&1\\1&0\end{bmatrix} ​$
-
+最后构建出完整的矩阵: 
+$$
+\begin{bmatrix}1&1 \\ 1&0\end{bmatrix}
+$$
 代码:
 
 ---------------------------
