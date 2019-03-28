@@ -41,19 +41,19 @@ $$
 
 首先我们可以发现，$ f[n] $ 最早由$ f[n-3] $转移而来，所以我们需要构造一个$ 3*3 $的矩阵。
 
-首先，我们将与 $ f[n] ​$ 有关的需要得到的式子放入一个矩阵:
+首先，我们将与 $ f[n] $ 有关的需要得到的式子放入一个矩阵:
 $$
-\begin{bmatrix}f[n] \\ f[n - 1] \\ f[n - 2]\end{bmatrix}
+\begin{bmatrix} {f[n]} \\\ {f[n - 1]} \\\ {f[n - 2]} \end{bmatrix}
 $$
 
 
 然后，我们寻找他从哪里来: $ f[n-1] = f[n - 2] + f[n - 3] $，即
 $$
-\begin{bmatrix}f[n-1] \\ f[n - 2] \\ f[n - 3]\end{bmatrix}
+\begin{bmatrix}f[n-1] \\\ f[n - 2] \\\ f[n - 3]\end{bmatrix}
 $$
 然后设我们需要得到的矩阵为$ Ans $，有
 $$
-Ans \times \begin{bmatrix}f[n-1] \\ f[n - 2] \\ f[n - 3]\end{bmatrix} = \begin{bmatrix}f[n] \\ f[n - 1] \\ f[n - 2]\end{bmatrix}
+Ans \times \begin{bmatrix}f[n-1] \\\ f[n - 2] \\\ f[n - 3]\end{bmatrix} = \begin{bmatrix}f[n] \\\ f[n - 1] \\\ f[n - 2]\end{bmatrix}
 $$
 然后我们一行一行根据矩乘的方式递推:
 
@@ -65,7 +65,7 @@ $$
 
 最后就构造出了完整的矩阵:
 $$
-\begin{bmatrix}1&0&1 \\ 1&0&0 \\ 0&1&0\end{bmatrix}
+\begin{bmatrix}1&0&1 \\\ 1&0&0 \\\ 0&1&0\end{bmatrix}
 $$
 
 
@@ -145,23 +145,23 @@ $$
 
 将递推式放入矩阵:
 $$
-\begin{bmatrix}f[n] \\ f[n - 1]\end{bmatrix}
+\begin{bmatrix}f[n] \\\ f[n - 1]\end{bmatrix}
 $$
 他从哪里来:
 $$
-\begin{bmatrix}f[n - 1] \\ f[n - 2]\end{bmatrix}
+\begin{bmatrix}f[n - 1] \\\ f[n - 2]\end{bmatrix}
 $$
 设
 $$
-Ans \times \begin{bmatrix}f[n - 1] \\ f[n - 2]\end{bmatrix} = \begin{bmatrix}f[n] \\ f[n - 1]\end{bmatrix}
+Ans \times \begin{bmatrix}f[n - 1] \\\ f[n - 2]\end{bmatrix} = \begin{bmatrix}f[n] \\\ f[n - 1]\end{bmatrix}
 $$
-第一行需要得到 $ f[n] ​$，所以需要$ f[n - 1] ​$ 和 $ f[n - 2] ​$，因此得到矩阵第一行为: $ \begin{bmatrix}1&1\end{bmatrix} ​$
+第一行需要得到 $ f[n] $，所以需要$ f[n - 1] $ 和 $ f[n - 2] $，因此得到矩阵第一行为: $ \begin{bmatrix}1&1\end{bmatrix} $
 
 第二行需要得到 $ f[n - 1] $，所以只需要$ f[n - 1] $就可以了，因此得到矩阵第二行为: $ \begin{bmatrix}1&0\end{bmatrix} $
 
 最后构建出完整的矩阵: 
 $$
-\begin{bmatrix}1&1 \\ 1&0\end{bmatrix}
+\begin{bmatrix}1&1 \\\ 1&0\end{bmatrix}
 $$
 代码:
 
