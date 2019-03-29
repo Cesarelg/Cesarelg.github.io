@@ -42,17 +42,17 @@ $$
 
 先举个栗子，如果
 $$
-n = 22, p = 3, k = 2
+n = 23, p = 3, k = 2
 $$
 有
 $$
-22! = 1 \times 2 \times 3 \ldots \times 22
+23! = 1 \times 2 \times 3 \ldots \times 23
 $$
 提出 $p$ 的所有倍数
 $$
-3^7 \times 7! \times (1 \times 2 \times 4 \times 5 \times 7 \times 8 \ldots)
+3^{7} \times 7! \times (1 \times 2 \times 4 \times 5 \times 7 \times 8 \ldots)
 $$
-可以看出第一部分是 $p^{\left\lfloor\frac{n}{p}\right\rfloor}$ ，第二部分是 $\left\lfloor\frac{n}{p}\right\rfloor!$ ，第三部分是 $\prod_{gcd(d, p) = 1}^{n!}d$ 。
+可以看出第一部分是 $p^{\left\lfloor\frac{n}{p}\right\rfloor}​$ ，第二部分是 $\left\lfloor\frac{n}{p}\right\rfloor!​$ ，第三部分是 $\prod_{gcd(d, p) = 1}^{n!}d​$ 。
 
 显然第一部分对于答案没有贡献，第二部分递归即可，所以现在还需要解决第三部分。
 
@@ -64,7 +64,7 @@ $$
 
 显然，这些部分有 $\frac{n}{p^k}$ 个，所以只需要暴力算出一次互质的，然后快速幂即可。
 
-记住最后要加上不完整的块，也就是例子里的 $19 \times 20 \times 22$ 。
+记住最后要加上不完整的块，也就是例子里的 $19 \times 20 \times 22 \times 23 $ 。
 
 然后我们回到求组合数的过程，提出因子 $p$ ，最后乘上逆元与提出的 $p$ 即可。
 
@@ -190,7 +190,6 @@ int main() {
 
 150052
 */
-
 
 ```
 

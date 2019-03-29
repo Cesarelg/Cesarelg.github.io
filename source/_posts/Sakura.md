@@ -96,7 +96,7 @@ int main() {
     For ( i, 1, cnt ) {
         ll P = pr[i];
         for ( re ll j = P; j <= n; j *= P ) 
-            c[i] += n / j; c[i] %= p; // 直接分解质因数。 
+            c[i] += n / j; c[i] %= p; // 直接分解质因数。
     }
     For ( i, 1, cnt ) ans = ans * (c[i] * 2 + 1) % p;
     return wln ( ans ), 0;
