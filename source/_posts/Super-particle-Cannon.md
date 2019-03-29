@@ -113,8 +113,8 @@ inline ll F ( ll n, ll k ) {
 }
 
 int main() {
-//    freopen(".in", "r", stdin);
-//    freopen(".out", "w", stdout);
+//  freopen(".in", "r", stdin);
+//  freopen(".out", "w", stdout);
     f[0][0] = C[0][0] = 1; For ( i, 1, N )
         C[i][i] = C[i][0] = f[i][0] = 1;
     For ( i, 1, N ) For ( j, 1, i - 1 )

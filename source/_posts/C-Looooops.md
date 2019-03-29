@@ -79,8 +79,8 @@ inline void exgcd ( ll a, ll b, ll &d, ll &x, ll &y ) {
 }
 
 int main() {
-//    freopen("c.in", "r", stdin);
-//    freopen("test.out", "w", stdout);
+//  freopen("c.in", "r", stdin);
+//  freopen("test.out", "w", stdout);
     while ( cin >> A >> B >> C >> k && (A || B || C || k) ) {
         ll a = C, b = 1ll << k, c = B - A;
         ll d, x, y; exgcd ( a, b, d, x, y );

@@ -108,8 +108,8 @@ namespace IO {
 using namespace IO;
 
 int main() {
-//    freopen(".in", "r", stdin);
-//    freopen(".out", "w", stdout);
+//  freopen(".in", "r", stdin);
+//  freopen(".out", "w", stdout);
     n = read(), T = read();
     For ( i, 1, n ) For ( j, 1, 8 )
         Ans.mp[i + j * n][i + (j - 1) * n] = 1;

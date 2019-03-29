@@ -95,26 +95,26 @@ ll n, m, p;
 
 namespace IO {
 
-	#define dd ch = getchar()
-	inline ll read() {
-		ll x = 0; bool f = 0; char dd;
-		for (; !isdigit (ch); dd) f ^= (ch == '-');
-		for (; isdigit (ch); dd)  x = (x << 3) + (x << 1) + (ch ^ 48);
-		return f? -x: x;
-	}
-	#undef dd
+    #define dd ch = getchar()
+    inline ll read() {
+        ll x = 0; bool f = 0; char dd;
+        for (; !isdigit (ch); dd) f ^= (ch == '-');
+        for (; isdigit (ch); dd)  x = (x << 3) + (x << 1) + (ch ^ 48);
+        return f? -x: x;
+    }
+    #undef dd
 
-	inline void write( ll x ) {
-		if ( x < 0 ) putchar ( '-' ), x = -x;
-		if ( x > 9 ) write ( x / 10 );
-		putchar ( x % 10 | 48 );
-	}
+    inline void write( ll x ) {
+        if ( x < 0 ) putchar ( '-' ), x = -x;
+        if ( x > 9 ) write ( x / 10 );
+        putchar ( x % 10 | 48 );
+    }
 
-	inline void wrn ( ll x ) { write (x); putchar ( ' ' ); }
+    inline void wrn ( ll x ) { write (x); putchar ( ' ' ); }
 
-	inline void wln ( ll x ) { write (x); putchar ( '\n' ); }
+    inline void wln ( ll x ) { write (x); putchar ( '\n' ); }
 
-	inline void wlnn ( ll x, ll y ) { wrn (x), wln (y); }
+    inline void wlnn ( ll x, ll y ) { wrn (x), wln (y); }
 
 }
 
@@ -122,67 +122,67 @@ using namespace IO;
 
 namespace Solve {
 
-	inline void exgcd ( ll a, ll b, ll &d, ll &x, ll &y ) {
-		if (b) exgcd ( b, a % b, d, y, x ), y -= a / b * x;
-		else d = a, x = 1, y = 0; return ;
-	}
-	
-	inline ll power ( ll a, ll b, ll p ) {
-		ll res = 1;
-		for (; b; b >>= 1, a = a * a % p) res = (b & 1)? res * a % p: res;
-		return res;
-	}
-	
-	inline ll Inv ( ll a, ll p ) {
-		ll d, x, y;
-		exgcd ( a, p, d, x, y );
-		return (x + p > p)? x: x + p;
-	} // exgcd 求逆元。 
-	
-	inline ll Crt ( ll b, ll mod ) {
-		return b * Inv ( p / mod, mod ) % p * ( p / mod ) % p;
-	} // Crt 合并答案。 
-	
-	inline ll Devide ( ll n, ll p, ll k ) {
-		if (!n) return 1;
-		ll res = 1; For ( i, 2, k ) 
-			if (i % p) res = res * i % k; // 计算一次第三部分 
-		res = power ( res, n / k, k ); // 总共有 n / k 次第三部分。 
-		For ( i, 2, n % k ) if (i % p) res = res * i % k; // 第三部分有一点没被乘进去。 
-		return res * Devide ( n / p, p, k ) % k; // 乘上第二部分。 
-	} // 求阶乘。 
-	
-	inline ll C ( ll n, ll m, ll p, ll k ) {
-		if ( n < m ) return 0;
-		ll cnt = 0, a = Devide (n, p, k), 
-			b = Devide (m, p, k), c = Devide (n - m, p, k);
-		Cross ( i, n, i / p ) cnt += i / p;
-		Cross ( i, m, i / p ) cnt -= i / p;
-		Cross ( i, n - m, i / p ) cnt -= i / p;
-		return a * Inv (b, k) % k * Inv (c, k) % k * power (p, cnt, k) % k;
-	} // 求组合数。 n! / m!(n - m)!
-	
-	inline ll exLucas () {
-		ll res = 0, temp = p;
-		for (re int i = 2; i * i <= temp; i++) 
-			if (temp % i == 0) {
-				ll t = 1;
-				while (temp % i == 0) t *= i, temp /= i;
-				res = (res + Crt ( C(n, m, i, t), t )) % p;
-			}
-		return (temp > 1)? (res + Crt ( C(n, m, temp, temp), temp )) % p: res;
-	} // 分解质因数， Crt 合并答案。
-	/*
-		t 就是 p^k, i 就是 p 。 
-	*/ 
+    inline void exgcd ( ll a, ll b, ll &d, ll &x, ll &y ) {
+        if (b) exgcd ( b, a % b, d, y, x ), y -= a / b * x;
+        else d = a, x = 1, y = 0; return ;
+    }
+    
+    inline ll power ( ll a, ll b, ll p ) {
+        ll res = 1;
+        for (; b; b >>= 1, a = a * a % p) res = (b & 1)? res * a % p: res;
+        return res;
+    }
+    
+    inline ll Inv ( ll a, ll p ) {
+        ll d, x, y;
+        exgcd ( a, p, d, x, y );
+        return (x + p > p)? x: x + p;
+    } // exgcd 求逆元。 
+    
+    inline ll Crt ( ll b, ll mod ) {
+        return b * Inv ( p / mod, mod ) % p * ( p / mod ) % p;
+    } // Crt 合并答案。 
+    
+    inline ll Devide ( ll n, ll p, ll k ) {
+        if (!n) return 1;
+        ll res = 1; For ( i, 2, k ) 
+            if (i % p) res = res * i % k; // 计算一次第三部分 
+        res = power ( res, n / k, k ); // 总共有 n / k 次第三部分。 
+        For ( i, 2, n % k ) if (i % p) res = res * i % k; // 第三部分有一点没被乘进去。 
+        return res * Devide ( n / p, p, k ) % k; // 乘上第二部分。 
+    } // 求阶乘。 
+    
+    inline ll C ( ll n, ll m, ll p, ll k ) {
+        if ( n < m ) return 0;
+        ll cnt = 0, a = Devide (n, p, k), 
+            b = Devide (m, p, k), c = Devide (n - m, p, k);
+        Cross ( i, n, i / p ) cnt += i / p;
+        Cross ( i, m, i / p ) cnt -= i / p;
+        Cross ( i, n - m, i / p ) cnt -= i / p;
+        return a * Inv (b, k) % k * Inv (c, k) % k * power (p, cnt, k) % k;
+    } // 求组合数。 n! / m!(n - m)!
+    
+    inline ll exLucas () {
+        ll res = 0, temp = p;
+        for (re int i = 2; i * i <= temp; i++) 
+            if (temp % i == 0) {
+                ll t = 1;
+                while (temp % i == 0) t *= i, temp /= i;
+                res = (res + Crt ( C(n, m, i, t), t )) % p;
+            }
+        return (temp > 1)? (res + Crt ( C(n, m, temp, temp), temp )) % p: res;
+    } // 分解质因数， Crt 合并答案。
+    /*
+        t 就是 p^k, i 就是 p 。 
+    */ 
 
 }
 
 int main() {
-//	freopen(".in", "r", stdin);
-//	freopen(".out", "w", stdout);
-	n = read(), m = read(), p = read();
-	return wln ( Solve::exLucas () ), 0;
+//  freopen(".in", "r", stdin);
+//  freopen(".out", "w", stdout);
+    n = read(), m = read(), p = read();
+    return wln ( Solve::exLucas () ), 0;
 }
 
 /*
@@ -191,7 +191,9 @@ int main() {
 150052
 */
 
+
 ```
 
 [题目链接](<https://www.luogu.org/problemnew/show/P4720>)
 
+ 
