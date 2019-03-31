@@ -6,12 +6,16 @@ tags: [math, exgcd]
 
 # $C$ $Looooops$
 
+
+
 ## $Description$
 
 求
 $$
 Cx + A \equiv B \pmod {2^k}
 $$
+
+
 
 ## $Solution$
 
@@ -24,6 +28,8 @@ $$
 a = C, b = 2^k, c = B - A, d = gcd(a, b)
 $$
 代入求解即可。
+
+
 
 ## $Code:$
 

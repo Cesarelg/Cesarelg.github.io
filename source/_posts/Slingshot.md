@@ -4,9 +4,7 @@ date: 2019-03-18 10:03:21
 tags: [category talk, segment tree]
 ---
 
-# 题解
-
-## $Slingshot$
+# $Slingshot$
 
 对于本题，我们进行分类讨论：
 

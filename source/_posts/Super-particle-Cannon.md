@@ -6,12 +6,16 @@ tags: [math, Lucas, 数论分块]
 
 # $Super$ $Particle$ $Cannon$
 
+
+
 ## $Description$
 
 求
 $$
 \sum_{i = 0}^{k} C_n^i \bmod 2333
 $$
+
+
 
 ## $Solution$
 
@@ -48,6 +52,8 @@ $$
 f(n, k) = f(n \% p, p - 1) \times f(n / p, k / p - 1) + C_{n / p}^{k / p} \times f(n \% p, k \% p)
 $$
 预处理组合数，套个 $Lucas$ 就完了。
+
+
 
 ## $Code:$
 

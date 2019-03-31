@@ -6,9 +6,13 @@ tags: [math, Study Notes]
 
 # $linear$ $inverse$ $element$
 
+
+
 ## $Descirption$
 
-给出 $k​$ ，求它的逆元。
+给出 $k$ ，求它的逆元。
+
+
 
 ## $Solution$
 
@@ -54,6 +58,8 @@ $$
 $$
 {(p-p / k) \times inv[p \bmod k]} \equiv inv[k] \pmod p
 $$
+
+
 
 ## $Code:$
 

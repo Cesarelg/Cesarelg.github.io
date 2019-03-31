@@ -6,9 +6,13 @@ tags: math
 
 # $Sakura$
 
+
+
 ## $Description$
 
-求 $\frac{1}{x} + \frac{1}{y} = \frac{1}{n!}​$ 的答案方案个数。
+求 $\frac{1}{x} + \frac{1}{y} = \frac{1}{n!}$ 的答案方案个数。
+
+
 
 ## $Solution$
 
@@ -29,6 +33,8 @@ $$
 ab = n^2
 $$
 筛出 $n^2$ 的因子即可。
+
+
 
 ## $Code:$
 

@@ -6,9 +6,13 @@ tags: [math, exgcd]
 
 # $Savage$
 
+
+
 ## $Description$
 
 给出 $n$ 个野人，初始在第 $C_i$ 个洞穴，每个人一年能走 $P_i$ 个洞穴，寿命是 $L_i$ 年，所有人在一个环上走，求最小满足所有人互不碰到的环的长度。
+
+
 
 ## $Solution$
 
@@ -22,7 +26,9 @@ $$
 $$
 (P_i - P_j) \times x + M \times y = C_j - C_i
 $$
-枚举 $M​$ ，解方程即可。
+枚举 $M$ ，解方程即可。
+
+
 
 ## $Code:$
 

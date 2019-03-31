@@ -4,13 +4,17 @@ date: 2019-03-15 17:56:27
 tags: Tree chain partition
 ---
 
-## 遥远的国度题解
+# $A$ $distant$ $country$
 
-### $Description$
+### 
+
+## $Description$
 
 给出一棵树，需要支持换根、区间查询、区间修改等操作。
 
-### $Solution$
+
+
+## $Solution$
 
 除了换根操作，其他都是树链剖分板子。
 
