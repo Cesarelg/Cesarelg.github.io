@@ -38,9 +38,9 @@ tags: [math, category talk]
 
 红色的点表示固定的点，也就是 $A$ 点，绿色的线表示 $B$ 点此时的活动范围，橙色的线表示 $C$ 点此时的活动范围。
 
-显然， $A$ 点有 $4$ 种方案， $B$ 点有 $i - 1$ 种方案， $C$ 点有 $j - 1$ 种方案。
+显然， $A​$ 点有 $4​$ 种方案， $B​$ 点有 $i - 1​$ 种方案， $C​$ 点有 $j - 1​$ 种方案。
 
-所以方案数就是 $4 \times (i - 1) \times (j - 1)$
+所以方案数就是 $4 \times (i - 1) \times (j - 1)​$
 
 然后我们考虑处在顶点上的特殊情况，我们钦定 $B$ 与顶点重合。
 
@@ -50,13 +50,90 @@ tags: [math, category talk]
 
 当 $B​$ 与右上角端点重合时，情况就变得复杂了。
 
-此时， $C$ 点
+可以发现此时 $A \to B$ 不仅仅经过了左下角与右上角两个端点，还经过了中间的一些格点，手玩一下几个数据可以发现，经过的格点数是 $gcd(i, j) - 1$ 个。
+
+所以，方案个数就是 $(i + 1) \times (j + 1) - 4 - (gcd(i, j) - 1)​$ 。
+
+注意此处图形可以翻转，所以答案要乘二。
+
+所以，对于每个子矩阵，完全覆盖的三角形个数就是
+$$
+4 \times (i - 1) \times (j - 1) + 2 \times [(i - 1) + (j - 1) + (i + 1) \times (j + 1) - 4 - (gcd(i, j) - 1)]
+$$
+化简后就是 
+$$
+6 \times i \times j - 2 \times gcd(i, j)
+$$
+
 
 
 
 ## $Code:$
 
 ```cpp
+#include<bits/stdc++.h>
+//#include<tr1/unordered_map>
+//#include"Bignum/bignum.h"
+//#define lll bignum
+#define ls(x) ( x << 1 )
+#define rs(x) ( x << 1 | 1 )
+//#define mid ( ( l + r ) >> 1 )
+#define lowbit(x) ( x & -x )
+#define debug(x) (cout << "#x = " << x << endl)
+#define re register
+#define For(i, j, k) for(re int i = (j); i <= (k); i++)
+#define foR(i, j, k) for(re int i = (j); i >= (k); i--)
+#define Cross(i, j, k) for(re int i = (j); i; i = (k))
+using namespace std;
+typedef long long ll;
+const ll N = 100011;
+const ll inf = 0x3f3f3f3f3f3f;
+
+ll m, n, ans = 0; 
+
+namespace IO {
+
+	#define dd ch = getchar()
+	inline ll read() {
+		ll x = 0; bool f = 0; char dd;
+		for (; !isdigit (ch); dd) f ^= (ch == '-');
+		for (; isdigit (ch); dd)  x = (x << 3) + (x << 1) + (ch ^ 48);
+		return f? -x: x;
+	}
+	#undef dd
+
+	inline void write( ll x ) {
+		if ( x < 0 ) putchar ( '-' ), x = -x;
+		if ( x > 9 ) write ( x / 10 );
+		putchar ( x % 10 | 48 );
+	}
+
+	inline void wrn ( ll x ) { write (x); putchar ( ' ' ); }
+
+	inline void wln ( ll x ) { write (x); putchar ( '\n' ); }
+
+	inline void wlnn ( ll x, ll y ) { wrn (x), wln (y); }
+
+}
+
+using namespace IO;
+
+inline ll gcd ( ll a, ll b ) { return !b? a: gcd (b, a % b); }
+
+int main() {
+//	freopen(".in", "r", stdin);
+//	freopen(".out", "w", stdout);
+	m = read(), n = read();
+	For ( i, 1, m ) For ( j, 1, n )
+		ans += ( m - i + 1 ) * ( n - j + 1 ) * ( 6 * i * j - 2 * gcd (i, j) );
+	return wln (ans), 0;
+}
+
+/*
+2 2
+
+76
+*/
 
 ```
 
