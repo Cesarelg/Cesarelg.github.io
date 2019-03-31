@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="$linear$ $inverse$ $element$$Descirption$给出 $k​$ ，求它的逆元。 $Solution$设$$a \times k + b = p,{b \times inv[b]}\equiv1\pmod p$$变式，得$$b = p - a \times k,{(p - a \times k) \times inv[b]}\equiv1\pmod p$$ 拆括号，">
+  <meta name="description" content="$linear$ $inverse$ $element$$Descirption$给出 $k$ ，求它的逆元。 $Solution$设$$a \times k + b = p,{b \times inv[b]}\equiv1\pmod p$$变式，得$$b = p - a \times k,{(p - a \times k) \times inv[b]}\equiv1\pmod p$$ 拆括号，得">
 <meta name="keywords" content="math,Study Notes">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Multiplicative inverse">
 <meta property="og:url" content="http://Cesarelg.github.io/2019/03/22/Multiplicative-inverse/index.html">
 <meta property="og:site_name" content="Cesare">
-<meta property="og:description" content="$linear$ $inverse$ $element$$Descirption$给出 $k​$ ，求它的逆元。 $Solution$设$$a \times k + b = p,{b \times inv[b]}\equiv1\pmod p$$变式，得$$b = p - a \times k,{(p - a \times k) \times inv[b]}\equiv1\pmod p$$ 拆括号，">
+<meta property="og:description" content="$linear$ $inverse$ $element$$Descirption$给出 $k$ ，求它的逆元。 $Solution$设$$a \times k + b = p,{b \times inv[b]}\equiv1\pmod p$$变式，得$$b = p - a \times k,{(p - a \times k) \times inv[b]}\equiv1\pmod p$$ 拆括号，得">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-22T07:48:46.374Z">
+<meta property="og:updated_time" content="2019-03-31T13:12:55.137Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Multiplicative inverse">
-<meta name="twitter:description" content="$linear$ $inverse$ $element$$Descirption$给出 $k​$ ，求它的逆元。 $Solution$设$$a \times k + b = p,{b \times inv[b]}\equiv1\pmod p$$变式，得$$b = p - a \times k,{(p - a \times k) \times inv[b]}\equiv1\pmod p$$ 拆括号，">
+<meta name="twitter:description" content="$linear$ $inverse$ $element$$Descirption$给出 $k$ ，求它的逆元。 $Solution$设$$a \times k + b = p,{b \times inv[b]}\equiv1\pmod p$$变式，得$$b = p - a \times k,{(p - a \times k) \times inv[b]}\equiv1\pmod p$$ 拆括号，得">
 
 
 
@@ -416,12 +416,24 @@
                 
               
 
-              <time title="创建时间：2019-03-22 07:22:07 / 修改时间：15:48:46" itemprop="dateCreated datePublished" datetime="2019-03-22T07:22:07+08:00">2019-03-22</time>
+              <time title="创建时间：2019-03-22 07:22:07" itemprop="dateCreated datePublished" datetime="2019-03-22T07:22:07+08:00">2019-03-22</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-31 21:12:55" itemprop="dateModified" datetime="2019-03-31T21:12:55+08:00">2019-03-31</time>
               
             
           </span>
@@ -483,7 +495,7 @@
       
 
       
-        <h1 id="linear-inverse-element"><a href="#linear-inverse-element" class="headerlink" title="$linear$ $inverse$ $element$"></a>$linear$ $inverse$ $element$</h1><h2 id="Descirption"><a href="#Descirption" class="headerlink" title="$Descirption$"></a>$Descirption$</h2><p>给出 $k​$ ，求它的逆元。</p>
+        <h1 id="linear-inverse-element"><a href="#linear-inverse-element" class="headerlink" title="$linear$ $inverse$ $element$"></a>$linear$ $inverse$ $element$</h1><h2 id="Descirption"><a href="#Descirption" class="headerlink" title="$Descirption$"></a>$Descirption$</h2><p>给出 $k$ ，求它的逆元。</p>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>设<br>$$<br>a \times k + b = p,{b \times inv[b]}\equiv1\pmod p<br>$$<br>变式，得<br>$$<br>b = p - a \times k,{(p - a \times k) \times inv[b]}\equiv1\pmod p<br>$$</p>
 <p>拆括号，得<br>$$<br>{p \times inv[b] - a \times k \times inv[b]}\equiv1\pmod p<br>$$<br>即<br>$$<br>{-a \times k \times inv[b]}\equiv1\pmod p<br>$$<br>观察<br>$$<br>a \times k + b = p<br>$$<br>两边同是对 $k$ 取模，得<br>$$<br>b = p \bmod k<br>$$<br>故有<br>$$<br>a = p \div k<br>$$<br>代入原式，得<br>$$<br>{-(p / k) \times inv[p \bmod k] \times k}\equiv 1 \pmod p<br>$$<br>即<br>$$<br>{-(p / k) \times inv[p \bmod k]} \equiv inv[k] \pmod p<br>$$</p>
 <p>也就是<br>$$<br>{(p-p / k) \times inv[p \bmod k]} \equiv inv[k] \pmod p<br>$$</p>
