@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="$exCrt$前言十几天前写的板子…然而当时就不会证以及打，只是抄了个板子，今天准备把坑填上。 $Description$给定 $n$ 组非负整数 $a_i, b_i$ ，求解关于 $x$ 的方程组$$\begin{cases} x \equiv b_1\ ({\rm mod}\ a_1) \ x \equiv b_2\ ({\rm mod}\ a_2) \ \ldots \ x \equiv b">
+  <meta name="description" content="$exCrt$前言十几天前写的板子…然而当时就不会证以及打，只是抄了个板子，今天准备把坑填上。 $Description$给定 $n$ 组非负整数 $a_i, b_i$ ，求解关于 $x$ 的方程组$$\begin{cases} x \equiv b_1\ ({\rm mod}\ a_1)\x \equiv b_2\ ({\rm mod}\ a_2)\\ldots\x \equiv b_n ({\">
 <meta name="keywords" content="math,exgcd,Crt">
 <meta property="og:type" content="article">
 <meta property="og:title" content="exCrt">
 <meta property="og:url" content="http://Cesarelg.github.io/2019/04/02/exCrt/index.html">
 <meta property="og:site_name" content="Cesare">
-<meta property="og:description" content="$exCrt$前言十几天前写的板子…然而当时就不会证以及打，只是抄了个板子，今天准备把坑填上。 $Description$给定 $n$ 组非负整数 $a_i, b_i$ ，求解关于 $x$ 的方程组$$\begin{cases} x \equiv b_1\ ({\rm mod}\ a_1) \ x \equiv b_2\ ({\rm mod}\ a_2) \ \ldots \ x \equiv b">
+<meta property="og:description" content="$exCrt$前言十几天前写的板子…然而当时就不会证以及打，只是抄了个板子，今天准备把坑填上。 $Description$给定 $n$ 组非负整数 $a_i, b_i$ ，求解关于 $x$ 的方程组$$\begin{cases} x \equiv b_1\ ({\rm mod}\ a_1)\x \equiv b_2\ ({\rm mod}\ a_2)\\ldots\x \equiv b_n ({\">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-02T12:05:55.091Z">
+<meta property="og:updated_time" content="2019-04-02T12:12:56.704Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="exCrt">
-<meta name="twitter:description" content="$exCrt$前言十几天前写的板子…然而当时就不会证以及打，只是抄了个板子，今天准备把坑填上。 $Description$给定 $n$ 组非负整数 $a_i, b_i$ ，求解关于 $x$ 的方程组$$\begin{cases} x \equiv b_1\ ({\rm mod}\ a_1) \ x \equiv b_2\ ({\rm mod}\ a_2) \ \ldots \ x \equiv b">
+<meta name="twitter:description" content="$exCrt$前言十几天前写的板子…然而当时就不会证以及打，只是抄了个板子，今天准备把坑填上。 $Description$给定 $n$ 组非负整数 $a_i, b_i$ ，求解关于 $x$ 的方程组$$\begin{cases} x \equiv b_1\ ({\rm mod}\ a_1)\x \equiv b_2\ ({\rm mod}\ a_2)\\ldots\x \equiv b_n ({\">
 
 
 
@@ -416,7 +416,7 @@
                 
               
 
-              <time title="创建时间：2019-04-02 20:05:32 / 修改时间：20:05:55" itemprop="dateCreated datePublished" datetime="2019-04-02T20:05:32+08:00">2019-04-02</time>
+              <time title="创建时间：2019-04-02 20:05:32 / 修改时间：20:12:56" itemprop="dateCreated datePublished" datetime="2019-04-02T20:05:32+08:00">2019-04-02</time>
             
 
             
@@ -484,8 +484,8 @@
 
       
         <h1 id="exCrt"><a href="#exCrt" class="headerlink" title="$exCrt$"></a>$exCrt$</h1><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>十几天前写的板子…然而当时就不会证以及打，只是抄了个板子，今天准备把坑填上。</p>
-<h2 id="Description"><a href="#Description" class="headerlink" title="$Description$"></a>$Description$</h2><p>给定 $n$ 组非负整数 $a_i, b_i$ ，求解关于 $x$ 的方程组<br>$$<br>\begin{cases} x \equiv b_1\ ({\rm mod}\ a_1) \ x \equiv b_2\ ({\rm mod}\ a_2) \ \ldots \ x \equiv b_n ({\rm mod}\ a_n) \end{cases}<br>$$<br>的最小非负整数解。</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>先从简单的入手，现在有<br>$$<br>\begin{cases} x \equiv b_1\ ({\rm mod}\ a_1) \ x \equiv b_2\ ({\rm mod}\ a_2) \end{cases}<br>$$<br>将其转换成<br>$$<br>\begin{cases} x = b_1k_1 \ x = b_2k_2 \end{cases}<br>$$<br>联立一下，就有<br>$$<br>b1k1 = a_2 - a_1 + b_2k_2<br>$$<br>根据 $exgcd$ 可知，满足有解的条件是 $gcd (b_1, b_2) | (a_2 - a_1)$</p>
+<h2 id="Description"><a href="#Description" class="headerlink" title="$Description$"></a>$Description$</h2><p>给定 $n$ 组非负整数 $a_i, b_i$ ，求解关于 $x$ 的方程组<br>$$<br>\begin{cases} x \equiv b_1\ ({\rm mod}\ a_1)\x \equiv b_2\ ({\rm mod}\ a_2)\\ldots\x \equiv b_n ({\rm mod}\ a_n) \end{cases}<br>$$<br>的最小非负整数解。</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>先从简单的入手，现在有<br>$$<br>\begin{cases} x \equiv b_1\ ({\rm mod}\ a_1)\x \equiv b_2\ ({\rm mod}\ a_2) \end{cases}<br>$$<br>将其转换成<br>$$<br>\begin{cases} x = b_1k_1\x = b_2k_2 \end{cases}<br>$$<br>联立一下，就有<br>$$<br>b1k1 = a_2 - a_1 + b_2k_2<br>$$<br>根据 $exgcd$ 可知，满足有解的条件是 $gcd (b_1, b_2) | (a_2 - a_1)$</p>
 <p>设<br>$$<br>d = gcd(b_1, b_2)<br>$$<br>两边同除以 $d$ ，得<br>$$<br>\frac{b_1}{d}k_1 = \frac{a_2 - a_1}{d} + \frac{b_2}{d}k_2<br>$$<br>两边同时对 $\dfrac{b_2}{d}$ 取模，得<br>$$<br>\frac{b_1}{d}k_1 = \frac{a_2 - a_1}{d} \pmod { \frac{b_2}{d} }<br>$$<br>即<br>$$<br>k_1 \equiv (\frac{b_1}{d})^{-1} \times \frac{a_2 - a_1}{d} \pmod {\frac{b_2}{d}}<br>$$<br>也即<br>$$<br>k_1 = (\frac{b_1}{d})^{-1} \times \frac{a_2 - a_1}{d} + y\frac{b_2}{d}<br>$$<br>带回原式，得<br>$$<br>x = b_1 \times (\frac{b_1}{d})^{-1} \times \frac{a_2 - a_1}{d} + y\frac{b_1b_2}{d} + a_1<br>$$<br>即<br>$$<br>x = b_1 \times (\frac{b_1}{d})^{-1} \times \frac{a_2 - a_1}{d} + y\frac{b_1b_2}{d}<br>$$<br>设 $c = b_1 \times (\dfrac{b_1}{d})^{-1} \times \dfrac{a_2 - a_1}{d}, m = \dfrac{b_1b_2}{d}$</p>
 <p>就做出了这个简单的式子。</p>
 <p>然后我们考虑通解。</p>
