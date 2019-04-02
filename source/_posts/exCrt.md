@@ -140,35 +140,35 @@ ll n, B[N], A[N];
 
 namespace IO {
 
-	#define dd ch = getchar()
-	inline ll read() {
-		ll x = 0; bool f = 0; char dd;
-		for (; !isdigit (ch); dd) f ^= (ch == '-');
-		for (; isdigit (ch); dd)  x = (x << 3) + (x << 1) + (ch ^ 48);
-		return f? -x: x;
-	}
-	#undef dd
+    #define dd ch = getchar()
+    inline ll read() {
+        ll x = 0; bool f = 0; char dd;
+        for (; !isdigit (ch); dd) f ^= (ch == '-');
+        for (; isdigit (ch); dd)  x = (x << 3) + (x << 1) + (ch ^ 48);
+        return f? -x: x;
+    }
+    #undef dd
 
-	inline void write( ll x ) {
-		if ( x < 0 ) putchar ( '-' ), x = -x;
-		if ( x > 9 ) write ( x / 10 );
-		putchar ( x % 10 | 48 );
-	}
+    inline void write( ll x ) {
+        if ( x < 0 ) putchar ( '-' ), x = -x;
+        if ( x > 9 ) write ( x / 10 );
+        putchar ( x % 10 | 48 );
+    }
 
-	inline void wrn ( ll x ) { write (x); putchar ( ' ' ); }
+    inline void wrn ( ll x ) { write (x); putchar ( ' ' ); }
 
-	inline void wln ( ll x ) { write (x); putchar ( '\n' ); }
+    inline void wln ( ll x ) { write (x); putchar ( '\n' ); }
 
-	inline void wlnn ( ll x, ll y ) { wrn (x), wln (y); }
+    inline void wlnn ( ll x, ll y ) { wrn (x), wln (y); }
 
 }
 
 using namespace IO;
 
 inline ll mul ( ll a, ll b, ll p ) {
-	ll res = 0;
-	for (; b; b >>= 1, a = (a + a) % p) res = (b & 1)? (res + a) % p: res;
-	return res;
+    ll res = 0;
+    for (; b; b >>= 1, a = (a + a) % p) res = (b & 1)? (res + a) % p: res;
+    return res;
 }
 
 inline void exgcd ( ll a, ll b, ll &d, ll &x, ll &y ) {
@@ -188,10 +188,10 @@ inline ll exCrt() {
 }
 
 int main() {
-//	freopen("testdata (6).in", "r", stdin);
-//	freopen(".out", "w", stdout);
+//  freopen("testdata (6).in", "r", stdin);
+//  freopen(".out", "w", stdout);
     n = read(); For ( i, 1, n ) 
-		A[i] = read(), B[i] = read();
+        A[i] = read(), B[i] = read();
     return wln ( exCrt() ), 0;
 }
 
