@@ -1,7 +1,7 @@
 ---
 title: Rabbit Exercise
 date: 2019-04-07 20:55:32
-tags: [math, expection, Redouble, 经典套路]
+tags: [math, expectation, Redouble, 经典套路]
 ---
 
 # $Rabbit$ $Exercise$
