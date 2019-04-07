@@ -96,25 +96,27 @@
 
 
 
-  <meta name="description" content="$Super$ $Particle$ $Cannon$$Description$求$$\sum_{i = 0}^{k} C_n^i \bmod 2333$$ $Solution$设$$f(n, k) = \sum_{i = 0}^{k} C_n^i$$即$$\sum_{i = 0}^{k}C_{n / p}^{i / p} \times C_{n \% p}^{i \% p}$$数论分块一下，此处">
-<meta name="keywords" content="math,Lucas,数论分块">
+  <meta name="description" content="$Rabbit$ $Exercise$$Description$ $Solution$又是一道经典套路题。 首先考虑 $50pts$ 的做法。 可以发现跳到左边的贡献是 $2\times c_{j - 1} - c_j$ ，右边的贡献 $2\times c_{j + 1} - c_j$ ，所以期望就是$$\frac{(2 \times c_{j - 1} + 2 \times c_{j + 1}">
+<meta name="keywords" content="math,expection， Redouble,经典套路">
 <meta property="og:type" content="article">
-<meta property="og:title" content="超能粒子炮·改">
-<meta property="og:url" content="http://Cesarelg.github.io/2019/03/22/超能粒子炮·改/index.html">
+<meta property="og:title" content="Rabbit Exercise">
+<meta property="og:url" content="http://Cesarelg.github.io/2019/04/07/Rabbit-Exercise/index.html">
 <meta property="og:site_name" content="Cesare">
-<meta property="og:description" content="$Super$ $Particle$ $Cannon$$Description$求$$\sum_{i = 0}^{k} C_n^i \bmod 2333$$ $Solution$设$$f(n, k) = \sum_{i = 0}^{k} C_n^i$$即$$\sum_{i = 0}^{k}C_{n / p}^{i / p} \times C_{n \% p}^{i \% p}$$数论分块一下，此处">
+<meta property="og:description" content="$Rabbit$ $Exercise$$Description$ $Solution$又是一道经典套路题。 首先考虑 $50pts$ 的做法。 可以发现跳到左边的贡献是 $2\times c_{j - 1} - c_j$ ，右边的贡献 $2\times c_{j + 1} - c_j$ ，所以期望就是$$\frac{(2 \times c_{j - 1} + 2 \times c_{j + 1}">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-02T09:42:45.808Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/04/07/AhO97F.png">
+<meta property="og:updated_time" content="2019-04-07T12:58:33.738Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="超能粒子炮·改">
-<meta name="twitter:description" content="$Super$ $Particle$ $Cannon$$Description$求$$\sum_{i = 0}^{k} C_n^i \bmod 2333$$ $Solution$设$$f(n, k) = \sum_{i = 0}^{k} C_n^i$$即$$\sum_{i = 0}^{k}C_{n / p}^{i / p} \times C_{n \% p}^{i \% p}$$数论分块一下，此处">
+<meta name="twitter:title" content="Rabbit Exercise">
+<meta name="twitter:description" content="$Rabbit$ $Exercise$$Description$ $Solution$又是一道经典套路题。 首先考虑 $50pts$ 的做法。 可以发现跳到左边的贡献是 $2\times c_{j - 1} - c_j$ ，右边的贡献 $2\times c_{j + 1} - c_j$ ，所以期望就是$$\frac{(2 \times c_{j - 1} + 2 \times c_{j + 1}">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/04/07/AhO97F.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://Cesarelg.github.io/2019/03/22/超能粒子炮·改/">
+  <link rel="canonical" href="http://Cesarelg.github.io/2019/04/07/Rabbit-Exercise/">
 
 
 
@@ -124,7 +126,7 @@
   };
 </script>
 
-  <title>超能粒子炮·改 | Cesare</title>
+  <title>Rabbit Exercise | Cesare</title>
   
 
 
@@ -373,7 +375,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://Cesarelg.github.io/2019/03/22/超能粒子炮·改/">
+    <link itemprop="mainEntityOfPage" href="http://Cesarelg.github.io/2019/04/07/Rabbit-Exercise/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cesare">
@@ -390,7 +392,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">超能粒子炮·改
+          <h1 class="post-title" itemprop="name headline">Rabbit Exercise
 
               
             
@@ -416,24 +418,12 @@
                 
               
 
-              <time title="创建时间：2019-03-22 21:06:59" itemprop="dateCreated datePublished" datetime="2019-03-22T21:06:59+08:00">2019-03-22</time>
+              <time title="创建时间：2019-04-07 20:55:32 / 修改时间：20:58:33" itemprop="dateCreated datePublished" datetime="2019-04-07T20:55:32+08:00">2019-04-07</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-02 17:42:45" itemprop="dateModified" datetime="2019-04-02T17:42:45+08:00">2019-04-02</time>
               
             
           </span>
@@ -461,7 +451,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">3.2k</span>
+                <span title="本文字数">2.7k</span>
               
 
               
@@ -475,7 +465,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">3 分钟</span>
+                <span title="阅读时长">2 分钟</span>
               
             </div>
           
@@ -495,10 +485,22 @@
       
 
       
-        <h1 id="Super-Particle-Cannon"><a href="#Super-Particle-Cannon" class="headerlink" title="$Super$ $Particle$ $Cannon$"></a>$Super$ $Particle$ $Cannon$</h1><h2 id="Description"><a href="#Description" class="headerlink" title="$Description$"></a>$Description$</h2><p>求<br>$$<br>\sum_{i = 0}^{k} C_n^i \bmod 2333<br>$$</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>设<br>$$<br>f(n, k) = \sum_{i = 0}^{k} C_n^i<br>$$<br>即<br>$$<br>\sum_{i = 0}^{k}C_{n / p}^{i / p} \times C_{n \% p}^{i \% p}<br>$$<br>数论分块一下，此处将其分成 $k / p$ 个块，许多数字同属一个块，就一起算掉。<br>$$<br>\sum_{i = 0}^{p - 1}C_{n \% p}^{i}C_{n / p}^{0} + \sum_{i = 0}^{p - 1}C_{n \% p}^{i}C_{n / p}^{1} + … + \sum_{i = 0}^{p - 1}C_{n \% p}^{i}C_{n / p}^{k / p - 1} + \sum_{i = 0}^{k \% p}C_{n \% p}^{i}C_{n / p}^{k / p}<br>$$<br>把 $\sum_{i = 0}^{p - 1}C_{n \% p}^{i}$ 提出来<br>$$<br>\sum_{i = 0}^{p - 1}C_{n \% p}^{i} \sum_{i = 0}^{k}C_{n / p}^{i / p - 1}<br>$$<br>也就是<br>$$<br>f(n \% p, p - 1) \times f(n / p, k / p - 1)<br>$$<br>最后一个不完整的块单独处理<br>$$<br>\sum_{i = 0}^{k \% p}C_{n \% p}^{i}<br>$$<br>即<br>$$<br>f(n \% p,k \% p)<br>$$<br>所以<br>$$<br>f(n, k) = f(n \% p, p - 1) \times f(n / p, k / p - 1) + C_{n / p}^{k / p} \times f(n \% p, k \% p)<br>$$<br>预处理组合数，套个 $Lucas$ 就完了。</p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="$Code:$"></a>$Code:$</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="comment">//#include&lt;tr1/unordered_map&gt;</span></span><br><span class="line"><span class="comment">//#include"Bignum/bignum.h"</span></span><br><span class="line"><span class="comment">//#define lll bignum</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ls(x) ( x &lt;&lt; 1 )</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rs(x) ( x &lt;&lt; 1 | 1 )</span></span><br><span class="line"><span class="comment">//#define mid ( ( l + r ) &gt;&gt; 1 )</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lowbit(x) ( x &amp; -x )</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> debug(x) cout &lt;&lt; <span class="meta-string">"#x = "</span> &lt;&lt; x &lt;&lt; endl</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> re register</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> For(i, j, k) for(re int i = (j); i &lt;= (k); i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> foR(i, j, k) for(re int i = (j); i &gt;= (k); i--)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Cross(i, j, k) for(re int i = (j); i; i = (k))</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> ll p = <span class="number">2333</span>;</span><br><span class="line"><span class="keyword">const</span> ll N = <span class="number">2345</span>;</span><br><span class="line"><span class="keyword">const</span> ll inf = <span class="number">0x3f3f3f3f3f3f</span>;</span><br><span class="line"></span><br><span class="line">ll T, n, k, res, C[N + <span class="number">11</span>][N + <span class="number">11</span>], f[N + <span class="number">11</span>][N + <span class="number">11</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> IO &#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">inline</span> ll <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        ll x = <span class="number">0</span>; <span class="keyword">bool</span> f = <span class="number">0</span>; <span class="keyword">char</span> ch = getchar();</span><br><span class="line">        <span class="keyword">for</span> (; !<span class="built_in">isdigit</span> (ch); ch = getchar()) f ^= (ch == <span class="string">'-'</span>);</span><br><span class="line">        <span class="keyword">for</span> (; <span class="built_in">isdigit</span> (ch); ch = getchar()) x = ( x &lt;&lt; <span class="number">3</span> ) + ( x &lt;&lt; <span class="number">1</span> ) + ( ch ^ <span class="number">48</span> );</span><br><span class="line">        <span class="keyword">return</span> f? -x: x;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">( ll x )</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> ( x &lt; <span class="number">0</span> ) <span class="built_in">putchar</span> ( <span class="string">'-'</span> ), x = -x;</span><br><span class="line">        <span class="keyword">if</span> ( x &gt; <span class="number">9</span> ) write ( x / <span class="number">10</span> );</span><br><span class="line">        <span class="built_in">putchar</span> ( x % <span class="number">10</span> | <span class="number">48</span> );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">wrn</span> <span class="params">( ll x )</span> </span>&#123; write (x); <span class="built_in">putchar</span> ( <span class="string">' '</span> ); &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">wln</span> <span class="params">( ll x )</span> </span>&#123; write (x); <span class="built_in">putchar</span> ( <span class="string">'\n'</span> ); &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">wlnn</span> <span class="params">( ll x, ll y )</span> </span>&#123; wrn (x), wln (y); &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> IO;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">Lucas</span> <span class="params">( ll n, ll m )</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> ( n &lt; m ) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> ( !m || n == m ) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> C[n % p][m % p] * Lucas ( n / p, m / p ) % p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">F</span> <span class="params">( ll n, ll k )</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> ( k &lt; <span class="number">0</span> ) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> ( !n || !k ) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> ( n &lt; p &amp;&amp; k &lt; p ) <span class="keyword">return</span> f[n][k];</span><br><span class="line">    <span class="keyword">return</span> ( F (n / p, k / p - <span class="number">1</span>) * f[n % p][p - <span class="number">1</span>] % p </span><br><span class="line">        + Lucas ( n / p, k / p ) * f[n % p][k % p] % p ) % p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="comment">//  freopen(".in", "r", stdin);</span></span><br><span class="line"><span class="comment">//  freopen(".out", "w", stdout);</span></span><br><span class="line">    f[<span class="number">0</span>][<span class="number">0</span>] = C[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span>; For ( i, <span class="number">1</span>, N )</span><br><span class="line">        C[i][i] = C[i][<span class="number">0</span>] = f[i][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    For ( i, <span class="number">1</span>, N ) For ( j, <span class="number">1</span>, i - <span class="number">1</span> )</span><br><span class="line">        C[i][j] = (C[i - <span class="number">1</span>][j] + C[i - <span class="number">1</span>][j - <span class="number">1</span>]) % p;</span><br><span class="line">    For ( i, <span class="number">0</span>, N ) For ( j, <span class="number">1</span>, N ) </span><br><span class="line">        f[i][j] = ( C[i][j] + f[i][j - <span class="number">1</span>] ) % p;</span><br><span class="line">    T = read(); <span class="keyword">while</span> ( T-- ) n = read(), wln ( F (n, read()) );</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">3</span></span><br><span class="line"><span class="comment">5 5</span></span><br><span class="line"><span class="comment">10 7</span></span><br><span class="line"><span class="comment">1145 14</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">32</span></span><br><span class="line"><span class="comment">968</span></span><br><span class="line"><span class="comment">763</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-<p><a href="https://www.luogu.org/problemnew/show/P4345" target="_blank" rel="noopener">题目链接</a></p>
+        <h1 id="Rabbit-Exercise"><a href="#Rabbit-Exercise" class="headerlink" title="$Rabbit$ $Exercise$"></a>$Rabbit$ $Exercise$</h1><h2 id="Description"><a href="#Description" class="headerlink" title="$Description$"></a>$Description$</h2><p><img src="https://s2.ax1x.com/2019/04/07/AhO97F.png" alt></p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>又是一道经典套路题。</p>
+<p>首先考虑 $50pts$ 的做法。</p>
+<p>可以发现跳到左边的贡献是 $2\times c_{j - 1} - c_j$ ，右边的贡献 $2\times c_{j + 1} - c_j$ ，所以期望就是<br>$$<br>\frac{(2 \times c_{j - 1} + 2 \times c_{j + 1} - 2 \times c_j)}{2}<br>$$<br>即<br>$$<br>c_{j - 1} + c_{j + 1} - c_j<br>$$<br>所以暴力就是做 $mk$ 次这个东西即可。</p>
+<p>然后考虑正解。</p>
+<p>此时，就要用到一种经典套路。</p>
+<p>我们考虑先做一次差分，设<br>$$<br>f_i = a_i - a_{i - 1}<br>$$<br>然后我们发现，把 $c_j$ 插到 $c_{j - 1}$ 与 $c_{j +1}$ 改变位置就相当于交换 $c_j$ 与 $c_{j + 1}$ 。</p>
+<p>然后就非常巧妙的实现了跳来跳去的一次操作。</p>
+<p>然后我们考虑先把每个能交换的位置都交换一次，即跳一次，相当于初始化。</p>
+<p>之后再倍增的跳，跳完之后可以很方便的把 $a_i$ 加回去，就是每一位的答案。</p>
+<p>为什么可以这么做呢 $?$ </p>
+<p>首先，倍增的正确性是显然的。</p>
+<p>然后，由于我们先使用了<del>经典套路</del>差分来使插入操作转变成了交换操作。</p>
+<p>所以，就巧妙地实现了题目的要求。</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="$Code:$"></a>$Code:$</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="comment">//#include&lt;tr1/unordered_map&gt;</span></span><br><span class="line"><span class="comment">//#include"Bignum/bignum.h"</span></span><br><span class="line"><span class="comment">//#define lll bignum</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ls(x) ( x &lt;&lt; 1 )</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rs(x) ( x &lt;&lt; 1 | 1 )</span></span><br><span class="line"><span class="comment">//#define mid ( ( l + r ) &gt;&gt; 1 )</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lowbit(x) ( x &amp; -x )</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> debug(x) (cout &lt;&lt; <span class="meta-string">"#x = "</span> &lt;&lt; x &lt;&lt; endl)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> re register</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> For(i, j, k) for(re int i = (j); i &lt;= (k); i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> foR(i, j, k) for(re int i = (j); i &gt;= (k); i--)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Cross(i, j, k) for(re int i = (j); i; i = (k))</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> ll N = <span class="number">100011</span>;</span><br><span class="line"><span class="keyword">const</span> ll p = <span class="number">998244353</span>;</span><br><span class="line"><span class="keyword">const</span> ll inf = <span class="number">0x3f3f3f3f3f3f</span>;</span><br><span class="line"></span><br><span class="line">ll n, m, k, x, res = <span class="number">0</span>, a[N], b[N], c[N], B[N];</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> IO &#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">#<span class="meta-keyword">define</span> dd ch = getchar()</span></span><br><span class="line">	<span class="function"><span class="keyword">inline</span> ll <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		ll x = <span class="number">0</span>; <span class="keyword">bool</span> f = <span class="number">0</span>; <span class="keyword">char</span> dd;</span><br><span class="line">		<span class="keyword">for</span> (; !<span class="built_in">isdigit</span> (ch); dd) f ^= (ch == <span class="string">'-'</span>);</span><br><span class="line">		<span class="keyword">for</span> (; <span class="built_in">isdigit</span> (ch); dd)  x = (x &lt;&lt; <span class="number">3</span>) + (x &lt;&lt; <span class="number">1</span>) + (ch ^ <span class="number">48</span>);</span><br><span class="line">		<span class="keyword">return</span> f? -x: x;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="meta">#<span class="meta-keyword">undef</span> dd</span></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">( ll x )</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> ( x &lt; <span class="number">0</span> ) <span class="built_in">putchar</span> ( <span class="string">'-'</span> ), x = -x;</span><br><span class="line">		<span class="keyword">if</span> ( x &gt; <span class="number">9</span> ) write ( x / <span class="number">10</span> ); <span class="built_in">putchar</span> ( x % <span class="number">10</span> | <span class="number">48</span> );</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">wrn</span> <span class="params">( ll x )</span> </span>&#123; write (x); <span class="built_in">putchar</span> ( <span class="string">' '</span> ); &#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">wln</span> <span class="params">( ll x )</span> </span>&#123; write (x); <span class="built_in">putchar</span> ( <span class="string">'\n'</span> ); &#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">wlnn</span> <span class="params">( ll x, ll y )</span> </span>&#123; wrn (x), wln (y); &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> IO;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Redouble</span> <span class="params">( ll x )</span> </span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (; x; x &gt;&gt;= <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">if</span> (x &amp; <span class="number">1</span>) &#123;</span><br><span class="line">			For ( i, <span class="number">1</span>, n ) B[i] = a[b[i]]; </span><br><span class="line">			For ( i, <span class="number">1</span>, n ) a[i] = B[i];</span><br><span class="line">		&#125;</span><br><span class="line">		For ( i, <span class="number">1</span>, n ) B[i] = b[b[i]];</span><br><span class="line">		For ( i, <span class="number">1</span>, n ) b[i] = B[i];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="comment">//	freopen("qwq.in", "r", stdin);</span></span><br><span class="line"><span class="comment">//	freopen("qwq.out", "w", stdout);</span></span><br><span class="line">	n = read(); </span><br><span class="line">	For ( i, <span class="number">1</span>, n ) </span><br><span class="line">		a[i] = (read() + p) % p, b[i] = i;</span><br><span class="line">	foR ( i, n, <span class="number">1</span> ) a[i] = a[i] - a[i - <span class="number">1</span>];</span><br><span class="line">	m = read(), k = read();</span><br><span class="line">	For ( i, <span class="number">1</span>, m ) x = read(), swap ( b[x], b[x + <span class="number">1</span>] );</span><br><span class="line">	Redouble (k);</span><br><span class="line">	For ( i, <span class="number">1</span>, n ) </span><br><span class="line">		res = (res + a[i] + p) % p, wln (res);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">3</span></span><br><span class="line"><span class="comment">-1 0 2</span></span><br><span class="line"><span class="comment">1 1</span></span><br><span class="line"><span class="comment">2</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">998244352</span></span><br><span class="line"><span class="comment">1</span></span><br><span class="line"><span class="comment">2</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<p><a href="https://www.luogu.org/problemnew/show/AT2164" target="_blank" rel="noopener">题目链接</a></p>
 
       
     </div>
@@ -524,9 +526,9 @@
           
             <a href="/tags/math/" rel="tag"># math</a>
           
-            <a href="/tags/Lucas/" rel="tag"># Lucas</a>
+            <a href="/tags/expection，-Redouble/" rel="tag"># expection， Redouble</a>
           
-            <a href="/tags/数论分块/" rel="tag"># 数论分块</a>
+            <a href="/tags/经典套路/" rel="tag"># 经典套路</a>
           
         </div>
       
@@ -539,8 +541,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/22/Savage/" rel="next" title="Savage">
-                <i class="fa fa-chevron-left"></i> Savage
+              <a href="/2019/04/03/随机树/" rel="next" title="随机树">
+                <i class="fa fa-chevron-left"></i> 随机树
               </a>
             
           </div>
@@ -548,10 +550,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/26/Park/" rel="prev" title="Park">
-                Park <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -729,7 +727,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Super-Particle-Cannon"><span class="nav-number">1.</span> <span class="nav-text">$Super$ $Particle$ $Cannon$</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.1.</span> <span class="nav-text">$Description$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">1.2.</span> <span class="nav-text">$Solution$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code"><span class="nav-number">1.3.</span> <span class="nav-text">$Code:$</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Rabbit-Exercise"><span class="nav-number">1.</span> <span class="nav-text">$Rabbit$ $Exercise$</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.1.</span> <span class="nav-text">$Description$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">1.2.</span> <span class="nav-text">$Solution$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code"><span class="nav-number">1.3.</span> <span class="nav-text">$Code:$</span></a></li></ol></li></ol></div>
             
 
           </div>
