@@ -78,3 +78,138 @@ $$
 为什么是这样？
 
 我们可以观察最初的求和公式，我们发现对于一个上（下）三角矩阵，他的逆序对个数为 $0$ ，所以我们的答案就变成了 $\prod_{i = 1}^{n} K[i][i]$ 。
+
+
+
+[例题](<https://www.luogu.org/problemnew/show/P3317>)
+
+
+
+## $Solution$
+
+套上矩阵树定理，有
+$$
+Sum = \sum_{Tree} \prod_{(u, v)\in E} P_{u, v}
+$$
+由题意得
+$$
+Ans = Sum \times \prod_{u, v}(1 - P_{u, v})
+$$
+把式子拆出来，再设一个 $K[i][j]$
+$$
+Ans = Sum \times \prod_{(u, v)\in E}K_{u, v} \times (1 - P_{u, v}) \prod_{(u, v)\notin E}(1 - P_{u, v})
+$$
+而答案是
+$$
+Ans = Sum \times \prod_{(u, v)\in E}P_{u, v} \prod_{(u, v)\notin E}(1 - P_{u, v})
+$$
+所以只要使
+$$
+K_{u, v} = \frac{P_{u, v}}{1 - P_{u, v}}
+$$
+即可。
+
+然后我们再把 $\prod_{u, v}(1 - P_{u, v})$ 拆出来，剩下的部分通过高消求出行列式，乘积即为答案。
+
+另外，我们发现当 $P_{i, j} = 1$ 时，会输出 $nan$ ，所以如果我们判断 $P_{i, j} = 1$ ，就将 $P_{i, j}$ 减去 $eps$ 。
+
+
+
+## $Code:$
+
+```cpp
+#include<bits/stdc++.h>
+//#include<tr1/unordered_map>
+//#include"Bignum/bignum.h"
+//#define lll bignum
+#define ls(x) ( x << 1 )
+#define rs(x) ( x << 1 | 1 )
+//#define mid ( ( l + r ) >> 1 )
+#define lowbit(x) ( x & -x )
+#define debug(x) (cout << "#x = " << x << endl)
+#define re register
+#define For(i, j, k) for(re int i = (j); i <= (k); i++)
+#define foR(i, j, k) for(re int i = (j); i >= (k); i--)
+#define Cross(i, j, k) for(re int i = (j); i; i = (k))
+using namespace std;
+typedef long long ll;
+const ll N = 71;
+const ll inf = 0x3f3f3f3f3f3f;
+const double eps = 0.000000001;
+
+ll n;
+double ans = 1, K[N][N];
+
+namespace IO {
+
+	#define dd ch = getchar()
+	inline ll read() {
+		ll x = 0; bool f = 0; char dd;
+		for (; !isdigit (ch); dd) f ^= (ch == '-');
+		for (; isdigit (ch); dd)  x = (x << 3) + (x << 1) + (ch ^ 48);
+		return f? -x: x;
+	}
+	#undef dd
+
+	inline void write( ll x ) {
+		if ( x < 0 ) putchar ( '-' ), x = -x;
+		if ( x > 9 ) write ( x / 10 ); putchar ( x % 10 | 48 );
+	}
+
+	inline void wrn ( ll x ) { write (x); putchar ( ' ' ); }
+
+	inline void wln ( ll x ) { write (x); putchar ( '\n' ); }
+
+	inline void wlnn ( ll x, ll y ) { wrn (x), wln (y); }
+
+}
+
+using namespace IO;
+
+inline void Gauss () {
+	For ( i, 1, n - 1 ) {
+		ll pos = i;
+		For ( j, i + 1, n - 1 )
+			if ( fabs ( K[pos][i] - K[j][i] ) <= eps ) pos = i;
+		if ( i != pos ) 
+			For ( j, i, n - 1 ) swap ( K[i][j], K[pos][j] );
+		For ( j, i + 1, n - 1 ) {
+			double t = K[j][i] / K[i][i];
+			For ( k, i, n - 1 ) K[j][k] -= t * K[i][k];
+		}
+		if ( fabs (K[i][i]) < eps ) return (void) (ans = 0);
+	}
+	For ( i, 1, n - 1 ) ans *= K[i][i]; // 求行列式的值。
+	ans = fabs (ans);
+	/*
+		利用矩阵树定理做生成树计数时， 
+		传统基尔霍夫矩阵中，如果 x -> y 有一条边，
+		则看做是边权为 1 ，那么就使 K[x][y]--, K[y][x]--
+		此处若边权为 w ，正常操作应是 K[x][y] -= w, K[y][x] -= w ，
+		但前面却直接赋值成 K[x][y] = K[y][x] = w ，因为这样有可能有
+		正有负，所以用了 fabs 。 
+	*/
+} 
+
+int main()
+{
+//	freopen(".in", "r", stdin);
+//	freopen(".out", "w", stdout);
+	double t = 1; n = read(); 
+	For ( i, 1, n ) For ( j, 1, n ) scanf ("%lf", &K[i][j]);
+	For ( i, 1, n ) For ( j, 1, n ) {
+		if ( fabs ( K[i][j] ) < eps ) K[i][j] = eps;
+		if ( fabs ( 1.0 - K[i][j] ) < eps ) K[i][j] = 1 - eps;
+		if ( i < j ) t *= (1.0 - K[i][j]); K[i][j] /= (1.0 - K[i][j]);
+	}
+	For ( i, 1, n ) K[i][i] = 0;
+	For ( i, 1, n ) For ( j, 1, n ) K[i][i] -= (i == j)? 0: K[i][j];
+	Gauss (); return printf ("%.7lf", ans * t), 0;
+}
+
+/*
+
+*/
+
+```
+
