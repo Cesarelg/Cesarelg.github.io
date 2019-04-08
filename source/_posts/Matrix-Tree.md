@@ -142,69 +142,69 @@ double ans = 1, K[N][N];
 
 namespace IO {
 
-	#define dd ch = getchar()
-	inline ll read() {
-		ll x = 0; bool f = 0; char dd;
-		for (; !isdigit (ch); dd) f ^= (ch == '-');
-		for (; isdigit (ch); dd)  x = (x << 3) + (x << 1) + (ch ^ 48);
-		return f? -x: x;
-	}
-	#undef dd
+    #define dd ch = getchar()
+    inline ll read() {
+        ll x = 0; bool f = 0; char dd;
+        for (; !isdigit (ch); dd) f ^= (ch == '-');
+        for (; isdigit (ch); dd)  x = (x << 3) + (x << 1) + (ch ^ 48);
+        return f? -x: x;
+    }
+    #undef dd
 
-	inline void write( ll x ) {
-		if ( x < 0 ) putchar ( '-' ), x = -x;
-		if ( x > 9 ) write ( x / 10 ); putchar ( x % 10 | 48 );
-	}
+    inline void write( ll x ) {
+        if ( x < 0 ) putchar ( '-' ), x = -x;
+        if ( x > 9 ) write ( x / 10 ); putchar ( x % 10 | 48 );
+    }
 
-	inline void wrn ( ll x ) { write (x); putchar ( ' ' ); }
+    inline void wrn ( ll x ) { write (x); putchar ( ' ' ); }
 
-	inline void wln ( ll x ) { write (x); putchar ( '\n' ); }
+    inline void wln ( ll x ) { write (x); putchar ( '\n' ); }
 
-	inline void wlnn ( ll x, ll y ) { wrn (x), wln (y); }
+    inline void wlnn ( ll x, ll y ) { wrn (x), wln (y); }
 
 }
 
 using namespace IO;
 
 inline void Gauss () {
-	For ( i, 1, n - 1 ) {
-		ll pos = i;
-		For ( j, i + 1, n - 1 )
-			if ( fabs ( K[pos][i] - K[j][i] ) <= eps ) pos = i;
-		if ( i != pos ) 
-			For ( j, i, n - 1 ) swap ( K[i][j], K[pos][j] );
-		For ( j, i + 1, n - 1 ) {
-			double t = K[j][i] / K[i][i];
-			For ( k, i, n - 1 ) K[j][k] -= t * K[i][k];
-		}
-		if ( fabs (K[i][i]) < eps ) return (void) (ans = 0);
-	}
-	For ( i, 1, n - 1 ) ans *= K[i][i]; // 求行列式的值。
-	ans = fabs (ans);
-	/*
-		利用矩阵树定理做生成树计数时， 
-		传统基尔霍夫矩阵中，如果 x -> y 有一条边，
-		则看做是边权为 1 ，那么就使 K[x][y]--, K[y][x]--
-		此处若边权为 w ，正常操作应是 K[x][y] -= w, K[y][x] -= w ，
-		但前面却直接赋值成 K[x][y] = K[y][x] = w ，因为这样有可能有
-		正有负，所以用了 fabs 。 
-	*/
+    For ( i, 1, n - 1 ) {
+        ll pos = i;
+        For ( j, i + 1, n - 1 )
+            if ( fabs ( K[pos][i] - K[j][i] ) <= eps ) pos = i;
+        if ( i != pos ) 
+            For ( j, i, n - 1 ) swap ( K[i][j], K[pos][j] );
+        For ( j, i + 1, n - 1 ) {
+            double t = K[j][i] / K[i][i];
+            For ( k, i, n - 1 ) K[j][k] -= t * K[i][k];
+        }
+        if ( fabs (K[i][i]) < eps ) return (void) (ans = 0);
+    }
+    For ( i, 1, n - 1 ) ans *= K[i][i]; // 求行列式的值。
+    ans = fabs (ans);
+    /*
+        利用矩阵树定理做生成树计数时， 
+        传统基尔霍夫矩阵中，如果 x -> y 有一条边，
+        则看做是边权为 1 ，那么就使 K[x][y]--, K[y][x]--
+        此处若边权为 w ，正常操作应是 K[x][y] -= w, K[y][x] -= w ，
+        但前面却直接赋值成 K[x][y] = K[y][x] = w ，因为这样有可能有
+        正有负，所以用了 fabs 。 
+    */
 } 
 
 int main()
 {
-//	freopen(".in", "r", stdin);
-//	freopen(".out", "w", stdout);
-	double t = 1; n = read(); 
-	For ( i, 1, n ) For ( j, 1, n ) scanf ("%lf", &K[i][j]);
-	For ( i, 1, n ) For ( j, 1, n ) {
-		if ( fabs ( K[i][j] ) < eps ) K[i][j] = eps;
-		if ( fabs ( 1.0 - K[i][j] ) < eps ) K[i][j] = 1 - eps;
-		if ( i < j ) t *= (1.0 - K[i][j]); K[i][j] /= (1.0 - K[i][j]);
-	}
-	For ( i, 1, n ) K[i][i] = 0;
-	For ( i, 1, n ) For ( j, 1, n ) K[i][i] -= (i == j)? 0: K[i][j];
-	Gauss (); return printf ("%.7lf", ans * t), 0;
+//  freopen(".in", "r", stdin);
+//  freopen(".out", "w", stdout);
+    double t = 1; n = read(); 
+    For ( i, 1, n ) For ( j, 1, n ) scanf ("%lf", &K[i][j]);
+    For ( i, 1, n ) For ( j, 1, n ) {
+        if ( fabs ( K[i][j] ) < eps ) K[i][j] = eps;
+        if ( fabs ( 1.0 - K[i][j] ) < eps ) K[i][j] = 1 - eps;
+        if ( i < j ) t *= (1.0 - K[i][j]); K[i][j] /= (1.0 - K[i][j]);
+    }
+    For ( i, 1, n ) K[i][i] = 0;
+    For ( i, 1, n ) For ( j, 1, n ) K[i][i] -= (i == j)? 0: K[i][j];
+    Gauss (); return printf ("%.7lf", ans * t), 0;
 }
 
 /*
