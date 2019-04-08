@@ -100,26 +100,26 @@ ll n, T;
 
 namespace IO {
 
-	#define dd ch = getchar()
-	inline ll read() {
-		ll x = 0; bool f = 0; char dd;
-		for (; !isdigit (ch); dd) f ^= (ch == '-');
-		for (; isdigit (ch); dd)  x = (x << 3) + (x << 1) + (ch ^ 48);
-		return f? -x: x;
-	}
-	#undef dd
+    #define dd ch = getchar()
+    inline ll read() {
+        ll x = 0; bool f = 0; char dd;
+        for (; !isdigit (ch); dd) f ^= (ch == '-');
+        for (; isdigit (ch); dd)  x = (x << 3) + (x << 1) + (ch ^ 48);
+        return f? -x: x;
+    }
+    #undef dd
 
-	inline void write( ll x ) {
-		if ( x < 0 ) putchar ( '-' ), x = -x;
-		if ( x > 9 ) write ( x / 10 );
-		putchar ( x % 10 | 48 );
-	}
+    inline void write( ll x ) {
+        if ( x < 0 ) putchar ( '-' ), x = -x;
+        if ( x > 9 ) write ( x / 10 );
+        putchar ( x % 10 | 48 );
+    }
 
-	inline void wrn ( ll x ) { write (x); putchar ( '/' ); }
+    inline void wrn ( ll x ) { write (x); putchar ( '/' ); }
 
-	inline void wln ( ll x ) { write (x); putchar ( '\n' ); }
+    inline void wln ( ll x ) { write (x); putchar ( '\n' ); }
 
-	inline void wlnn ( ll x, ll y ) { wrn (x), wln (y); }
+    inline void wlnn ( ll x, ll y ) { wrn (x), wln (y); }
 
 }
 
@@ -128,71 +128,71 @@ using namespace IO;
 inline ll gcd ( ll a, ll b ) { return !b? a: gcd ( b, a % b ); }
 
 namespace Segment_Tree {
-	
-	struct Tree {
-		ll tag, sum[6];
-		Tree() { memset ( sum, 0, sizeof (sum) ); }
-	} ans[N << 2];
-	
-	inline void push_up ( ll p ) {
-		For ( i, 4, 5 )
-			ans[p].sum[i] = ans[ls(p)].sum[i] + ans[rs(p)].sum[i];
-	}
-	
-	inline void pushUp ( ll p ) { 
-		For ( i, 1, 3 )
-			ans[p].sum[i] = ans[ls(p)].sum[i] + ans[rs(p)].sum[i]; 
-	}
-	
-	inline void pushDown ( ll p, ll l, ll r ) {
-		if ( ans[p].tag ) {
-			ans[rs(p)].tag += ans[p].tag;
-			ans[ls(p)].tag += ans[p].tag, 
-			ans[rs(p)].sum[1] += (r - mid) * ans[p].tag; 
-			ans[ls(p)].sum[1] += (mid - l + 1) * ans[p].tag;
-			
-			ans[ls(p)].sum[2] += ans[ls(p)].sum[4] * ans[p].tag;
-			ans[rs(p)].sum[2] += ans[rs(p)].sum[4] * ans[p].tag;
-			ans[ls(p)].sum[3] += ans[ls(p)].sum[5] * ans[p].tag;
-			ans[rs(p)].sum[3] += ans[rs(p)].sum[5] * ans[p].tag;
-			
-			ans[p].tag = 0;
-		}
-	}
-	
-	inline void build ( ll p, ll l, ll r ) {
-		if ( l == r ) 
-			return (void) (ans[p].sum[4] = l, ans[p].sum[5] = l * l);
-		build ( ls(p), l, mid ); build ( rs(p), mid + 1, r ); push_up (p);
-	}
-	
-	inline void Update ( ll p, ll l, ll r, ll ul, ll ur, ll k ) {
-		if ( l >= ul && r <= ur ) 
-			return (void) (ans[p].tag += k, 
-				ans[p].sum[1] += (r - l + 1) * k, 
-					ans[p].sum[2] += ans[p].sum[4] * k,
-						ans[p].sum[3] += ans[p].sum[5] * k);
-		pushDown ( p, l, r );
-		if ( mid >= ul ) Update ( ls(p), l, mid, ul, ur, k );
-		if ( mid < ur )  Update ( rs(p), mid + 1, r, ul, ur, k ); 
-		pushUp (p);
-	}
-	
-	inline Tree Query ( ll p, ll l, ll r, ll ul, ll ur ) {
-		if ( l >= ul && r <= ur ) return ans[p];
-		Tree res; 
-		if ( ans[p].tag ) pushDown ( p, l, r );
-		if ( mid >= ul ) {
-			Tree Ans = Query ( ls(p), l, mid, ul, ur );
-			res.sum[1] += Ans.sum[1], 
-				res.sum[2] += Ans.sum[2], res.sum[3] += Ans.sum[3];
-		} if ( mid < ur ) {
-			Tree Ans = Query ( rs(p), mid + 1, r, ul, ur );
-			res.sum[1] += Ans.sum[1], 
-				res.sum[2] += Ans.sum[2], res.sum[3] += Ans.sum[3];
-		} return res;
-	}
-	
+    
+    struct Tree {
+        ll tag, sum[6];
+        Tree() { memset ( sum, 0, sizeof (sum) ); }
+    } ans[N << 2];
+    
+    inline void push_up ( ll p ) {
+        For ( i, 4, 5 )
+            ans[p].sum[i] = ans[ls(p)].sum[i] + ans[rs(p)].sum[i];
+    }
+    
+    inline void pushUp ( ll p ) { 
+        For ( i, 1, 3 )
+            ans[p].sum[i] = ans[ls(p)].sum[i] + ans[rs(p)].sum[i]; 
+    }
+    
+    inline void pushDown ( ll p, ll l, ll r ) {
+        if ( ans[p].tag ) {
+            ans[rs(p)].tag += ans[p].tag;
+            ans[ls(p)].tag += ans[p].tag, 
+            ans[rs(p)].sum[1] += (r - mid) * ans[p].tag; 
+            ans[ls(p)].sum[1] += (mid - l + 1) * ans[p].tag;
+            
+            ans[ls(p)].sum[2] += ans[ls(p)].sum[4] * ans[p].tag;
+            ans[rs(p)].sum[2] += ans[rs(p)].sum[4] * ans[p].tag;
+            ans[ls(p)].sum[3] += ans[ls(p)].sum[5] * ans[p].tag;
+            ans[rs(p)].sum[3] += ans[rs(p)].sum[5] * ans[p].tag;
+            
+            ans[p].tag = 0;
+        }
+    }
+    
+    inline void build ( ll p, ll l, ll r ) {
+        if ( l == r ) 
+            return (void) (ans[p].sum[4] = l, ans[p].sum[5] = l * l);
+        build ( ls(p), l, mid ); build ( rs(p), mid + 1, r ); push_up (p);
+    }
+    
+    inline void Update ( ll p, ll l, ll r, ll ul, ll ur, ll k ) {
+        if ( l >= ul && r <= ur ) 
+            return (void) (ans[p].tag += k, 
+                ans[p].sum[1] += (r - l + 1) * k, 
+                    ans[p].sum[2] += ans[p].sum[4] * k,
+                        ans[p].sum[3] += ans[p].sum[5] * k);
+        pushDown ( p, l, r );
+        if ( mid >= ul ) Update ( ls(p), l, mid, ul, ur, k );
+        if ( mid < ur )  Update ( rs(p), mid + 1, r, ul, ur, k ); 
+        pushUp (p);
+    }
+    
+    inline Tree Query ( ll p, ll l, ll r, ll ul, ll ur ) {
+        if ( l >= ul && r <= ur ) return ans[p];
+        Tree res; 
+        if ( ans[p].tag ) pushDown ( p, l, r );
+        if ( mid >= ul ) {
+            Tree Ans = Query ( ls(p), l, mid, ul, ur );
+            res.sum[1] += Ans.sum[1], 
+                res.sum[2] += Ans.sum[2], res.sum[3] += Ans.sum[3];
+        } if ( mid < ur ) {
+            Tree Ans = Query ( rs(p), mid + 1, r, ul, ur );
+            res.sum[1] += Ans.sum[1], 
+                res.sum[2] += Ans.sum[2], res.sum[3] += Ans.sum[3];
+        } return res;
+    }
+    
 }
 
 using namespace Segment_Tree;
@@ -201,31 +201,31 @@ string opt;
 ll x, y, k;
 
 int main() {
-//	freopen("2752.in", "r", stdin);
-//	freopen("2752.out", "w", stdout);
-	n = read(), T = read();
-	
-	build ( 1, 1, n );
-	
-	while ( T-- ) {
-		cin >> opt;
-		x = read(), y = read(); 
-		switch ( opt[0] ) {
-			case 'C': 
-				k = read();
-				if ( x == y ) break;
-				Update ( 1, 1, n, x + 1, y, k ); break;
-			case 'Q': 
-				Tree res = Query ( 1, 1, n, x + 1, y );
-				ll fz = 
-					(y - (x + 1) - (x + 1) * y + 1) 
-						* res.sum[1] + (x + y + 1) * res.sum[2] - res.sum[3];
-				ll fm = (y - x + 1) * (y - x) >> 1;
-				ll d = gcd ( fz, fm );
-//				debug (d);
-				wlnn ( fz / d, fm / d ); break;
-		}
-	} return 0;
+//  freopen("2752.in", "r", stdin);
+//  freopen("2752.out", "w", stdout);
+    n = read(), T = read();
+    
+    build ( 1, 1, n );
+    
+    while ( T-- ) {
+        cin >> opt;
+        x = read(), y = read(); 
+        switch ( opt[0] ) {
+            case 'C': 
+                k = read();
+                if ( x == y ) break;
+                Update ( 1, 1, n, x + 1, y, k ); break;
+            case 'Q': 
+                Tree res = Query ( 1, 1, n, x + 1, y );
+                ll fz = 
+                    (y - (x + 1) - (x + 1) * y + 1) 
+                        * res.sum[1] + (x + y + 1) * res.sum[2] - res.sum[3];
+                ll fm = (y - x + 1) * (y - x) >> 1;
+                ll d = gcd ( fz, fm );
+//                debug (d);
+                wlnn ( fz / d, fm / d ); break;
+        }
+    } return 0;
 }
 
 /*

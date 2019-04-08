@@ -73,73 +73,63 @@ $$
 using namespace std;
 typedef long long ll;
 const ll N = 100011;
-const ll p = 998244353;
 const ll inf = 0x3f3f3f3f3f3f;
 
-ll n, m, k, x, res = 0, a[N], b[N], c[N], B[N];
+ll n, m, k, x, a[N], b[N], c[N], B[N];
+double res = 0;
 
 namespace IO {
 
-	#define dd ch = getchar()
-	inline ll read() {
-		ll x = 0; bool f = 0; char dd;
-		for (; !isdigit (ch); dd) f ^= (ch == '-');
-		for (; isdigit (ch); dd)  x = (x << 3) + (x << 1) + (ch ^ 48);
-		return f? -x: x;
-	}
-	#undef dd
+    #define dd ch = getchar()
+    inline ll read() {
+        ll x = 0; bool f = 0; char dd;
+        for (; !isdigit (ch); dd) f ^= (ch == '-');
+        for (; isdigit (ch); dd)  x = (x << 3) + (x << 1) + (ch ^ 48);
+        return f? -x: x;
+    }
+    #undef dd
 
-	inline void write( ll x ) {
-		if ( x < 0 ) putchar ( '-' ), x = -x;
-		if ( x > 9 ) write ( x / 10 ); putchar ( x % 10 | 48 );
-	}
+    inline void write( ll x ) {
+        if ( x < 0 ) putchar ( '-' ), x = -x;
+        if ( x > 9 ) write ( x / 10 ); putchar ( x % 10 | 48 );
+    }
 
-	inline void wrn ( ll x ) { write (x); putchar ( ' ' ); }
+    inline void wrn ( ll x ) { write (x); putchar ( ' ' ); }
 
-	inline void wln ( ll x ) { write (x); putchar ( '\n' ); }
+    inline void wln ( ll x ) { write (x); putchar ( '\n' ); }
 
-	inline void wlnn ( ll x, ll y ) { wrn (x), wln (y); }
+    inline void wlnn ( ll x, ll y ) { wrn (x), wln (y); }
 
 }
 
 using namespace IO;
 
 inline void Redouble ( ll x ) {
-	for (; x; x >>= 1) {
-		if (x & 1) {
-			For ( i, 1, n ) B[i] = a[b[i]]; 
-			For ( i, 1, n ) a[i] = B[i];
-		}
-		For ( i, 1, n ) B[i] = b[b[i]];
-		For ( i, 1, n ) b[i] = B[i];
-	}
+    for (; x; x >>= 1) {
+        if (x & 1) {
+            For ( i, 1, n ) B[i] = a[b[i]]; 
+            For ( i, 1, n ) a[i] = B[i];
+        }
+        For ( i, 1, n ) B[i] = b[b[i]]; 
+        For ( i, 1, n ) b[i] = B[i];
+    }
 }
 
 int main() 
 {
-//	freopen("qwq.in", "r", stdin);
-//	freopen("qwq.out", "w", stdout);
-	n = read(); 
-	For ( i, 1, n ) 
-		a[i] = (read() + p) % p, b[i] = i;
-	foR ( i, n, 1 ) a[i] = a[i] - a[i - 1];
-	m = read(), k = read();
-	For ( i, 1, m ) x = read(), swap ( b[x], b[x + 1] );
-	Redouble (k);
-	For ( i, 1, n ) 
-		res = (res + a[i] + p) % p, wln (res);
-	return 0;
+    n = read(); 
+    For ( i, 1, n ) a[i] = read(), b[i] = i;
+    foR ( i, n, 1 ) a[i] = a[i] - a[i - 1];
+    m = read(), k = read();
+    For ( i, 1, m ) x = read(), swap ( b[x], b[x + 1] );
+    Redouble (k);
+    For ( i, 1, n ) 
+        res += a[i], printf ("%.1lf\n", res);
+    return 0;
 }
 
 /*
-3
--1 0 2
-1 1
-2
 
-998244352
-1
-2
 */
 
 ```
