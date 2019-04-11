@@ -96,21 +96,21 @@
 
 
 
-  <meta name="description" content="$4.10$ 比赛部分题解$t1$ 暮色苍然$Descroition$ $Solution$由题意可以列出一点东西：$$\begin{cases}{gcd(x, y) = a_1}\{gcd(x, y + 1) = a_2}\{gcd (x, y + 2) = a_3}\{\ldots}\{gcd(x, y + l - 1) = a_l}\end{cases}$$可以发现$$a_1|x, a_1">
+  <meta name="description" content="$4.10$ 比赛部分题解$t1$ 暮色苍然$Descroition$ $Solution$由题意可以列出一点东西：$$\begin{cases}gcd(x, y) = a_1\\gcd(x, y + 1) = a_2\\gcd (x, y + 2) = a_3\\\ldots\\gcd(x, y + l - 1) = a_l\end{cases}$$可以发现$$a_1|x, a_1 | y\\a">
 <meta name="keywords" content="test">
 <meta property="og:type" content="article">
 <meta property="og:title" content="4.10 比赛题解">
 <meta property="og:url" content="http://Cesarelg.github.io/2019/04/11/4-10-比赛题解/index.html">
 <meta property="og:site_name" content="Cesare">
-<meta property="og:description" content="$4.10$ 比赛部分题解$t1$ 暮色苍然$Descroition$ $Solution$由题意可以列出一点东西：$$\begin{cases}{gcd(x, y) = a_1}\{gcd(x, y + 1) = a_2}\{gcd (x, y + 2) = a_3}\{\ldots}\{gcd(x, y + l - 1) = a_l}\end{cases}$$可以发现$$a_1|x, a_1">
+<meta property="og:description" content="$4.10$ 比赛部分题解$t1$ 暮色苍然$Descroition$ $Solution$由题意可以列出一点东西：$$\begin{cases}gcd(x, y) = a_1\\gcd(x, y + 1) = a_2\\gcd (x, y + 2) = a_3\\\ldots\\gcd(x, y + l - 1) = a_l\end{cases}$$可以发现$$a_1|x, a_1 | y\\a">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://s2.ax1x.com/2019/04/11/A7MYJf.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/04/11/A7QR4P.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/04/11/A7lF4x.png">
-<meta property="og:updated_time" content="2019-04-11T01:16:49.598Z">
+<meta property="og:updated_time" content="2019-04-11T01:25:51.526Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="4.10 比赛题解">
-<meta name="twitter:description" content="$4.10$ 比赛部分题解$t1$ 暮色苍然$Descroition$ $Solution$由题意可以列出一点东西：$$\begin{cases}{gcd(x, y) = a_1}\{gcd(x, y + 1) = a_2}\{gcd (x, y + 2) = a_3}\{\ldots}\{gcd(x, y + l - 1) = a_l}\end{cases}$$可以发现$$a_1|x, a_1">
+<meta name="twitter:description" content="$4.10$ 比赛部分题解$t1$ 暮色苍然$Descroition$ $Solution$由题意可以列出一点东西：$$\begin{cases}gcd(x, y) = a_1\\gcd(x, y + 1) = a_2\\gcd (x, y + 2) = a_3\\\ldots\\gcd(x, y + l - 1) = a_l\end{cases}$$可以发现$$a_1|x, a_1 | y\\a">
 <meta name="twitter:image" content="https://s2.ax1x.com/2019/04/11/A7MYJf.png">
 
 
@@ -420,7 +420,7 @@
                 
               
 
-              <time title="创建时间：2019-04-11 09:16:35 / 修改时间：09:16:49" itemprop="dateCreated datePublished" datetime="2019-04-11T09:16:35+08:00">2019-04-11</time>
+              <time title="创建时间：2019-04-11 09:16:35 / 修改时间：09:25:51" itemprop="dateCreated datePublished" datetime="2019-04-11T09:16:35+08:00">2019-04-11</time>
             
 
             
@@ -488,7 +488,7 @@
 
       
         <h1 id="4-10-比赛部分题解"><a href="#4-10-比赛部分题解" class="headerlink" title="$4.10$ 比赛部分题解"></a>$4.10$ 比赛部分题解</h1><h2 id="t1-暮色苍然"><a href="#t1-暮色苍然" class="headerlink" title="$t1$ 暮色苍然"></a>$t1$ 暮色苍然</h2><h3 id="Descroition"><a href="#Descroition" class="headerlink" title="$Descroition$"></a>$Descroition$</h3><p><img src="https://s2.ax1x.com/2019/04/11/A7MYJf.png" alt></p>
-<h3 id="Solution"><a href="#Solution" class="headerlink" title="$Solution$"></a>$Solution$</h3><p>由题意可以列出一点东西：<br>$$<br>\begin{cases}{gcd(x, y) = a_1}\{gcd(x, y + 1) = a_2}\{gcd (x, y + 2) = a_3}\{\ldots}\{gcd(x, y + l - 1) = a_l}\end{cases}<br>$$<br>可以发现<br>$$<br>a_1|x, a_1 | y\a_2|x, a_2|(y + 1)\{\ldots}\a_l|x, a_l|(y + l - 1)<br>$$<br>即<br>$$<br>\begin{cases}{y \equiv 0 \pmod{a_1}}\{y + 1 \equiv 0 \pmod{a_2}}\{\ldots}\{y + l - 1 \equiv 0 \pmod{a_l}}\end{cases}<br>$$<br>$exCrt$ 解方程，判断是否在 $n \times m$ 范围内即可。</p>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="$Solution$"></a>$Solution$</h3><p>由题意可以列出一点东西：<br>$$<br>\begin{cases}gcd(x, y) = a_1<br>\\gcd(x, y + 1) = a_2<br>\\gcd (x, y + 2) = a_3<br>\\\ldots<br>\\gcd(x, y + l - 1) = a_l<br>\end{cases}<br>$$<br>可以发现<br>$$<br>a_1|x, a_1 | y<br>\\a_2|x, a_2|(y + 1)<br>\\\ldots<br>\\a_l|x, a_l|(y + l - 1)<br>$$<br>即<br>$$<br>\begin{cases}<br>y \equiv 0 \pmod{a_1}<br>\\y + 1 \equiv 0 \pmod{a_2}<br>\\\ldots<br>\\y + l - 1 \equiv 0 \pmod{a_l}<br>\end{cases}<br>$$<br>$exCrt$ 解方程，判断是否在 $n \times m$ 范围内即可。</p>
 <p>特别的，对于 $k &gt;= m$ 的情况，必然无解。</p>
 <h2 id="t2-云外苍天"><a href="#t2-云外苍天" class="headerlink" title="$t2$ 云外苍天"></a>$t2$ 云外苍天</h2><h3 id="Description"><a href="#Description" class="headerlink" title="$Description$"></a>$Description$</h3><p><img src="https://s2.ax1x.com/2019/04/11/A7QR4P.png" alt></p>
 <h3 id="Solution-1"><a href="#Solution-1" class="headerlink" title="$Solution$"></a>$Solution$</h3><p>先考虑没有折返限制的情况。</p>
