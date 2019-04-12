@@ -18,19 +18,12 @@ tags: [math, Crt, exgcd]
 
 给定 $n$ 组非负整数 $a_i, b_i$ ，求解关于 $x$ 的方程组
 $$
+\begin{cases}
 x \equiv b_1\ ({\rm mod}\ a_1)
-$$
-
-$$
-x \equiv b_2\ ({\rm mod}\ a_2)
-$$
-
-$$
-\ldots
-$$
-
-$$
-x\equiv b_n ({\rm mod}\ a_n)
+\\\x \equiv b_2\ ({\rm mod}\ a_2)
+\\\\\ldots
+\\\x\equiv b_n ({\rm mod}\ a_n)
+\end{cases}
 $$
 
 的最小非负整数解。
@@ -41,20 +34,18 @@ $$
 
 先从简单的入手，现在有
 $$
+\begin{cases}
 x \equiv b_1\ ({\rm mod}\ a_1)
+\\\x \equiv b_2\ ({\rm mod}\ a_2)
+\end{cases}
 $$
-$$
-x \equiv b_2\ ({\rm mod}\ a_2)
-$$
-
 将其转换成
 $$
+\begin{cases}
 x = b_1k_1
+\\\x = b_2k_2
+\end{cases}
 $$
-$$
-x = b_2k_2
-$$
-
 联立一下，就有
 $$
 b1k1 = a_2 - a_1 + b_2k_2
