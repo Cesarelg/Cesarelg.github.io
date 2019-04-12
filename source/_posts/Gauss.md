@@ -6,7 +6,7 @@ tags: [matrix, gauss, expectation, probability]
 
 # $Gauss$
 
-​			——浅谈高斯消元方程组的构造
+——浅谈高斯消元方程组的构造
 
 我们以[一道题](<https://www.luogu.org/problemnew/show/P3211>)为例：
 
@@ -32,21 +32,21 @@ $$
 $$
 \begin{bmatrix}
 du_{1_1} - \sum_{E_{1_1}(u, v) = 0} + \sum_{E_{1_1}(u, v) = 1} & du_{1_2} - \sum_{E_{1_2}(u, v) = 0} + \sum_{E_{1_2}(u, v) = 1} & \ldots
-\\
+\\\
 du_{2_1} - \sum_{E_{2_1}(u, v) = 0} + \sum_{E_{2_1}(u, v) = 1} & du_{2_2} - \sum_{E_{2_2}(u, v) = 0} + \sum_{E_{2_2}(u, v) = 1} & \ldots
-\\
+\\\
 \ldots
-\\
-du_{{n - 1}_1} - \sum_{E_{{n - 1}_1}(u, v) = 0} + \sum_{E_{{n - 1}_1}(u, v) = 1} & du_{{n - 1}_2} - \sum_{E_{{n - 1}_2}(u, v) = 0} + \sum_{E_{{n - 1}_2}(u, v) = 1} & \ldots
+\\\
+du_{n - 1_1} - \sum_{E_{n - 1_1}(u, v) = 0} + \sum_{E_{n - 1_1}(u, v) = 1} & du_{n - 1_2} - \sum_{E_{n - 1_2}(u, v) = 0} + \sum_{E_{n - 1_2}(u, v) = 1} & \ldots
 \end{bmatrix}
  = 
 \begin{bmatrix}
 \sum_{E_1(u, v) = 1}
-\\
+\\\
 \sum_{E_2(u, v) = 1}
-\\
+\\\
 \ldots
-\\
+\\\
 \sum_{E_{n - 1}(u, v) = 1}
 \end{bmatrix}
 $$
