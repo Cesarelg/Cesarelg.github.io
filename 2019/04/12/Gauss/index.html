@@ -96,25 +96,25 @@
 
 
 
-  <meta name="description" content="$Sequence$ $Statistics$$Description$给定三个整数  $N,L$ 和 $R$，统计长度在 $1$ 到 $N$ 之间，元素大小都在 $L$ 到 $R$ 之间的单调不降序列的数量，对 $10^6 + 3$ 取模。 $Solution$观察本题，我们会发现如果他是单调上升序列，那么会非常好做，直接 $\sum_{i = 1}^{n} C_{r - l + 1}^{i}$">
-<meta name="keywords" content="math,经典套路,Lucas">
+  <meta name="description" content="$Gauss$——浅谈高斯消元方程组的构造 我们以一道题为例： 本题要求求解路径上 $xor$ 的期望值，那么根据期望是线性的套路性质，我们可以考虑求出每一位上为 $1$ 的期望，乘上使用次数就是答案。 所以我们根据这个性质，设 $f_i$ 表示从 $i$ 这一位为 $1$ 的概率。 那么从其他转移过来为 $0$ 的概率是 $f_i$ ，为 $1$ 的概率为 $1 - f_i$ 。 有$$f_i">
+<meta name="keywords" content="probability,expectation,matrix,gauss">
 <meta property="og:type" content="article">
-<meta property="og:title" content="序列统计">
-<meta property="og:url" content="http://Cesarelg.github.io/2019/04/01/序列统计/index.html">
+<meta property="og:title" content="Gauss">
+<meta property="og:url" content="http://Cesarelg.github.io/2019/04/12/Gauss/index.html">
 <meta property="og:site_name" content="Cesare">
-<meta property="og:description" content="$Sequence$ $Statistics$$Description$给定三个整数  $N,L$ 和 $R$，统计长度在 $1$ 到 $N$ 之间，元素大小都在 $L$ 到 $R$ 之间的单调不降序列的数量，对 $10^6 + 3$ 取模。 $Solution$观察本题，我们会发现如果他是单调上升序列，那么会非常好做，直接 $\sum_{i = 1}^{n} C_{r - l + 1}^{i}$">
+<meta property="og:description" content="$Gauss$——浅谈高斯消元方程组的构造 我们以一道题为例： 本题要求求解路径上 $xor$ 的期望值，那么根据期望是线性的套路性质，我们可以考虑求出每一位上为 $1$ 的期望，乘上使用次数就是答案。 所以我们根据这个性质，设 $f_i$ 表示从 $i$ 这一位为 $1$ 的概率。 那么从其他转移过来为 $0$ 的概率是 $f_i$ ，为 $1$ 的概率为 $1 - f_i$ 。 有$$f_i">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-01T00:55:16.557Z">
+<meta property="og:updated_time" content="2019-04-12T08:09:08.182Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="序列统计">
-<meta name="twitter:description" content="$Sequence$ $Statistics$$Description$给定三个整数  $N,L$ 和 $R$，统计长度在 $1$ 到 $N$ 之间，元素大小都在 $L$ 到 $R$ 之间的单调不降序列的数量，对 $10^6 + 3$ 取模。 $Solution$观察本题，我们会发现如果他是单调上升序列，那么会非常好做，直接 $\sum_{i = 1}^{n} C_{r - l + 1}^{i}$">
+<meta name="twitter:title" content="Gauss">
+<meta name="twitter:description" content="$Gauss$——浅谈高斯消元方程组的构造 我们以一道题为例： 本题要求求解路径上 $xor$ 的期望值，那么根据期望是线性的套路性质，我们可以考虑求出每一位上为 $1$ 的期望，乘上使用次数就是答案。 所以我们根据这个性质，设 $f_i$ 表示从 $i$ 这一位为 $1$ 的概率。 那么从其他转移过来为 $0$ 的概率是 $f_i$ ，为 $1$ 的概率为 $1 - f_i$ 。 有$$f_i">
 
 
 
 
 
 
-  <link rel="canonical" href="http://Cesarelg.github.io/2019/04/01/序列统计/">
+  <link rel="canonical" href="http://Cesarelg.github.io/2019/04/12/Gauss/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>序列统计 | Cesare</title>
+  <title>Gauss | Cesare</title>
   
 
 
@@ -373,7 +373,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://Cesarelg.github.io/2019/04/01/序列统计/">
+    <link itemprop="mainEntityOfPage" href="http://Cesarelg.github.io/2019/04/12/Gauss/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cesare">
@@ -390,7 +390,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">序列统计
+          <h1 class="post-title" itemprop="name headline">Gauss
 
               
             
@@ -416,7 +416,7 @@
                 
               
 
-              <time title="创建时间：2019-04-01 08:52:52 / 修改时间：08:55:16" itemprop="dateCreated datePublished" datetime="2019-04-01T08:52:52+08:00">2019-04-01</time>
+              <time title="创建时间：2019-04-12 09:28:40 / 修改时间：16:09:08" itemprop="dateCreated datePublished" datetime="2019-04-12T09:28:40+08:00">2019-04-12</time>
             
 
             
@@ -449,7 +449,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">3.1k</span>
+                <span title="本文字数">1.3k</span>
               
 
               
@@ -463,7 +463,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">3 分钟</span>
+                <span title="阅读时长">1 分钟</span>
               
             </div>
           
@@ -483,15 +483,17 @@
       
 
       
-        <h1 id="Sequence-Statistics"><a href="#Sequence-Statistics" class="headerlink" title="$Sequence$ $Statistics$"></a>$Sequence$ $Statistics$</h1><h2 id="Description"><a href="#Description" class="headerlink" title="$Description$"></a>$Description$</h2><p>给定三个整数  $N,L$ 和 $R$，统计长度在 $1$ 到 $N$ 之间，元素大小都在 $L$ 到 $R$ 之间的单调不降序列的数量，对 $10^6 + 3$ 取模。</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>观察本题，我们会发现如果他是单调上升序列，那么会非常好做，直接 $\sum_{i = 1}^{n} C_{r - l + 1}^{i}$ 就完事了，但这题是单调不降序列，所以，此处有一个经典<del>套路</del>做法，把所有数字加上他自己的下标，转换成求单调不降序列来做。</p>
-<p>如此，数的取值范围就是 $[l + 1, r + n]$ 。</p>
-<p>然后答案就是有 $r - l + 1$ 个数可选，总共有 $r - l + n$ 个数。</p>
-<p>也就是<br>$$<br>Ans = \sum_{i = 1}^{n} C_{r - l + i}^{r - l}<br>$$<br>显然这个东西复杂度是 $O(n)$ 的，所以我们考虑找规律优化。</p>
-<p>我们把 $\sum$ 展开<br>$$<br>Ans = C_{r - l + 1}^{r - l} + C_{r - l + 2}^{r - l} \ldots + C_{r - l + n}^{r - l}<br>$$<br>然后我们考虑在前面加一项 $C_{r - l}^{r - l}$ ，就可以用组合数递推通项公式合并了。</p>
-<p>最后的答案就是<br>$$<br>C_{r - l + 1 + n}^{r - l} - C_{r - l}^{r - l}<br>$$<br>即<br>$$<br>Ans = C_{r - l + 1 + n}^{r - l} - 1<br>$$<br>就做完了。</p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="$Code:$"></a>$Code:$</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="comment">//#include&lt;tr1/unordered_map&gt;</span></span><br><span class="line"><span class="comment">//#include"Bignum/bignum.h"</span></span><br><span class="line"><span class="comment">//#define lll bignum</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ls(x) ( x &lt;&lt; 1 )</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rs(x) ( x &lt;&lt; 1 | 1 )</span></span><br><span class="line"><span class="comment">//#define mid ( ( l + r ) &gt;&gt; 1 )</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lowbit(x) ( x &amp; -x )</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> debug(x) (cout &lt;&lt; <span class="meta-string">"#x = "</span> &lt;&lt; x &lt;&lt; endl)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> re register</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> For(i, j, k) for(re int i = (j); i &lt;= (k); i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> foR(i, j, k) for(re int i = (j); i &gt;= (k); i--)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Cross(i, j, k) for(re int i = (j); i; i = (k))</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> ll N = <span class="number">1000011</span>;</span><br><span class="line"><span class="keyword">const</span> ll p = <span class="number">1e6</span> + <span class="number">3</span>;</span><br><span class="line"><span class="keyword">const</span> ll inf = <span class="number">0x3f3f3f3f3f3f</span>;</span><br><span class="line"></span><br><span class="line">ll T, n, l, r, fac[N + <span class="number">5</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> IO &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">#<span class="meta-keyword">define</span> dd ch = getchar()</span></span><br><span class="line">    <span class="function"><span class="keyword">inline</span> ll <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        ll x = <span class="number">0</span>; <span class="keyword">bool</span> f = <span class="number">0</span>; <span class="keyword">char</span> dd;</span><br><span class="line">        <span class="keyword">for</span> (; !<span class="built_in">isdigit</span> (ch); dd) f ^= (ch == <span class="string">'-'</span>);</span><br><span class="line">        <span class="keyword">for</span> (; <span class="built_in">isdigit</span> (ch); dd)  x = (x &lt;&lt; <span class="number">3</span>) + (x &lt;&lt; <span class="number">1</span>) + (ch ^ <span class="number">48</span>);</span><br><span class="line">        <span class="keyword">return</span> f? -x: x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">undef</span> dd</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">( ll x )</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> ( x &lt; <span class="number">0</span> ) <span class="built_in">putchar</span> ( <span class="string">'-'</span> ), x = -x;</span><br><span class="line">        <span class="keyword">if</span> ( x &gt; <span class="number">9</span> ) write ( x / <span class="number">10</span> );</span><br><span class="line">        <span class="built_in">putchar</span> ( x % <span class="number">10</span> | <span class="number">48</span> );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">wrn</span> <span class="params">( ll x )</span> </span>&#123; write (x); <span class="built_in">putchar</span> ( <span class="string">' '</span> ); &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">wln</span> <span class="params">( ll x )</span> </span>&#123; write (x); <span class="built_in">putchar</span> ( <span class="string">'\n'</span> ); &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">wlnn</span> <span class="params">( ll x, ll y )</span> </span>&#123; wrn (x), wln (y); &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> IO;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    fac[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    For ( i, <span class="number">1</span>, N ) fac[i] = fac[i - <span class="number">1</span>] * i % p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">power</span> <span class="params">( ll a, ll b )</span> </span>&#123;</span><br><span class="line">    ll res = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (; b; b &gt;&gt;= <span class="number">1</span>, a = a * a % p) res = (b &amp; <span class="number">1</span>)? res * a % p: res;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">Inv</span> <span class="params">( ll a, ll p )</span> </span>&#123; <span class="keyword">return</span> power ( a, p - <span class="number">2</span> ); &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">C</span> <span class="params">( ll n, ll m )</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> n &lt; m? <span class="number">0</span>: fac[n] * Inv (fac[m], p) % p * Inv (fac[n - m], p) % p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">Lucas</span> <span class="params">( ll n, ll m )</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> !m? <span class="number">1</span>: C (n % p, m % p) * Lucas (n / p, m / p) % p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="comment">//  freopen(".in", "r", stdin);</span></span><br><span class="line"><span class="comment">//  freopen(".out", "w", stdout);</span></span><br><span class="line">    Init();</span><br><span class="line">    T = read(); <span class="keyword">while</span> ( T-- ) &#123;</span><br><span class="line">        n = read(), l = read(), r = read();</span><br><span class="line"><span class="comment">//        debug ( (r - l + 1 + n) / p );</span></span><br><span class="line">        wln ( (Lucas ( r - l + <span class="number">1</span> + n, r - l + <span class="number">1</span> ) - <span class="number">1</span> + p) % p );</span><br><span class="line">    &#125; <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">1</span></span><br><span class="line"><span class="comment">728257683 297206817 944126618</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">1000002</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-<p><a href="https://www.lydsy.com/JudgeOnline/problem.php?id=4403" target="_blank" rel="noopener">题目链接</a></p>
+        <h1 id="Gauss"><a href="#Gauss" class="headerlink" title="$Gauss$"></a>$Gauss$</h1><p>——浅谈高斯消元方程组的构造</p>
+<p>我们以<a href="https://www.luogu.org/problemnew/show/P3211" target="_blank" rel="noopener">一道题</a>为例：</p>
+<p>本题要求求解路径上 $xor$ 的期望值，那么根据期望是线性的<del>套路</del>性质，我们可以考虑求出每一位上为 $1$ 的期望，乘上使用次数就是答案。</p>
+<p>所以我们根据这个性质，设 $f_i$ 表示从 $i$ 这一位为 $1$ 的概率。</p>
+<p>那么从其他转移过来为 $0$ 的概率是 $f_i$ ，为 $1$ 的概率为 $1 - f_i$ 。</p>
+<p>有<br>$$<br>f_i = \frac{\sum_{E(u, v) = 0} f_i + \sum_{E(u, v) = 1} (1 - f_i)}{du_i}<br>$$<br>移个项<br>$$<br>f_i \times du_i - \sum_{E(u, v) = 0} f_i + \sum_{E(u, v) = 1} f_i = \sum_{E(u, v) = 1}<br>$$<br>然后就到了构造高斯消元方程的时候。</p>
+<p>也就是我们将高斯消元的系数填入矩阵中，再利用高斯消元求解。</p>
+<p>我们将系数直接放入矩阵<br>$$<br>\begin{bmatrix}<br>du_{1_1} - \sum_{E_{1_1}(u, v) = 0} + \sum_{E_{1_1}(u, v) = 1} &amp; du_{1_2} - \sum_{E_{1_2}(u, v) = 0} + \sum_{E_{1_2}(u, v) = 1} &amp; \ldots<br>\\<br>du_{2_1} - \sum_{E_{2_1}(u, v) = 0} + \sum_{E_{2_1}(u, v) = 1} &amp; du_{2_2} - \sum_{E_{2_2}(u, v) = 0} + \sum_{E_{2_2}(u, v) = 1} &amp; \ldots<br>\\<br>\ldots<br>\\<br>du_{n - 1_1} - \sum_{E_{n - 1_1}(u, v) = 0} + \sum_{E_{n - 1_1}(u, v) = 1} &amp; du_{n - 1_2} - \sum_{E_{n - 1_2}(u, v) = 0} + \sum_{E_{n - 1_2}(u, v) = 1} &amp; \ldots<br>\end{bmatrix}<br> =<br>\begin{bmatrix}<br>\sum_{E_1(u, v) = 1}<br>\\<br>\sum_{E_2(u, v) = 1}<br>\\<br>\ldots<br>\\<br>\sum_{E_{n - 1}(u, v) = 1}<br>\end{bmatrix}<br>$$<br>为什么矩阵长成这样？</p>
+<p>因为在本题中，对于每一位，他的状态都不同， $E(u, v)$ 的情况也都不同，所以构造出来了这样的方程。</p>
+<p>那么，代码实现就简单了，设 $A_{i, j}$ 表示初始矩阵， $A{i, n + 1}$ 表示答案，对于每一位，我们记一个 $w$ 表示这一位的情况，初始赋值 $A_{u, u} = du_i$ ，如果 $E(u, v) = 0$ 那么 $A_{u, v} - 1$ ，否则 $A_{u, v} + 1$ ，并使 $A_{u, n + 1} + 1$ ，就构造出了高斯消元的矩阵，然后套上模板即可。</p>
+<p>特别的， $A_{n, n} = 1$ ， $n \to n$ 的概率是 $1$ 。</p>
 
       
     </div>
@@ -515,11 +517,13 @@
       
         <div class="post-tags">
           
-            <a href="/tags/math/" rel="tag"># math</a>
+            <a href="/tags/probability/" rel="tag"># probability</a>
           
-            <a href="/tags/经典套路/" rel="tag"># 经典套路</a>
+            <a href="/tags/expectation/" rel="tag"># expectation</a>
           
-            <a href="/tags/Lucas/" rel="tag"># Lucas</a>
+            <a href="/tags/matrix/" rel="tag"># matrix</a>
+          
+            <a href="/tags/gauss/" rel="tag"># gauss</a>
           
         </div>
       
@@ -532,8 +536,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/29/数三角形/" rel="next" title="数三角形">
-                <i class="fa fa-chevron-left"></i> 数三角形
+              <a href="/2019/04/11/4-10-比赛题解/" rel="next" title="4.10 比赛题解">
+                <i class="fa fa-chevron-left"></i> 4.10 比赛题解
               </a>
             
           </div>
@@ -541,10 +545,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/02/exCrt/" rel="prev" title="exCrt">
-                exCrt <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -728,7 +728,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Sequence-Statistics"><span class="nav-number">1.</span> <span class="nav-text">$Sequence$ $Statistics$</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.1.</span> <span class="nav-text">$Description$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">1.2.</span> <span class="nav-text">$Solution$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code"><span class="nav-number">1.3.</span> <span class="nav-text">$Code:$</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Gauss"><span class="nav-number">1.</span> <span class="nav-text">$Gauss$</span></a></li></ol></div>
             
 
           </div>
