@@ -96,14 +96,27 @@ search:
   format: html
   limit: 10000
 
+# Live2D
+## https://github.com/EYHN/hexo-helper-live2d
 live2d:
   enable: true
-  pluginModelPath: assets/
+  scriptFrom: local # 默认
+  pluginModelPath: assets/ # 模型文件相对与插件根目录路径
   model:
-    use: live2d-widget-model-epsilon2_1  #模板目录，在node_modules里
+    use: live2d-widget-model-wanko # npm-module package name
+    scale: 1
+    hHeadPos: 0.5
+    vHeadPos: 0.618
   display:
-    position: right
-    width: 150 
+    superSample: 2
+    width: 150
     height: 300
+    position: right
+    hOffset: 0
+    vOffset: -20
   mobile:
-    show: false  #是否在手机进行显示
+    show: true
+    scale: 0.5
+  react:
+    opacityDefault: 0.7
+    opacityOnHover: 0.2
