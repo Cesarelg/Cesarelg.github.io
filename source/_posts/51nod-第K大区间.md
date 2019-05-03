@@ -59,25 +59,25 @@ ll n, k, a[N], b[N];
 
 namespace IO {
 
-	#define dd ch = getchar()
-	inline ll read() {
-		ll x = 0; bool f = 0; char dd;
-		for (; !isdigit (ch); dd) f ^= (ch == '-');
-		for (; isdigit (ch); dd)  x = (x << 3) + (x << 1) + (ch ^ 48);
-		return f? -x: x;
-	}
-	#undef dd
+    #define dd ch = getchar()
+    inline ll read() {
+        ll x = 0; bool f = 0; char dd;
+        for (; !isdigit (ch); dd) f ^= (ch == '-');
+        for (; isdigit (ch); dd)  x = (x << 3) + (x << 1) + (ch ^ 48);
+        return f? -x: x;
+    }
+    #undef dd
 
-	inline void write( ll x ) {
-		if ( x < 0 ) putchar ('-'), x = -x;
-		if ( x > 9 ) write ( x / 10 ); putchar ( x % 10 | 48 );
-	}
+    inline void write( ll x ) {
+        if ( x < 0 ) putchar ('-'), x = -x;
+        if ( x > 9 ) write ( x / 10 ); putchar ( x % 10 | 48 );
+    }
 
-	inline void wrn ( ll x ) { write (x); putchar (' '); }
+    inline void wrn ( ll x ) { write (x); putchar (' '); }
 
-	inline void wln ( ll x ) { write (x); putchar ('\n'); }
+    inline void wln ( ll x ) { write (x); putchar ('\n'); }
 
-	inline void wlnn ( ll x, ll y ) { wrn (x), wln (y); }
+    inline void wlnn ( ll x, ll y ) { wrn (x), wln (y); }
 
 }
 
@@ -86,35 +86,36 @@ using namespace IO;
 ll Cnt[N];
 
 inline bool Check ( ll Limit ) {
-	Set (Cnt, 0); ll res = 0, r = 0;
-	For ( l, 1, n ) {
-		while ( r <= n && 
-			Cnt[a[r]] < Limit ) Cnt[a[++r]]++;  // 尺取法。
-		if ( r > n ) break; res += n - r + 1; --Cnt[a[l]]; 
-	} return res >= k;
+    Set (Cnt, 0); ll res = 0, r = 0;
+    For ( l, 1, n ) {
+        while ( r <= n && 
+            Cnt[a[r]] < Limit ) Cnt[a[++r]]++;  // 尺取法。
+        if ( r > n ) break; res += n - r + 1; --Cnt[a[l]]; 
+    } return res >= k;
 }
 
 int main()
 {
-//	freopen(".in", "r", stdin);
-//	freopen(".out", "w", stdout);
-	n = read(), k = read();
-	For ( i, 1, n ) a[i] = b[i] = read(); 
-	
-	sort (b + 1, b + n + 1); 
-	ll len = unique (b + 1, b + n + 1) - b - 1;
-	For ( i, 1, n ) a[i] = upper_bound (b + 1, b + len + 1, a[i]) - b;
-	
-	ll l = 0, r = 1ll << 30;
-	while ( l < r ) {
-		ll Mid = (l + r + 1) >> 1;
-		Check (Mid)? l = Mid: r = Mid - 1;
-	} return wln (l), 0;
+//  freopen(".in", "r", stdin);
+//  freopen(".out", "w", stdout);
+    n = read(), k = read();
+    For ( i, 1, n ) a[i] = b[i] = read(); 
+    
+    sort (b + 1, b + n + 1); 
+    ll len = unique (b + 1, b + n + 1) - b - 1;
+    For ( i, 1, n ) a[i] = upper_bound (b + 1, b + len + 1, a[i]) - b;
+    
+    ll l = 0, r = 1ll << 30;
+    while ( l < r ) {
+        ll Mid = (l + r + 1) >> 1;
+        Check (Mid)? l = Mid: r = Mid - 1;
+    } return wln (l), 0;
 }
 
-/*
+/* 
 
 */
+
 
 ```
 
