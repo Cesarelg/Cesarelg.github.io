@@ -52,7 +52,138 @@ inline bool cmp ( MoTeam a, Moteam b ) {
 
 ## 带修莫队
 
-~~我也还没学，先咕着~~
+带修莫队顾名思义，就是有单点修改的莫队，此时我们考虑再记一个 $Time$ 表示距离本次查询最近的修改，如果我们莫队改的少了就再改几次，改的多了就改回去，以此来避免修改操作对答案造成的影响。
+
+同时我们多记一个 $Update$ 数组，来存储修改操作，再在问题数组中也记一个 $Time$ 记录当前查询发生在哪次修改之后，然后回答时把序列改成此次修改之后的序列再操作。
+
+其他的就与莫队本身无区别了。
+
+下面给出一道[例题](<https://www.luogu.org/problemnew/show/P1903>)的代码
+
+### $Code:$
+
+```cpp
+#include <bits/stdc++.h>
+//#include<tr1/unordered_map>
+//#include"Bignum/bignum.h"
+//#define lll bignum
+#define ls(x) ( x << 1 )
+#define rs(x) ( x << 1 | 1 )
+//#define mid ( ( l + r ) >> 1 )
+#define lowbit(x) ( x & -x )
+#define debug(x) (cout << "#x = " << (x) << endl)
+#define Set(x, i) memset (x, i, sizeof(x))
+#define re register
+#define For(i, j, k) for(re int i = (j); i <= (k); ++i)
+#define foR(i, j, k) for(re int i = (j); i >= (k); --i)
+#define Cross(i, j, k) for(re int i = (j); i; i = (k))
+using namespace std;
+typedef long long ll;
+typedef unsigned long long ull;
+const ll N = 1000011;
+const ll inf = 0x3f3f3f3f3f3f;
+
+ll n, m, len, res, cnt[N], col[N], Ans[N];
+
+ll QNum;
+
+struct MoTeam {
+    ll l, r, id, Time;
+} Q[N];
+
+inline bool cmp ( MoTeam a, MoTeam b ) {
+    return (a.l / len) ^ (b.l / len)?
+        a.l < b.l: ( (a.r / len) ^ (b.r / len)? 
+            ( (a.l / len & 1)? a.r < b.r: a.r > b.r ): a.Time < b.Time );
+}
+
+ll UNum;
+
+struct Node {
+    ll x, col;
+} Up[N];
+
+namespace IO {
+
+    inline char gc() {
+        static char buf[100000], *p1 = buf, *p2 = buf;
+        return (p1 == p2) && (p2 = (p1 = buf) +
+            fread (buf, 1, 100000, stdin), p1 == p2)? EOF: *p1++;
+    }
+
+    #define dd ch = getchar()
+    inline ll read() {
+        ll x = 0; bool f = 0; char dd;
+        for (; !isdigit (ch); dd) f ^= (ch == '-');
+        for (; isdigit (ch); dd)  x = (x << 3) + (x << 1) + (ch ^ 48);
+        return f? -x: x;
+    }
+    #undef dd
+
+    inline void write( ll x ) {
+        if ( x < 0 ) putchar ('-'), x = -x;
+        if ( x > 9 ) write ( x / 10 ); putchar ( x % 10 | 48 );
+    }
+
+    inline void wrn ( ll x ) { write (x); putchar (' '); }
+
+    inline void wln ( ll x ) { write (x); putchar ('\n'); }
+
+    inline void wlnn ( ll x, ll y ) { wrn (x), wln (y); }
+
+}
+
+using namespace IO;
+
+inline void add ( ll x ) { res += !cnt[x]++; }
+
+inline void del ( ll x ) { res -= !--cnt[x]; }
+
+inline void upd ( ll x, ll i ) {
+    if ( Up[x].x >= Q[i].l )
+        if ( Up[x].x <= Q[i].r ) 
+            del (col[Up[x].x]), add (Up[x].col);
+    swap (col[Up[x].x], Up[x].col);
+}
+
+int main()
+{
+//	freopen(".in", "r", stdin);
+//	freopen(".out", "w", stdout);
+    n = read(), m = read();
+    len = pow (n, 2.0 / 3.35);
+    For ( i, 1, n ) col[i] = read();
+    For ( i, 1, m ) {
+        char opt; cin >> opt;
+        if ( opt == 'Q' ) {
+            ++QNum;
+            Q[QNum].l = read(), Q[QNum].r = read();
+            Q[QNum].Time = UNum, Q[QNum].id = QNum;
+        } else Up[++UNum].x = read(), Up[UNum].col = read();
+    }
+    ll L = 1, R = 0, Time = 0;
+    sort (Q + 1, Q + QNum + 1, cmp);
+    For ( i, 1, QNum ) {
+        while ( L < Q[i].l ) del (col[L++]);
+        while ( L > Q[i].l ) add (col[--L]);
+        while ( R < Q[i].r ) add (col[++R]);
+        while ( R > Q[i].r ) del (col[R--]);
+        while ( Time < Q[i].Time ) upd (++Time, i);
+        while ( Time > Q[i].Time ) upd (Time--, i);
+        Ans[Q[i].id] = res;
+    }
+    For ( i, 1, QNum ) wln (Ans[i]);
+    return 0;
+}
+
+/*
+
+*/
+
+
+```
+
+
 
 
 
