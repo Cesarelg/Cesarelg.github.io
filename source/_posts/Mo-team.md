@@ -115,52 +115,52 @@ ll St[N], Ed[N];
 ll n, m, len, res, a[N], b[N], P[N], cnt[N], Ans[N];
 
 struct MoTeam {
-	ll l, r, id, add;
+    ll l, r, id, add;
 } Q[N];
 
 inline bool cmp ( MoTeam a, MoTeam b ) {
-	return (a.l / len) ^ (b.l / len)?
-		a.l < b.l: ( (a.l / len & 1)? a.r < b.r: a.r > b.r );
+    return (a.l / len) ^ (b.l / len)?
+        a.l < b.l: ( (a.l / len & 1)? a.r < b.r: a.r > b.r );
 }
 
 struct Edge {
-	ll To, Next;
+    ll To, Next;
 } e[N << 1];
 
 ll Cnt = 0, head[N];
 
 inline void add ( ll u, ll v ) {
-	e[++Cnt].To = v, e[Cnt].Next = head[u], head[u] = Cnt;
-	e[++Cnt].To = u, e[Cnt].Next = head[v], head[v] = Cnt;
+    e[++Cnt].To = v, e[Cnt].Next = head[u], head[u] = Cnt;
+    e[++Cnt].To = u, e[Cnt].Next = head[v], head[v] = Cnt;
 }
 
 namespace IO {
 
-	inline char gc() {
+    inline char gc() {
         static char buf[100000], *p1 = buf, *p2 = buf;
         return (p1 == p2) && (p2 = (p1 = buf) +
             fread (buf, 1, 100000, stdin), p1 == p2)? EOF: *p1++;
     }
 
-	#define dd ch = getchar()
-	inline ll read() {
-		ll x = 0; bool f = 0; char dd;
-		for (; !isdigit (ch); dd) f ^= (ch == '-');
-		for (; isdigit (ch); dd)  x = (x << 3) + (x << 1) + (ch ^ 48);
-		return f? -x: x;
-	}
-	#undef dd
+    #define dd ch = getchar()
+    inline ll read() {
+        ll x = 0; bool f = 0; char dd;
+        for (; !isdigit (ch); dd) f ^= (ch == '-');
+        for (; isdigit (ch); dd)  x = (x << 3) + (x << 1) + (ch ^ 48);
+        return f? -x: x;
+    }
+    #undef dd
 
-	inline void write( ll x ) {
-		if ( x < 0 ) putchar ('-'), x = -x;
-		if ( x > 9 ) write ( x / 10 ); putchar ( x % 10 | 48 );
-	}
+    inline void write( ll x ) {
+        if ( x < 0 ) putchar ('-'), x = -x;
+        if ( x > 9 ) write ( x / 10 ); putchar ( x % 10 | 48 );
+    }
 
-	inline void wrn ( ll x ) { write (x); putchar (' '); }
+    inline void wrn ( ll x ) { write (x); putchar (' '); }
 
-	inline void wln ( ll x ) { write (x); putchar ('\n'); }
+    inline void wln ( ll x ) { write (x); putchar ('\n'); }
 
-	inline void wlnn ( ll x, ll y ) { wrn (x), wln (y); }
+    inline void wlnn ( ll x, ll y ) { wrn (x), wln (y); }
 
 }
 
@@ -168,26 +168,26 @@ using namespace IO;
 
 namespace Tree {
 
-	ll tot = 0, dep[N], f[21][N];
-	
-	inline void dfs ( ll u, ll fa ) {
-		dep[u] = dep[fa] + 1, 
-		P[++tot] = u, St[u] = tot;
-		For ( i, 0, 15 ) f[i + 1][u] = f[i][f[i][u]];
-		Cross ( i, head[u], e[i].Next ) 
-			if ( fa ^ e[i].To ) f[0][e[i].To] = u, dfs (e[i].To, u);
-		P[++tot] = u, Ed[u] = tot;
-	} // 预处理倍增数组、欧拉序， dfs 序。 
-	
-	inline ll LCA ( ll x, ll y ) {
-		if ( dep[x] < dep[y] ) swap (x, y);
-		foR ( i, 16, 0 ) 
-			if ( dep[f[i][x]] >= dep[y] ) x = f[i][x];
-		if ( x == y ) return x;
-		foR ( i, 16, 0 )
-			if ( f[i][x] ^ f[i][y] ) x = f[i][x], y = f[i][y];
-		return f[0][x];
-	} // 倍增求 LCA 。 
+    ll tot = 0, dep[N], f[21][N];
+    
+    inline void dfs ( ll u, ll fa ) {
+        dep[u] = dep[fa] + 1, 
+        P[++tot] = u, St[u] = tot;
+        For ( i, 0, 15 ) f[i + 1][u] = f[i][f[i][u]];
+        Cross ( i, head[u], e[i].Next ) 
+            if ( fa ^ e[i].To ) f[0][e[i].To] = u, dfs (e[i].To, u);
+        P[++tot] = u, Ed[u] = tot;
+    } // 预处理倍增数组、欧拉序， dfs 序。 
+    
+    inline ll LCA ( ll x, ll y ) {
+        if ( dep[x] < dep[y] ) swap (x, y);
+        foR ( i, 16, 0 ) 
+            if ( dep[f[i][x]] >= dep[y] ) x = f[i][x];
+        if ( x == y ) return x;
+        foR ( i, 16, 0 )
+            if ( f[i][x] ^ f[i][y] ) x = f[i][x], y = f[i][y];
+        return f[0][x];
+    } // 倍增求 LCA 。 
 
 }
 
@@ -196,45 +196,45 @@ using namespace Tree;
 ll Vis[N];
 
 inline void Add ( ll x ) {
-	if ( Vis[x] ) res -= (--cnt[a[x]] == 0);
-	else res += (++cnt[a[x]] == 1); Vis[x] ^= 1;
+    if ( Vis[x] ) res -= (--cnt[a[x]] == 0);
+    else res += (++cnt[a[x]] == 1); Vis[x] ^= 1;
 }
 
 int main()
 {
-//	freopen(".in", "r", stdin);
-//	freopen(".out", "w", stdout);
-	ll u, v;
-	n = read(), m = read();
-	len = pow (n, 2.0 / 3.35);
-	For ( i, 1, n ) a[i] = b[i] = read();
-	sort (b + 1, b + n + 1);
-	ll Len = unique (b + 1, b + n + 1) - b - 1;
-	For ( i, 1, n ) 
-		a[i] = lower_bound (b + 1, b + Len + 1, a[i]) - b;
-	For ( i, 2, n ) u = read(), add ( u, read() );
-	
-	dfs (1, 0);
-	For ( i, 1, m ) {
-		ll l = read();
-		ll r = read(), lca = LCA (l, r);
-		if ( St[r] < St[l] ) swap (l, r);
-		if ( l == lca ) Q[i] = (MoTeam) { St[l], St[r], i, 0 };
-		if ( l != lca ) Q[i] = (MoTeam) { Ed[l], St[r], i, lca };
-	}
-	
-	ll L = 1, R = 0;
-	sort ( Q + 1, Q + m + 1, cmp );
-	For ( i, 1, m ) {
-		while ( L < Q[i].l ) Add (P[L++]);
-		while ( L > Q[i].l ) Add (P[--L]);
-		while ( R < Q[i].r ) Add (P[++R]);
-		while ( R > Q[i].r ) Add (P[R--]);
-		if ( Q[i].add ) Add ( Q[i].add );
-		Ans[Q[i].id] = res; 
-		if ( Q[i].add ) Add ( Q[i].add );
-	}
-	For ( i, 1, m ) wln (Ans[i]); return 0;
+//  freopen(".in", "r", stdin);
+//  freopen(".out", "w", stdout);
+    ll u, v;
+    n = read(), m = read();
+    len = pow (n, 2.0 / 3.35);
+    For ( i, 1, n ) a[i] = b[i] = read();
+    sort (b + 1, b + n + 1);
+    ll Len = unique (b + 1, b + n + 1) - b - 1;
+    For ( i, 1, n ) 
+        a[i] = lower_bound (b + 1, b + Len + 1, a[i]) - b;
+    For ( i, 2, n ) u = read(), add ( u, read() );
+    
+    dfs (1, 0);
+    For ( i, 1, m ) {
+        ll l = read();
+        ll r = read(), lca = LCA (l, r);
+        if ( St[r] < St[l] ) swap (l, r);
+        if ( l == lca ) Q[i] = (MoTeam) { St[l], St[r], i, 0 };
+        if ( l != lca ) Q[i] = (MoTeam) { Ed[l], St[r], i, lca };
+    }
+    
+    ll L = 1, R = 0;
+    sort ( Q + 1, Q + m + 1, cmp );
+    For ( i, 1, m ) {
+        while ( L < Q[i].l ) Add (P[L++]);
+        while ( L > Q[i].l ) Add (P[--L]);
+        while ( R < Q[i].r ) Add (P[++R]);
+        while ( R > Q[i].r ) Add (P[R--]);
+        if ( Q[i].add ) Add ( Q[i].add );
+        Ans[Q[i].id] = res; 
+        if ( Q[i].add ) Add ( Q[i].add );
+    }
+    For ( i, 1, m ) wln (Ans[i]); return 0;
 }
 
 /*
