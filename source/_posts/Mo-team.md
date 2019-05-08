@@ -374,3 +374,210 @@ int main()
 
 ```
 
+
+
+## 树上带修莫队
+
+~~就是把树上莫队和带修莫队并起来。~~
+
+听起来似乎非常高端，代码其实就是以上两份代码的结合。
+
+我们直接进入一道[例题](<https://www.luogu.org/problemnew/show/P4074>)分析一波。
+
+这道题要求 $V_i \times \sum_{j = 1}^{cnt[i]} W_j$ ，支持修改，游览点关系是一棵树。
+
+即第 $i$ 种糖果的美味指数乘上所有新奇指数的和。
+
+那么我们就知道 $Add$ 函数怎么写了：
+
+```cpp
+inline void Add ( ll x ) {
+    if ( Vis[x] ) res -= W[cnt[a[x]]--] * V[a[x]];
+    else res += W[++cnt[a[x]]] * V[a[x]]; Vis[x] ^= 1;
+}
+```
+
+就是模拟时间流逝，如果曾经计入了答案，就把他踢掉，没计入就把他计入，然后根据乘法分配律搞一搞即可。
+
+然后也没什么了，就把上面两份代码并起来魔改一下就好了。
+
+具体看注释。
+
+### $Code:$
+
+```cpp
+#include <bits/stdc++.h>
+//#include<tr1/unordered_map>
+//#include"Bignum/bignum.h"
+//#define lll bignum
+#define ls(x) ( x << 1 )
+#define rs(x) ( x << 1 | 1 )
+//#define mid ( ( l + r ) >> 1 )
+#define lowbit(x) ( x & -x )
+#define debug(x) (cout << "#x = " << (x) << endl)
+#define Set(x, i) memset (x, i, sizeof(x))
+#define re register
+#define For(i, j, k) for(re int i = (j); i <= (k); ++i)
+#define foR(i, j, k) for(re int i = (j); i >= (k); --i)
+#define Cross(i, j, k) for(re int i = (j); i; i = (k))
+using namespace std;
+typedef long long ll;
+typedef unsigned long long ull;
+const ll N = 200011;
+const ll inf = 0x3f3f3f3f3f3f;
+
+ll Qc = 0, Uc = 0, res = 0;
+ll n, m, T, len, a[N], V[N], W[N], C[N], cnt[N], Ans[N];
+
+struct MoTeam {
+    ll l, r, id, add, Time;
+} Q[N];
+
+struct Update {
+    ll x, k, Last;
+} Up[N];
+
+inline bool cmp ( MoTeam a, MoTeam b ) {
+    return (a.l / len) ^ (b.l / len)?
+        a.l < b.l: ( (a.r / len) ^ (b.r / len)? 
+            ( (a.l / len & 1)? a.r < b.r: a.r > b.r ): a.Time < b.Time );
+}
+
+struct Edge {
+    ll To, Next;
+} e[N << 1];
+
+ll CntE = 0, head[N];
+
+inline void add ( ll u, ll v ) {
+    e[++CntE].To = v, e[CntE].Next = head[u], head[u] = CntE;
+    e[++CntE].To = u, e[CntE].Next = head[v], head[v] = CntE;
+}
+
+namespace IO {
+
+    inline char gc() {
+        static char buf[100000], *p1 = buf, *p2 = buf;
+        return (p1 == p2) && (p2 = (p1 = buf) +
+            fread (buf, 1, 100000, stdin), p1 == p2)? EOF: *p1++;
+    }
+
+    #define dd ch = getchar()
+    inline ll read() {
+        ll x = 0; bool f = 0; char dd;
+        for (; !isdigit (ch); dd) f ^= (ch == '-');
+        for (; isdigit (ch); dd)  x = (x << 3) + (x << 1) + (ch ^ 48);
+        return f? -x: x;
+    }
+    #undef dd
+
+    inline void write( ll x ) {
+        if ( x < 0 ) putchar ('-'), x = -x;
+        if ( x > 9 ) write ( x / 10 ); putchar ( x % 10 | 48 );
+    }
+
+    inline void wrn ( ll x ) { write (x); putchar (' '); }
+
+    inline void wln ( ll x ) { write (x); putchar ('\n'); }
+
+    inline void wlnn ( ll x, ll y ) { wrn (x), wln (y); }
+
+}
+
+using namespace IO;
+
+namespace Tree {
+    
+    ll tot = 0, P[N], St[N], Ed[N], dep[N], f[21][N];
+    
+    inline void dfs ( ll u, ll fa ) {
+        dep[u] = dep[fa] + 1, 
+        P[++tot] = u, St[u] = tot;
+        For ( i, 0, 15 ) f[i + 1][u] = f[i][f[i][u]];
+        Cross ( i, head[u], e[i].Next )
+            if ( fa ^ e[i].To ) f[0][e[i].To] = u, dfs (e[i].To, u);
+        P[++tot] = u, Ed[u] = tot;
+    }
+    
+    inline ll LCA ( ll x, ll y ) {
+        if ( dep[x] < dep[y] ) swap (x, y);
+        foR ( i, 16, 0 )
+            if ( dep[f[i][x]] >= dep[y] ) x = f[i][x];
+        if ( x == y ) return x;
+        foR ( i, 16, 0 )
+            if ( f[i][x] ^ f[i][y] ) x = f[i][x], y = f[i][y];
+        return f[0][x];
+    }
+    
+}
+
+using namespace Tree;
+
+ll Vis[N];
+
+inline void Add ( ll x ) {
+    if ( Vis[x] ) res -= W[cnt[a[x]]--] * V[a[x]];
+    else res += W[++cnt[a[x]]] * V[a[x]]; Vis[x] ^= 1;
+}
+
+inline void Upd ( ll x, ll k ) {
+    if ( !Vis[x] ) a[x] = k;
+    else Add (x), a[x] = k, Add (x);
+}
+
+inline void Modify ( ll id, ll Check ) {
+    if ( Check ) Add (Check);
+    Ans[id] = res; if ( Check ) Add (Check);
+}
+
+int main()
+{
+//  freopen(".in", "r", stdin);
+//  freopen(".out", "w", stdout);
+    n = read(), 
+    m = read(), T = read();
+    ll u, v; len = pow (n, 2.0 / 3.35);
+    For ( i, 1, m ) V[i] = read();
+    For ( i, 1, n ) W[i] = read();
+    For ( i, 2, n ) u = read(), add ( u, read() );
+    For ( i, 1, n ) C[i] = a[i] = read();
+    
+    dfs (1, 0);
+    For ( i, 1, T ) {
+        ll Type = read(), x = read(), y = read();
+        if ( !Type ) 
+            Up[++Uc] = (Update) { x, y, C[x] }, C[x] = y;
+        else {
+            ll lca = LCA (x, y);
+            if ( St[x] > St[y] ) swap (x, y);
+            if ( x == lca ) Q[++Qc] = (MoTeam) { St[x], St[y], Qc, 0, Uc };
+            if ( x != lca ) Q[++Qc] = (MoTeam) { Ed[x], St[y], Qc, lca, Uc };
+        }
+    }
+    
+    ll L = 1, R = 0, Time = 0;
+    sort (Q + 1, Q + Qc + 1, cmp);
+    For ( i, 1, Qc ) {
+        while ( L > Q[i].l ) Add (P[--L]);
+        while ( L < Q[i].l ) Add (P[L++]);
+        while ( R > Q[i].r ) Add (P[R--]);
+        while ( R < Q[i].r ) Add (P[++R]);
+        while ( Time < Q[i].Time ) ++Time, Upd ( Up[Time].x, Up[Time].k ); 
+            // 修改。 
+        while ( Time > Q[i].Time ) Upd ( Up[Time].x, Up[Time].Last ), --Time; 
+            // 还原，带修莫队。 
+        Modify ( Q[i].id, Q[i].add ); // 树上莫队特判 LCA 。 
+    }
+    
+    For ( i, 1, Qc ) wln (Ans[i]); return 0;
+}
+
+/*
+
+*/
+
+
+```
+
+
+
