@@ -10,6 +10,8 @@ tags: [打表， game theory]
 
 ## $Description$
 
+![](https://s2.ax1x.com/2019/05/20/EvteIO.png)
+
 
 
 ## $Solution$ 
