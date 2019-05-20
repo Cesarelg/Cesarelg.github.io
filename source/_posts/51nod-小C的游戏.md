@@ -1,7 +1,7 @@
 ---
 title: 51nod 小C的游戏
 date: 2019-05-20 09:11:39
-tags: [打表， game theory]
+tags: [打表, game theory]
 ---
 
 # 小 $C$ 的游戏
