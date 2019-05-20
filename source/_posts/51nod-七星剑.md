@@ -111,9 +111,6 @@ int main()
 
 ```
 
-
-
-
-
+[题目链接](<http://www.51nod.com/Challenge/Problem.html#!#problemId=1705>)
 
 
