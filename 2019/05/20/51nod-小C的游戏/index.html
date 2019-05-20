@@ -96,25 +96,25 @@
 
 
 
-  <meta name="description" content="$Gauss$——浅谈高斯消元方程组的构造 我们以一道题为例： 本题要求求解路径上 $xor$ 的期望值，那么根据期望是线性的套路性质，我们可以考虑求出每一位上为 $1$ 的期望，乘上使用次数就是答案。 所以我们根据这个性质，设 $f_i$ 表示从 $i$ 这一位为 $1$ 的概率。 那么从其他转移过来为 $0$ 的概率是 $f_i$ ，为 $1$ 的概率为 $1 - f_i$ 。 有$$f_i">
-<meta name="keywords" content="expectation,probability,matrix,gauss">
+  <meta name="description" content="小 $C$ 的游戏$Description$$Solution$打表好题 首先约定 $P-position$ 表示先手必败， $N-position$ 表示先手必胜。 本题并不需要用到 $SG$ 函数等知识，只需要懂得如何对博弈论的局面进行转移即可。 如此就引出了关于博弈论题目的打表技巧。 首先，我们要分析题目中的状态转移条件。 如本题，一个大小为 $n$ 的石子堆可以转移到 $n - 1$ 个石">
+<meta name="keywords" content="打表， game theory">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Gauss">
-<meta property="og:url" content="http://Cesarelg.github.io/2019/04/12/Gauss/index.html">
+<meta property="og:title" content="51nod 小C的游戏">
+<meta property="og:url" content="http://Cesarelg.github.io/2019/05/20/51nod-小C的游戏/index.html">
 <meta property="og:site_name" content="Cesare">
-<meta property="og:description" content="$Gauss$——浅谈高斯消元方程组的构造 我们以一道题为例： 本题要求求解路径上 $xor$ 的期望值，那么根据期望是线性的套路性质，我们可以考虑求出每一位上为 $1$ 的期望，乘上使用次数就是答案。 所以我们根据这个性质，设 $f_i$ 表示从 $i$ 这一位为 $1$ 的概率。 那么从其他转移过来为 $0$ 的概率是 $f_i$ ，为 $1$ 的概率为 $1 - f_i$ 。 有$$f_i">
+<meta property="og:description" content="小 $C$ 的游戏$Description$$Solution$打表好题 首先约定 $P-position$ 表示先手必败， $N-position$ 表示先手必胜。 本题并不需要用到 $SG$ 函数等知识，只需要懂得如何对博弈论的局面进行转移即可。 如此就引出了关于博弈论题目的打表技巧。 首先，我们要分析题目中的状态转移条件。 如本题，一个大小为 $n$ 的石子堆可以转移到 $n - 1$ 个石">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-12T08:09:08.182Z">
+<meta property="og:updated_time" content="2019-05-20T01:35:13.216Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Gauss">
-<meta name="twitter:description" content="$Gauss$——浅谈高斯消元方程组的构造 我们以一道题为例： 本题要求求解路径上 $xor$ 的期望值，那么根据期望是线性的套路性质，我们可以考虑求出每一位上为 $1$ 的期望，乘上使用次数就是答案。 所以我们根据这个性质，设 $f_i$ 表示从 $i$ 这一位为 $1$ 的概率。 那么从其他转移过来为 $0$ 的概率是 $f_i$ ，为 $1$ 的概率为 $1 - f_i$ 。 有$$f_i">
+<meta name="twitter:title" content="51nod 小C的游戏">
+<meta name="twitter:description" content="小 $C$ 的游戏$Description$$Solution$打表好题 首先约定 $P-position$ 表示先手必败， $N-position$ 表示先手必胜。 本题并不需要用到 $SG$ 函数等知识，只需要懂得如何对博弈论的局面进行转移即可。 如此就引出了关于博弈论题目的打表技巧。 首先，我们要分析题目中的状态转移条件。 如本题，一个大小为 $n$ 的石子堆可以转移到 $n - 1$ 个石">
 
 
 
 
 
 
-  <link rel="canonical" href="http://Cesarelg.github.io/2019/04/12/Gauss/">
+  <link rel="canonical" href="http://Cesarelg.github.io/2019/05/20/51nod-小C的游戏/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>Gauss | Cesare</title>
+  <title>51nod 小C的游戏 | Cesare</title>
   
 
 
@@ -373,7 +373,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://Cesarelg.github.io/2019/04/12/Gauss/">
+    <link itemprop="mainEntityOfPage" href="http://Cesarelg.github.io/2019/05/20/51nod-小C的游戏/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cesare">
@@ -390,7 +390,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Gauss
+          <h1 class="post-title" itemprop="name headline">51nod 小C的游戏
 
               
             
@@ -416,7 +416,7 @@
                 
               
 
-              <time title="创建时间：2019-04-12 09:28:40 / 修改时间：16:09:08" itemprop="dateCreated datePublished" datetime="2019-04-12T09:28:40+08:00">2019-04-12</time>
+              <time title="创建时间：2019-05-20 09:11:39 / 修改时间：09:35:13" itemprop="dateCreated datePublished" datetime="2019-05-20T09:11:39+08:00">2019-05-20</time>
             
 
             
@@ -449,7 +449,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.3k</span>
+                <span title="本文字数">4.7k</span>
               
 
               
@@ -463,7 +463,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">4 分钟</span>
               
             </div>
           
@@ -483,17 +483,19 @@
       
 
       
-        <h1 id="Gauss"><a href="#Gauss" class="headerlink" title="$Gauss$"></a>$Gauss$</h1><p>——浅谈高斯消元方程组的构造</p>
-<p>我们以<a href="https://www.luogu.org/problemnew/show/P3211" target="_blank" rel="noopener">一道题</a>为例：</p>
-<p>本题要求求解路径上 $xor$ 的期望值，那么根据期望是线性的<del>套路</del>性质，我们可以考虑求出每一位上为 $1$ 的期望，乘上使用次数就是答案。</p>
-<p>所以我们根据这个性质，设 $f_i$ 表示从 $i$ 这一位为 $1$ 的概率。</p>
-<p>那么从其他转移过来为 $0$ 的概率是 $f_i$ ，为 $1$ 的概率为 $1 - f_i$ 。</p>
-<p>有<br>$$<br>f_i = \frac{\sum_{E(u, v) = 0} f_i + \sum_{E(u, v) = 1} (1 - f_i)}{du_i}<br>$$<br>移个项<br>$$<br>f_i \times du_i - \sum_{E(u, v) = 0} f_i + \sum_{E(u, v) = 1} f_i = \sum_{E(u, v) = 1}<br>$$<br>然后就到了构造高斯消元方程的时候。</p>
-<p>也就是我们将高斯消元的系数填入矩阵中，再利用高斯消元求解。</p>
-<p>我们将系数直接放入矩阵<br>$$<br>\begin{bmatrix}<br>du_{1_1} - \sum_{E_{1_1}(u, v) = 0} + \sum_{E_{1_1}(u, v) = 1} &amp; du_{1_2} - \sum_{E_{1_2}(u, v) = 0} + \sum_{E_{1_2}(u, v) = 1} &amp; \ldots<br>\\<br>du_{2_1} - \sum_{E_{2_1}(u, v) = 0} + \sum_{E_{2_1}(u, v) = 1} &amp; du_{2_2} - \sum_{E_{2_2}(u, v) = 0} + \sum_{E_{2_2}(u, v) = 1} &amp; \ldots<br>\\<br>\ldots<br>\\<br>du_{n - 1_1} - \sum_{E_{n - 1_1}(u, v) = 0} + \sum_{E_{n - 1_1}(u, v) = 1} &amp; du_{n - 1_2} - \sum_{E_{n - 1_2}(u, v) = 0} + \sum_{E_{n - 1_2}(u, v) = 1} &amp; \ldots<br>\end{bmatrix}<br> =<br>\begin{bmatrix}<br>\sum_{E_1(u, v) = 1}<br>\\<br>\sum_{E_2(u, v) = 1}<br>\\<br>\ldots<br>\\<br>\sum_{E_{n - 1}(u, v) = 1}<br>\end{bmatrix}<br>$$<br>为什么矩阵长成这样？</p>
-<p>因为在本题中，对于每一位，他的状态都不同， $E(u, v)$ 的情况也都不同，所以构造出来了这样的方程。</p>
-<p>那么，代码实现就简单了，设 $A_{i, j}$ 表示初始矩阵， $A{i, n + 1}$ 表示答案，对于每一位，我们记一个 $w$ 表示这一位的情况，初始赋值 $A_{u, u} = du_i$ ，如果 $E(u, v) = 0$ 那么 $A_{u, v} - 1$ ，否则 $A_{u, v} + 1$ ，并使 $A_{u, n + 1} + 1$ ，就构造出了高斯消元的矩阵，然后套上模板即可。</p>
-<p>特别的， $A_{n, n} = 1$ ， $n \to n$ 的概率是 $1$ 。</p>
+        <h1 id="小-C-的游戏"><a href="#小-C-的游戏" class="headerlink" title="小 $C$ 的游戏"></a>小 $C$ 的游戏</h1><h2 id="Description"><a href="#Description" class="headerlink" title="$Description$"></a>$Description$</h2><h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution$"></a>$Solution$</h2><p><del>打表好题</del></p>
+<p>首先约定 $P-position$ 表示先手必败， $N-position$ 表示先手必胜。</p>
+<p>本题并不需要用到 $SG$ 函数等知识，只需要懂得如何对博弈论的局面进行转移即可。</p>
+<p>如此就引出了关于博弈论题目的打表技巧。</p>
+<p>首先，我们要分析题目中的状态转移条件。</p>
+<p>如本题，一个大小为 $n$ 的石子堆可以转移到 $n - 1$ 个石子或者是 $d_i\ (i \in n)$ ，即 $n$ 的所有约数。</p>
+<p>所以，我们的打表程序可以先根据题意初始化前面几个状态，然后从小到大依次枚举 $i$ ，然后枚举所有 $i$ 能转移到的状态，判断他是否是 $P-position$ ，如果是那么当前的 $i$ 就为 $N-position$ ，这是根据定理得出的。</p>
+<p>之后就根据打表程序找规律即可。</p>
+<h3 id="打表代码："><a href="#打表代码：" class="headerlink" title="打表代码："></a>打表代码：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="comment">//#include &lt;tr1/unordered_map&gt;</span></span><br><span class="line"><span class="comment">//#include"Bignum/bignum.h"</span></span><br><span class="line"><span class="comment">//#define lll bignum</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ls(x) ( x &lt;&lt; 1 )</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rs(x) ( x &lt;&lt; 1 | 1 )</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lowbit(x) ( x &amp; -x )</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> debug(x) (cout &lt;&lt; <span class="meta-string">"#x = "</span> &lt;&lt; (x) &lt;&lt; endl)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Set(x, i) memset (x, i, sizeof(x))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> re register</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> For(i, j, k) for(re int i = (j); i &lt;= (k); ++i)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> foR(i, j, k) for(re int i = (j); i &gt;= (k); --i)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Cross(i, j, k) for(re int i = (j); i; i = (k))</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> ll N = <span class="number">1011</span>;</span><br><span class="line"><span class="keyword">const</span> ll inf = <span class="number">0x3f3f3f3f3f3f</span>;</span><br><span class="line"></span><br><span class="line">ll Pd[N + <span class="number">5</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> IO &#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">char</span> <span class="title">gc</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">static</span> <span class="keyword">char</span> buf[<span class="number">100000</span>], *p1 = buf, *p2 = buf;</span><br><span class="line">        <span class="keyword">return</span> (p1 == p2) &amp;&amp; (p2 = (p1 = buf) +</span><br><span class="line">            fread (buf, <span class="number">1</span>, <span class="number">100000</span>, <span class="built_in">stdin</span>), p1 == p2)? EOF: *p1++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">#<span class="meta-keyword">define</span> dd ch = getchar()</span></span><br><span class="line">    <span class="function"><span class="keyword">inline</span> ll <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        ll x = <span class="number">0</span>; <span class="keyword">bool</span> f = <span class="number">0</span>; <span class="keyword">char</span> dd;</span><br><span class="line">        <span class="keyword">for</span> (; !<span class="built_in">isdigit</span> (ch); dd) f ^= (ch == <span class="string">'-'</span>);</span><br><span class="line">        <span class="keyword">for</span> (; <span class="built_in">isdigit</span> (ch); dd)  x = x * <span class="number">10</span> + (ch ^ <span class="number">48</span>);</span><br><span class="line">        <span class="keyword">return</span> f? -x: x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">undef</span> dd</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">( ll x )</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> ( x &lt; <span class="number">0</span> ) <span class="built_in">putchar</span> (<span class="string">'-'</span>), x = -x;</span><br><span class="line">        <span class="keyword">if</span> ( x &gt; <span class="number">9</span> ) write ( x / <span class="number">10</span> ); <span class="built_in">putchar</span> ( x % <span class="number">10</span> | <span class="number">48</span> );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">wrn</span> <span class="params">( ll x )</span> </span>&#123; write (x); <span class="built_in">putchar</span> (<span class="string">' '</span>); &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">wln</span> <span class="params">( ll x )</span> </span>&#123; write (x); <span class="built_in">putchar</span> (<span class="string">'\n'</span>); &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">wlnn</span> <span class="params">( ll x, ll y )</span> </span>&#123; wrn (x), wln (y); &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> IO;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Init</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    Pd[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">    For (i, <span class="number">2</span>, N) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!Pd[i - <span class="number">1</span>]) Pd[i] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">2</span>; j &lt;= i / <span class="number">2</span>; ++j)</span><br><span class="line">            <span class="keyword">if</span> (i % j == <span class="number">0</span> &amp;&amp; !Pd[i / j]) &#123; Pd[i] = <span class="number">1</span>; <span class="keyword">break</span>; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="comment">//  freopen(".in", "r", stdin);</span></span><br><span class="line"><span class="comment">//  freopen("biao.out", "w", stdout);</span></span><br><span class="line">    Init (); ll aa = <span class="number">0</span>;</span><br><span class="line">    For (i, <span class="number">1</span>, N) <span class="built_in">cout</span> &lt;&lt; <span class="string">"Pd["</span> &lt;&lt; ++aa &lt;&lt; <span class="string">"] = "</span> &lt;&lt; Pd[i] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<p>然后我们找规律发现，除了 $2$ 和 $17$ 以外的质数都是 $P-position$ ，除了 $16,\ 34,\ 289$ 以外的合数都是 $N-position$ 。</p>
+<p>再特判掉 $1$ ，就做完了。</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="$Code:$"></a>$Code:$</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="comment">//#include &lt;tr1/unordered_map&gt;</span></span><br><span class="line"><span class="comment">//#include"Bignum/bignum.h"</span></span><br><span class="line"><span class="comment">//#define lll bignum</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ls(x) ( x &lt;&lt; 1 )</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rs(x) ( x &lt;&lt; 1 | 1 )</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lowbit(x) ( x &amp; -x )</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> debug(x) (cout &lt;&lt; <span class="meta-string">"#x = "</span> &lt;&lt; (x) &lt;&lt; endl)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Set(x, i) memset (x, i, sizeof(x))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> R register</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> For(i, j, k) for(R int i = (j); i &lt;= (k); ++i)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> foR(i, j, k) for(R int i = (j); i &gt;= (k); --i)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Cross(i, j, k) for(R int i = (j); i; i = (k))</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> ll N = <span class="number">100011</span>;</span><br><span class="line"><span class="keyword">const</span> ll inf = <span class="number">0x3f3f3f3f3f3f</span>;</span><br><span class="line"></span><br><span class="line">ll T, n, cnt = <span class="number">0</span>, m[N];</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> IO &#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">char</span> <span class="title">gc</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">static</span> <span class="keyword">char</span> buf[<span class="number">100000</span>], *p1 = buf, *p2 = buf;</span><br><span class="line">        <span class="keyword">return</span> (p1 == p2) &amp;&amp; (p2 = (p1 = buf) +</span><br><span class="line">            fread (buf, <span class="number">1</span>, <span class="number">100000</span>, <span class="built_in">stdin</span>), p1 == p2)? EOF: *p1++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">#<span class="meta-keyword">define</span> dd ch = getchar()</span></span><br><span class="line">    <span class="function"><span class="keyword">inline</span> ll <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        ll x = <span class="number">0</span>; <span class="keyword">bool</span> f = <span class="number">0</span>; <span class="keyword">char</span> dd;</span><br><span class="line">        <span class="keyword">for</span> (; !<span class="built_in">isdigit</span> (ch); dd) f ^= (ch == <span class="string">'-'</span>);</span><br><span class="line">        <span class="keyword">for</span> (; <span class="built_in">isdigit</span> (ch); dd)  x = x * <span class="number">10</span> + (ch ^ <span class="number">48</span>);</span><br><span class="line">        <span class="keyword">return</span> f? -x: x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">undef</span> dd</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">( ll x )</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> ( x &lt; <span class="number">0</span> ) <span class="built_in">putchar</span> (<span class="string">'-'</span>), x = -x;</span><br><span class="line">        <span class="keyword">if</span> ( x &gt; <span class="number">9</span> ) write ( x / <span class="number">10</span> ); <span class="built_in">putchar</span> ( x % <span class="number">10</span> | <span class="number">48</span> );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">wrn</span> <span class="params">( ll x )</span> </span>&#123; write (x); <span class="built_in">putchar</span> (<span class="string">' '</span>); &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">wln</span> <span class="params">( ll x )</span> </span>&#123; write (x); <span class="built_in">putchar</span> (<span class="string">'\n'</span>); &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">wlnn</span> <span class="params">( ll x, ll y )</span> </span>&#123; wrn (x), wln (y); &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> IO;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">Check</span> <span class="params">(ll n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (R <span class="keyword">int</span> i = <span class="number">2</span>; i * i &lt;= n; ++i)</span><br><span class="line">        <span class="keyword">if</span> (n % i == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>; <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="comment">//  freopen(".in", "r", stdin);</span></span><br><span class="line"><span class="comment">//  freopen("test.out", "w", stdout);</span></span><br><span class="line">    <span class="keyword">for</span> (T = read(); T; --T) &#123;</span><br><span class="line">        n = read();</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">1</span> || n == <span class="number">16</span>) <span class="built_in">puts</span> (<span class="string">"NIE"</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (n == <span class="number">2</span> || n == <span class="number">17</span>) <span class="built_in">puts</span> (<span class="string">"TAK"</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (n == <span class="number">34</span> || n == <span class="number">289</span>) <span class="built_in">puts</span> (<span class="string">"NIE"</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">puts</span> (Check (n)? <span class="string">"NIE"</span>: <span class="string">"TAK"</span>);</span><br><span class="line">    &#125; <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<p><a href="http://www.51nod.com/Challenge/Problem.html#!#problemId=1831" target="_blank" rel="noopener">题目链接</a></p>
 
       
     </div>
@@ -517,13 +519,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/expectation/" rel="tag"># expectation</a>
-          
-            <a href="/tags/probability/" rel="tag"># probability</a>
-          
-            <a href="/tags/matrix/" rel="tag"># matrix</a>
-          
-            <a href="/tags/gauss/" rel="tag"># gauss</a>
+            <a href="/tags/打表，-game-theory/" rel="tag"># 打表， game theory</a>
           
         </div>
       
@@ -536,8 +532,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/11/4-10-比赛题解/" rel="next" title="4.10 比赛题解">
-                <i class="fa fa-chevron-left"></i> 4.10 比赛题解
+              <a href="/2019/05/08/51nod-B君的竞技场/" rel="next" title="51nod B君的竞技场">
+                <i class="fa fa-chevron-left"></i> 51nod B君的竞技场
               </a>
             
           </div>
@@ -545,10 +541,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/29/51nod-最后的机会/" rel="prev" title="51nod 最后的机会">
-                51nod 最后的机会 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -740,7 +732,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Gauss"><span class="nav-number">1.</span> <span class="nav-text">$Gauss$</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#小-C-的游戏"><span class="nav-number">1.</span> <span class="nav-text">小 $C$ 的游戏</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.1.</span> <span class="nav-text">$Description$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">1.2.</span> <span class="nav-text">$Solution$</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#打表代码："><span class="nav-number">1.2.1.</span> <span class="nav-text">打表代码：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code"><span class="nav-number">1.3.</span> <span class="nav-text">$Code:$</span></a></li></ol></li></ol></div>
             
 
           </div>
