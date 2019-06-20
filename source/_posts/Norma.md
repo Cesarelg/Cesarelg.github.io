@@ -6,6 +6,8 @@ tags: [分治, CDQ 分治]
 
 # $Norma$
 
+![](https://s2.ax1x.com/2019/06/20/Vv4lNj.png)
+
 
 
 ## $Description$
