@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="Cesare">
 <meta property="og:description" content="$XOR\ Partitioning$$Description$给一个序列，问有多少种方法能够把这个序列分成若干块使得每一块的异或和都相同。答案对 $1e9+7$ 取模。 $Solution$观察本题，可以发现几个性质： 对于两段异或和 $1 - i,\ 1 - j$ ，规定 $i &amp;lt; j$ ，记 $1 - i$ 的异或和为 $s_i$ ，两段异或和相等当且仅当 $s_j == 0$ ，那么">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-25T11:38:11.104Z">
+<meta property="og:updated_time" content="2019-06-25T11:41:58.295Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="XOR Partitioning">
 <meta name="twitter:description" content="$XOR\ Partitioning$$Description$给一个序列，问有多少种方法能够把这个序列分成若干块使得每一块的异或和都相同。答案对 $1e9+7$ 取模。 $Solution$观察本题，可以发现几个性质： 对于两段异或和 $1 - i,\ 1 - j$ ，规定 $i &amp;lt; j$ ，记 $1 - i$ 的异或和为 $s_i$ ，两段异或和相等当且仅当 $s_j == 0$ ，那么">
@@ -416,7 +416,7 @@
                 
               
 
-              <time title="创建时间：2019-06-25 19:37:50 / 修改时间：19:38:11" itemprop="dateCreated datePublished" datetime="2019-06-25T19:37:50+08:00">2019-06-25</time>
+              <time title="创建时间：2019-06-25 19:37:50 / 修改时间：19:41:58" itemprop="dateCreated datePublished" datetime="2019-06-25T19:37:50+08:00">2019-06-25</time>
             
 
             
@@ -483,7 +483,7 @@
       
 
       
-        <h1 id="XOR-Partitioning"><a href="#XOR-Partitioning" class="headerlink" title="$XOR\ Partitioning$"></a>$XOR\ Partitioning$</h1><h2 id="Description"><a href="#Description" class="headerlink" title="$Description$"></a>$Description$</h2><p>给一个序列，问有多少种方法能够把这个序列分成若干块使得每一块的异或和都相<br>同。答案对 $1e9+7$ 取模。</p>
+        <h1 id="XOR-Partitioning"><a href="#XOR-Partitioning" class="headerlink" title="$XOR\ Partitioning$"></a>$XOR\ Partitioning$</h1><h2 id="Description"><a href="#Description" class="headerlink" title="$Description$"></a>$Description$</h2><p>给一个序列，问有多少种方法能够把这个序列分成若干块使得每一块的异或和都相同。答案对 $1e9+7$ 取模。</p>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>观察本题，可以发现几个性质：</p>
 <p>对于两段异或和 $1 - i,\ 1 - j$ ，规定 $i &lt; j$ ，记 $1 - i$ 的异或和为 $s_i$ ，两段异或和相等当且仅当 $s_j == 0$ ，那么显然对于所有 $s_j == 0$ ，只会有选与不选两种情况，即他对答案的贡献为使答案乘 $2$ 。</p>
 <p>我们设 $f_i$ 表示异或和为 $s_i$ 的方案数。</p>
