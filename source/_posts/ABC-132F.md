@@ -18,11 +18,11 @@ tags: [dp, 分块]
 
 首先很容易看出与除法分块相关。
 
-$yy$ 一下发现第二层答案就是 $\sum_{i = 1}^{n}\dfrac{n}{i}$ ，然后后面的答案要根据这个拓展出去。
+$yy$ 一下发现第二层答案就是 $\sum_{i = 1}^{n}\left\lfloor\dfrac{n}{i}\right\rfloor$ ，然后后面的答案要根据这个拓展出去。
 
 设  $f_{i, j}$ 表示做到第 $i$ 层，第 $i$ 层做到第 $j$ 个块的答案。
 
-转移从 $f_{i, j - 1}$ 继承，然后考虑第 $j$ 个块元素答案均为 $\dfrac{l}{n}$ ，考虑这个块的元素的贡献就是 $\dfrac{n}{n/l} \times (r - l + 1)$  ，就有转移方程
+转移从 $f_{i, j - 1}$ 继承，然后考虑第 $j$ 个块元素答案均为 $\left\lfloor\dfrac{l}{n}\right\rfloor$ ，考虑这个块的元素的贡献就是 $\left\lfloor\dfrac{n}{n/l} \times (r - l + 1)\right\rfloor$  ，就有转移方程
 $$
 f_{i, j} = f_{i, j - 1} + f_{i - 1, cnt - j + 1} \times (r_j - l_j + 1)
 $$
